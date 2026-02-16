@@ -8,13 +8,18 @@
       "license": "CC-BY-4.0",
       "citation": "Author et al., Year. Title. Institution.",
       "moku_ids": ["oahu-koolaupoko"],
-      "topics": ["water"],
-      "sdg_codes": ["sdg6"],
+      "topics": ["land_environment"],
+      "sdg_codes": ["sdg15"],
       "quality": "preliminary",
       "access_level": "public",
       "temporal_coverage": {
         "start": "2025-01-01",
         "end": "2025-12-31"
+      },
+      "sample_context": {
+        "matrix": ["soil"],
+        "collection_method": "describe your collection method",
+        "equipment": "describe equipment used"
       },
       "schema": {
         "site_id": "string",

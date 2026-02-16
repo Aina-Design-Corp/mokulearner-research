@@ -30,8 +30,8 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 
 | Topic | ISO 37101 Issue | SDG Codes | Example Datasets |
 |---|---|---|---|
-| **soil** | Living environment | SDG 2, 15 | Soil surveys, nutrient profiles |
-| **water** | Living environment, Community infrastructure | SDG 6, 14 | Water quality, streamflow |
+| **land_environment** | Living environment | SDG 2, 15 | Soil surveys, sediment analysis, substrate testing |
+| **water** | Living environment, Community infrastructure | SDG 6, 14 | Water quality, streamflow, effluent |
 | **biodiversity** | Biodiversity & ecosystem services | SDG 14, 15 | Species surveys, habitat mapping |
 | **agriculture** | Economy & production | SDG 2, 12 | Crop trials, production data |
 | **coastal** | Safety & security, Biodiversity | SDG 13, 14 | Erosion rates, sea level, coral |
@@ -40,6 +40,8 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 | **food_safety** | Health & care | SDG 2 | Contamination testing, pathogens |
 | **infrastructure** | Community infrastructure | SDG 6, 7, 11 | Water system capacity, energy |
 | **demographics** | Governance, empowerment | SDG 8, 11 | Population, land ownership |
+
+Topics describe domain questions, not sample media. For environmental samples, use the optional `sample_context` block (see [docs/topics.md](docs/topics.md#sample-context-optional)).
 
 ## Moku Districts
 

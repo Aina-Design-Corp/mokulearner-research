@@ -55,7 +55,7 @@ body:
       label: Research Focus Areas
       description: Select all topics that apply to your planned contributions
       options:
-        - label: "soil"
+        - label: "land_environment"
         - label: "water"
         - label: "biodiversity"
         - label: "agriculture"
@@ -89,7 +89,7 @@ body:
     attributes:
       label: Brief Description
       description: What kind of data does your organization plan to contribute?
-      placeholder: "e.g., We conduct quarterly soil nutrient surveys across windward O'ahu agricultural lands."
+      placeholder: "e.g., We conduct quarterly environmental surveys across windward O'ahu agricultural lands."
     validations:
       required: true
 

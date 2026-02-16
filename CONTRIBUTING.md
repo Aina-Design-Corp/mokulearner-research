@@ -47,12 +47,13 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].license` | Yes | Open data license (CC-BY-4.0, CC0, etc.) |
 | `datasets[].citation` | No | Preferred citation |
 | `datasets[].moku_ids` | Yes | Array of moku district IDs your data covers |
-| `datasets[].topics` | Yes | Array from: soil, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics |
+| `datasets[].topics` | Yes | Array from: land_environment, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics |
 | `datasets[].sdg_codes` | Yes | Array of SDG codes: sdg2, sdg6, sdg7, sdg8, sdg11, sdg12, sdg13, sdg14, sdg15 |
 | `datasets[].quality` | Yes | One of: preliminary, verified, peer_reviewed |
 | `datasets[].access_level` | No | public (default), attributed, or restricted |
 | `datasets[].temporal_coverage` | No | `{ "start": "YYYY-MM-DD", "end": "YYYY-MM-DD" }` |
 | `datasets[].schema` | Yes | Column name to type mapping (`string`, `number`, `date`, `boolean`) |
+| `datasets[].sample_context` | No | Standard container for environmental sample metadata (see [docs/topics.md](docs/topics.md#sample-context-optional)) |
 | `datasets[].required_fields` | Yes | Columns that must be non-null in every record |
 
 ### Example
@@ -64,7 +65,7 @@ See [contributions/_example/](contributions/_example/) for a complete working ex
 1. **Fork** this repository to your GitHub account
 2. **Create** a directory: `contributions/{your-slug}/{dataset-slug}/`
    - `{your-slug}` is your registered contributor slug
-   - `{dataset-slug}` is a short, descriptive name (e.g., `soil-koolaupoko-2025`)
+   - `{dataset-slug}` is a short, descriptive name (e.g., `wetland-koolaupoko-2025`)
 3. **Add** your data file (CSV or GeoJSON) to the directory
 4. **Add** your `metadata.json` to the same directory
 

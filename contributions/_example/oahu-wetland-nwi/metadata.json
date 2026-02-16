@@ -23,6 +23,12 @@
         "start": "2020-01-01",
         "end": "2024-12-31"
       },
+      "sample_context": {
+        "matrix": ["water", "sediment"],
+        "collection_method": "remote sensing + field verification",
+        "source_agency": "U.S. Fish and Wildlife Service",
+        "classification_system": "Cowardin et al. 1979"
+      },
       "schema": {
         "site_id": "string",
         "latitude": "number",

@@ -68,11 +68,11 @@
         },
         "topics": {
           "type": "array",
-          "description": "Research topics from the controlled vocabulary",
+          "description": "Research topics from the controlled vocabulary (domain questions, not sample media types)",
           "items": {
             "type": "string",
             "enum": [
-              "soil",
+              "land_environment",
               "water",
               "biodiversity",
               "agriculture",
@@ -133,6 +133,23 @@
               "description": "End date (ISO 8601)"
             }
           }
+        },
+        "sample_context": {
+          "type": "object",
+          "description": "Standard container for environmental sample metadata. The matrix field uses a controlled vocabulary; all other fields are free-form for the research analyst.",
+          "required": ["matrix"],
+          "properties": {
+            "matrix": {
+              "type": "array",
+              "description": "What was physically collected (controlled vocabulary)",
+              "items": {
+                "type": "string",
+                "enum": ["soil", "water", "sediment", "air", "tissue", "sludge", "mixed"]
+              },
+              "minItems": 1
+            }
+          },
+          "additionalProperties": true
         },
         "schema": {
           "type": "object",
