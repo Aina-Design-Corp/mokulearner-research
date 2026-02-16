@@ -1,0 +1,29 @@
+{
+  "description": "Approved research contributors to the Mokunet Research Commons. Managed by Mokunet administrators via pull request.",
+  "contributors": [
+    {
+      "slug": "_example",
+      "name": "Example Contributor",
+      "institution": "Mokunet",
+      "contact_name": "Mokunet Admin",
+      "website": "https://mokunet.us",
+      "focus_areas": ["water", "biodiversity", "coastal"],
+      "moku_coverage": null,
+      "sdg_alignment": ["sdg6", "sdg14", "sdg15"],
+      "status": "approved",
+      "approved_at": "2026-02-15"
+    },
+    {
+      "slug": "uh-ssri",
+      "name": "UH Manoa SSRI / Health Policy Initiative",
+      "institution": "University of Hawaii at Manoa",
+      "contact_name": "Dr. John P. Barile",
+      "website": "https://ssri.hawaii.edu",
+      "focus_areas": ["demographics", "infrastructure"],
+      "moku_coverage": null,
+      "sdg_alignment": ["sdg8", "sdg11"],
+      "status": "approved",
+      "approved_at": "2026-02-15"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "contributor": "your-contributor-slug",
+  "datasets": [
+    {
+      "file": "your-data-file.csv",
+      "title": "Dataset Title — Moku District Year",
+      "description": "Brief description of methods, coverage, and purpose.",
+      "license": "CC-BY-4.0",
+      "citation": "Author et al., Year. Title. Institution.",
+      "moku_ids": ["oahu-koolaupoko"],
+      "topics": ["water"],
+      "sdg_codes": ["sdg6"],
+      "quality": "preliminary",
+      "access_level": "public",
+      "temporal_coverage": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "schema": {
+        "site_id": "string",
+        "latitude": "number",
+        "longitude": "number",
+        "sample_date": "date",
+        "measurement_value": "number",
+        "notes": "string"
+      },
+      "required_fields": ["site_id", "latitude", "longitude"]
+    }
+  ]
+}

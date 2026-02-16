@@ -1,0 +1,96 @@
+name: New Dataset Proposal
+description: Propose a new dataset contribution
+title: "[Dataset] "
+labels: ["dataset-proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a new dataset for the Mokunet Research Commons.
+        You must be a [registered contributor](https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/registry/contributors.json) before submitting data.
+
+  - type: input
+    id: contributor_slug
+    attributes:
+      label: Contributor Slug
+      description: Your registered contributor slug from registry/contributors.json
+      placeholder: "e.g., uh-ctahr"
+    validations:
+      required: true
+
+  - type: input
+    id: dataset_title
+    attributes:
+      label: Dataset Title
+      placeholder: "e.g., Soil Nutrient Survey — Ko'olaupoko 2025"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Brief description of the dataset, collection methods, and coverage
+    validations:
+      required: true
+
+  - type: input
+    id: record_count
+    attributes:
+      label: Estimated Record Count
+      placeholder: "e.g., 47 sites, quarterly over 2 years = ~188 records"
+
+  - type: checkboxes
+    id: topics
+    attributes:
+      label: Topics
+      options:
+        - label: "soil"
+        - label: "water"
+        - label: "biodiversity"
+        - label: "agriculture"
+        - label: "coastal"
+        - label: "climate"
+        - label: "forestry"
+        - label: "food_safety"
+        - label: "infrastructure"
+        - label: "demographics"
+
+  - type: textarea
+    id: moku_ids
+    attributes:
+      label: Moku Coverage
+      description: Which moku districts does this dataset cover?
+      placeholder: "e.g., oahu-koolaupoko, oahu-kona"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: quality
+    attributes:
+      label: Quality Level
+      options:
+        - preliminary
+        - verified
+        - peer_reviewed
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: Data Format
+      options:
+        - CSV
+        - GeoJSON
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      description: "CC-BY-4.0, CC-BY-SA-4.0, CC-BY-NC-4.0, CC0, or ODbL"
+      placeholder: "CC-BY-4.0"
+    validations:
+      required: true

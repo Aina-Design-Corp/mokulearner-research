@@ -1,0 +1,38 @@
+{
+  "contributor": "_example",
+  "datasets": [
+    {
+      "file": "oahu-wetland-nwi-sample.csv",
+      "title": "National Wetlands Inventory — O'ahu Sample (USFWS)",
+      "description": "Representative sample of 50 wetland features from the USFWS National Wetlands Inventory for O'ahu. Includes estuarine, marine, freshwater, and riverine wetland polygons with NWI classification codes and acreage. Centroids computed from polygon geometry.",
+      "license": "CC0",
+      "citation": "U.S. Fish and Wildlife Service. National Wetlands Inventory. https://www.fws.gov/program/national-wetlands-inventory",
+      "moku_ids": [
+        "oahu-koolauloa",
+        "oahu-koolaupoko",
+        "oahu-kona",
+        "oahu-ewa",
+        "oahu-waianae",
+        "oahu-waialua"
+      ],
+      "topics": ["water", "biodiversity", "coastal"],
+      "sdg_codes": ["sdg6", "sdg14", "sdg15"],
+      "quality": "verified",
+      "access_level": "public",
+      "temporal_coverage": {
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      "schema": {
+        "site_id": "string",
+        "latitude": "number",
+        "longitude": "number",
+        "wetland_type": "string",
+        "nwi_attribute": "string",
+        "acres": "number",
+        "status": "string"
+      },
+      "required_fields": ["site_id", "latitude", "longitude", "wetland_type"]
+    }
+  ]
+}

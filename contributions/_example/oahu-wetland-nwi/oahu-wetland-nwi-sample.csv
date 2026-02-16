@@ -1,0 +1,51 @@
+site_id,latitude,longitude,wetland_type,nwi_attribute,acres,status
+NWI-00001,21.359266,-158.022705,Estuarine and Marine Deepwater,E1UBL,0.5775,Digital
+NWI-00100,21.314664,-158.102355,Freshwater Pond,PUBHx,0.166,Digital
+NWI-00199,21.55119,-158.131914,Freshwater Pond,PABHh,2.3332,Digital
+NWI-00298,21.572039,-158.132836,Freshwater Emergent Wetland,PEM1Fh,0.1052,Digital
+NWI-00397,21.587102,-158.107584,Freshwater Forested/Shrub Wetland,PSS3C,2.3405,Digital
+NWI-00496,21.575406,-158.050582,Riverine,R4SBCx,2.9408,Digital
+NWI-00595,21.579935,-158.11982,Riverine,R5UBH,0.0479,Digital
+NWI-00694,21.576953,-157.935782,Freshwater Forested/Shrub Wetland,PFO3C,2.3349,Digital
+NWI-00793,21.586875,-157.965538,Riverine,R4SBC,0.0904,Digital
+NWI-00892,21.353984,-157.806006,Freshwater Emergent Wetland,PEM1/FO3Ch,0.4727,Digital
+NWI-00991,21.352828,-157.880632,Riverine,R4SBC,0.2896,Digital
+NWI-01090,21.537806,-158.204581,Freshwater Forested/Shrub Wetland,PFO3C,1.8026,Digital
+NWI-01189,21.554436,-157.870424,Estuarine and Marine Wetland,E2SS3N,0.0096,Digital
+NWI-01288,21.50745,-157.852176,Freshwater Emergent Wetland,PEM1Fh,0.0476,Digital
+NWI-01387,21.501934,-157.85433,Freshwater Pond,PUBF,0.0283,Digital
+NWI-01486,21.636577,-157.91848,Estuarine and Marine Wetland,M2RF1N,1.1036,Digital
+NWI-01585,21.685555,-157.956014,Freshwater Emergent Wetland,PEM1F,0.4945,Digital
+NWI-01684,21.685912,-157.949369,Freshwater Forested/Shrub Wetland,PSS1A,0.3711,Digital
+NWI-01783,21.682643,-157.957741,Freshwater Pond,PUBFx,0.9739,Digital
+NWI-01882,21.691162,-157.960809,Freshwater Pond,PUBFx,0.7565,Digital
+NWI-01981,21.677923,-157.971957,Riverine,R5UBFx,1.9265,Digital
+NWI-02080,21.448168,-157.809735,Estuarine and Marine Deepwater,M1RF1L,1.3526,Digital
+NWI-02179,21.403725,-157.811826,Freshwater Emergent Wetland,PEM1Fh,0.0299,Digital
+NWI-02278,21.466334,-157.848041,Freshwater Emergent Wetland,PEM1Fx,3.8019,Digital
+NWI-02377,21.395252,-157.776546,Freshwater Pond,PUSCx,0.109,Digital
+NWI-02476,21.363743,-157.713291,Estuarine and Marine Wetland,E2EM1N,2.7864,Digital
+NWI-02575,21.311162,-157.659942,Estuarine and Marine Wetland,M2USN,2.7228,Digital
+NWI-02674,21.340959,-157.747355,Freshwater Forested/Shrub Wetland,PFO3C,1.0834,Digital
+NWI-02773,21.31556,-157.664776,Freshwater Pond,PUBKx,0.1213,Digital
+NWI-02872,21.328995,-157.695822,Riverine,R4SBAx,0.9911,Digital
+NWI-02971,21.450928,-157.725763,Estuarine and Marine Wetland,M2USN,0.4132,Digital
+NWI-03070,21.526874,-158.228448,Estuarine and Marine Deepwater,E1UBL,0.2719,Digital
+NWI-03169,21.267276,-157.709883,Estuarine and Marine Deepwater,M1ABL,0.0762,Digital
+NWI-03268,21.261766,-157.711487,Estuarine and Marine Wetland,M2AB/RSN,0.057,Digital
+NWI-03367,21.54192,-158.236842,Estuarine and Marine Wetland,M2RSN,0.0243,Digital
+NWI-03466,21.331135,-158.123303,Estuarine and Marine Wetland,M2RSPs,0.2652,Digital
+NWI-03565,21.699501,-158.002707,Estuarine and Marine Wetland,M2USN,0.6854,Digital
+NWI-03664,21.344412,-158.122271,Freshwater Pond,PUBHx,0.6078,Digital
+NWI-03763,21.345109,-157.980071,Estuarine and Marine Wetland,E2FO3N,0.36,Digital
+NWI-03862,21.365153,-157.937667,Estuarine and Marine Wetland,E2SS3N,0.4701,Digital
+NWI-03961,21.358987,-157.975888,Freshwater Forested/Shrub Wetland,PFO3Ch,1.2045,Digital
+NWI-04060,21.456792,-158.053768,Freshwater Emergent Wetland,PEM1C,4.8881,Digital
+NWI-04159,21.436524,-158.057752,Freshwater Pond,PUBHx,0.1488,Digital
+NWI-04258,21.492187,-158.027871,Riverine,R5UBH,0.0076,Digital
+NWI-04357,21.472959,-158.199353,Freshwater Emergent Wetland,PEM1Ah,0.172,Digital
+NWI-04456,21.413929,-158.16016,Freshwater Pond,PUBHx,0.0691,Digital
+NWI-04555,21.638462,-158.059391,Estuarine and Marine Deepwater,E1UBL,6.8881,Digital
+NWI-04654,21.681517,-158.027877,Freshwater Forested/Shrub Wetland,PFO3C,0.9262,Digital
+NWI-04753,21.38736,-157.963707,Estuarine and Marine Wetland,E2SS3N,0.4725,Digital
+NWI-04852,21.457225,-158.018572,Freshwater Pond,PUBHx,0.4361,Digital

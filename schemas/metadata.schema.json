@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Mokunet Research Contribution Metadata",
+  "description": "Schema for metadata.json files in the mokulearner-research contributions directory. Each metadata.json declares one or more datasets contributed by a research group.",
+  "type": "object",
+  "required": ["contributor", "datasets"],
+  "additionalProperties": false,
+  "properties": {
+    "contributor": {
+      "type": "string",
+      "description": "Contributor slug matching an approved entry in registry/contributors.json",
+      "pattern": "^[_a-z][a-z0-9-]+$"
+    },
+    "datasets": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/DatasetEntry" }
+    }
+  },
+  "definitions": {
+    "DatasetEntry": {
+      "type": "object",
+      "required": [
+        "file",
+        "title",
+        "license",
+        "moku_ids",
+        "topics",
+        "sdg_codes",
+        "quality",
+        "schema",
+        "required_fields"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "description": "Filename of the data file (CSV or GeoJSON) in the same directory",
+          "pattern": "\\.(csv|geojson)$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Human-readable title for this dataset",
+          "minLength": 5,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of methods, coverage, and purpose"
+        },
+        "license": {
+          "type": "string",
+          "enum": ["CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC0", "ODbL"],
+          "description": "Open data license for this dataset"
+        },
+        "citation": {
+          "type": "string",
+          "description": "Preferred citation for this dataset"
+        },
+        "moku_ids": {
+          "type": "array",
+          "description": "Moku district IDs this dataset covers (see docs/moku-districts.md)",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]+-[a-z-]+$"
+          },
+          "minItems": 1
+        },
+        "topics": {
+          "type": "array",
+          "description": "Research topics from the controlled vocabulary",
+          "items": {
+            "type": "string",
+            "enum": [
+              "soil",
+              "water",
+              "biodiversity",
+              "agriculture",
+              "coastal",
+              "climate",
+              "forestry",
+              "food_safety",
+              "infrastructure",
+              "demographics"
+            ]
+          },
+          "minItems": 1
+        },
+        "sdg_codes": {
+          "type": "array",
+          "description": "UN Sustainable Development Goal codes this dataset relates to",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sdg2",
+              "sdg6",
+              "sdg7",
+              "sdg8",
+              "sdg11",
+              "sdg12",
+              "sdg13",
+              "sdg14",
+              "sdg15"
+            ]
+          },
+          "minItems": 1
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["preliminary", "verified", "peer_reviewed"],
+          "description": "Quality level declared by the contributor"
+        },
+        "access_level": {
+          "type": "string",
+          "enum": ["public", "attributed", "restricted"],
+          "default": "public",
+          "description": "Visibility level (default: public)"
+        },
+        "temporal_coverage": {
+          "type": "object",
+          "description": "Date range of the data",
+          "required": ["start", "end"],
+          "additionalProperties": false,
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date",
+              "description": "Start date (ISO 8601)"
+            },
+            "end": {
+              "type": "string",
+              "format": "date",
+              "description": "End date (ISO 8601)"
+            }
+          }
+        },
+        "schema": {
+          "type": "object",
+          "description": "Column name to data type mapping for the data file",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["string", "number", "date", "boolean"]
+          },
+          "minProperties": 1
+        },
+        "required_fields": {
+          "type": "array",
+          "description": "Column names that must be present and non-null in every record",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+name: New Contributor Registration
+description: Register your organization as a research contributor
+title: "[Contributor] "
+labels: ["contributor-registration"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Register your research organization to contribute data to the Mokunet Research Commons.
+        Once approved, your contributor slug will be added to `registry/contributors.json`.
+
+  - type: input
+    id: org_name
+    attributes:
+      label: Organization Name
+      description: Full name of your research organization
+      placeholder: "e.g., UH Manoa College of Tropical Agriculture"
+    validations:
+      required: true
+
+  - type: input
+    id: institution
+    attributes:
+      label: Parent Institution
+      description: University, agency, or organization
+      placeholder: "e.g., University of Hawaii at Manoa"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_name
+    attributes:
+      label: Primary Contact Name
+      placeholder: "e.g., Dr. Jane Smith"
+    validations:
+      required: true
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact Email
+      placeholder: "e.g., jsmith@hawaii.edu"
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: "e.g., https://ctahr.hawaii.edu"
+
+  - type: checkboxes
+    id: focus_areas
+    attributes:
+      label: Research Focus Areas
+      description: Select all topics that apply to your planned contributions
+      options:
+        - label: "soil"
+        - label: "water"
+        - label: "biodiversity"
+        - label: "agriculture"
+        - label: "coastal"
+        - label: "climate"
+        - label: "forestry"
+        - label: "food_safety"
+        - label: "infrastructure"
+        - label: "demographics"
+
+  - type: dropdown
+    id: data_format
+    attributes:
+      label: Primary Data Format
+      options:
+        - CSV
+        - GeoJSON
+        - Both CSV and GeoJSON
+    validations:
+      required: true
+
+  - type: textarea
+    id: moku_coverage
+    attributes:
+      label: Geographic Coverage
+      description: Which moku districts does your research cover? (See docs/moku-districts.md)
+      placeholder: "e.g., All O'ahu moku, or specifically oahu-koolaupoko and oahu-kona"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Brief Description
+      description: What kind of data does your organization plan to contribute?
+      placeholder: "e.g., We conduct quarterly soil nutrient surveys across windward O'ahu agricultural lands."
+    validations:
+      required: true
+
+  - type: input
+    id: suggested_slug
+    attributes:
+      label: Suggested Contributor Slug
+      description: "A short, lowercase identifier for your organization (letters, numbers, hyphens)"
+      placeholder: "e.g., uh-ctahr"
