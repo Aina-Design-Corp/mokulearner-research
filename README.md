@@ -24,9 +24,23 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full step-by-step guide.
 4. Include a `metadata.json` (use [the template](templates/metadata-template.json))
 5. Open a pull request
 
+## Environmental Samples
+
+Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. Mokunet does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can anchor geospatially without interpreting the domain-specific contents.
+
+**How this works in practice:**
+
+- **Topics** identify the domain question your research addresses (e.g. `land_environment`, `water`, `coastal`). Mokunet uses topics for graph discovery and sustainability goal linkage.
+- **`sample_context`** is an optional block in your `metadata.json` where you describe what was physically collected. Only the `matrix` field is controlled (`soil`, `water`, `sediment`, `air`, `tissue`, `sludge`, `mixed`); everything else is free-form for your research context.
+- **Your CSV columns** are declared in `schema` and validated, but Mokunet stores them as-is. The platform orchestrates research inputs through [H3 hexagonal cells](https://h3geo.org/) and moku district boundaries — not through sample-specific interpretation.
+
+This means a single contribution can span multiple sample matrices under one topic. A land environment study collecting soil cores, stream sediment, and composting facility sludge from the same sites submits one dataset with `"matrix": ["soil", "sediment", "sludge"]`.
+
+See [docs/topics.md](docs/topics.md) for the full topic taxonomy, sample matrix vocabulary, and `sample_context` examples.
+
 ## Topic Taxonomy
 
-Contributions are tagged with topics from a controlled vocabulary. Each topic maps to ISO 37101 community sustainability issues and UN Sustainable Development Goals.
+Contributions are tagged with topics from a controlled vocabulary. Each topic maps to [ISO 37101](https://www.iso.org/standard/61885.html) community sustainability issues and UN Sustainable Development Goals.
 
 | Topic | ISO 37101 Issue | SDG Codes | Example Datasets |
 |---|---|---|---|
@@ -40,8 +54,6 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 | **food_safety** | Health & care | SDG 2 | Contamination testing, pathogens |
 | **infrastructure** | Community infrastructure | SDG 6, 7, 11 | Water system capacity, energy |
 | **demographics** | Governance, empowerment | SDG 8, 11 | Population, land ownership |
-
-Topics describe domain questions, not sample media. For environmental samples, use the optional `sample_context` block (see [docs/topics.md](docs/topics.md#sample-context-optional)).
 
 ## Moku Districts
 
