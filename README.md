@@ -1,17 +1,33 @@
 # Mokunet Research Commons
 
-Public, transparent research data contributions to the [Mokunet](https://mokunet.us) provenance graph — anchored to traditional Hawaiian moku districts, linked to sustainability goals, and openly queryable.
+Open, place-based research data for Hawai'i — contributed by university and community researchers, anchored to traditional moku districts, and queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
 
 ## What Is This?
 
-This repository is the contribution interface for external research groups to share place-based environmental, agricultural, and community data with the Mokunet platform. Contributed datasets become nodes in the Mokunet provenance graph (AuraDB/Neo4j), linked to moku districts, UN Sustainable Development Goals, and community sustainability objectives.
+This repository is how university and community researchers contribute place-based environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://mokunet.us) provenance graph, linked to the 33 traditional moku districts, UN Sustainable Development Goals, and community sustainability objectives.
+
+**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the public browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
 **Contributions are:**
 - Version-controlled with full Git provenance
 - Validated automatically via GitHub Actions
-- Reviewed by Mokunet administrators before ingestion
+- Reviewed by community maintainers before ingestion
 - Publicly accessible as commons data (default)
 - Anchored to the 33 traditional moku districts of Hawaiʻi
+
+## Who Contributes?
+
+Research labs across Hawai'i's university system and community organizations:
+
+| Institution | Example Labs / Groups | Focus Areas |
+|---|---|---|
+| **UH Mānoa** | SSRI, CTAHR, SOEST, WRRC | Demographics, agriculture, coastal, water |
+| **UH Hilo** | Tropical Conservation Biology & Environment | Forestry, biodiversity |
+| **Hawai'i Pacific University** | Natural Sciences, Marine Science | Biodiversity, coastal |
+| **Community organizations** | Watershed partnerships, conservation districts | Water, land environment |
+| **State & federal agencies** | DLNR, DOH, USGS, NOAA, USFWS | Multi-topic |
+
+Your research already has a place in the commons. Moku districts provide geographic anchoring without requiring you to learn the platform — just declare which districts your data covers.
 
 ## How to Contribute
 
@@ -22,17 +38,19 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full step-by-step guide.
 2. Fork this repository
 3. Add your data to `contributions/{your-slug}/{dataset-slug}/`
 4. Include a `metadata.json` (use [the template](templates/metadata-template.json))
-5. Open a pull request
+5. Open a pull request — GitHub Actions validates automatically
+
+If your lab already uses Git for code, the same workflow applies to data.
 
 ## Environmental Samples
 
-Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. Mokunet does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can anchor geospatially without interpreting the domain-specific contents.
+Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. This commons does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can anchor geospatially without interpreting domain-specific contents.
 
 **How this works in practice:**
 
-- **Topics** identify the domain question your research addresses (e.g. `land_environment`, `water`, `coastal`). Mokunet uses topics for graph discovery and sustainability goal linkage.
+- **Topics** identify the domain question your research addresses (e.g. `land_environment`, `water`, `coastal`). The platform uses topics for graph discovery and sustainability goal linkage.
 - **`sample_context`** is an optional block in your `metadata.json` where you describe what was physically collected. Only the `matrix` field is controlled (`soil`, `water`, `sediment`, `air`, `tissue`, `sludge`, `mixed`); everything else is free-form for your research context.
-- **Your CSV columns** are declared in `schema` and validated, but Mokunet stores them as-is. The platform orchestrates research inputs through [H3 hexagonal cells](https://h3geo.org/) and moku district boundaries — not through sample-specific interpretation.
+- **Your CSV columns** are declared in `schema` and validated, but the platform stores them as-is. Data orchestration works through [H3 hexagonal cells](https://h3geo.org/) and moku district boundaries — not through sample-specific interpretation.
 
 This means a single contribution can span multiple sample matrices under one topic. A land environment study collecting soil cores, stream sediment, and composting facility sludge from the same sites submits one dataset with `"matrix": ["soil", "sediment", "sludge"]`.
 
@@ -57,15 +75,17 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 
 ## Moku Districts
 
-Mokunet recognizes 33 traditional moku districts across 7 islands. See [docs/moku-districts.md](docs/moku-districts.md) for the full list with island groupings.
+The commons recognizes 33 traditional moku districts across 7 islands. See [docs/moku-districts.md](docs/moku-districts.md) for the full list with island groupings.
 
 ## Quality Levels
 
 | Level | Meaning | Review |
 |---|---|---|
-| **preliminary** | Raw field data, not yet QA'd | Admin spot-check |
-| **verified** | QA'd by contributor, methods documented | Admin review |
+| **preliminary** | Raw field data, not yet QA'd | Spot-check |
+| **verified** | QA'd by contributor, methods documented | Standard review |
 | **peer_reviewed** | Published or reviewed by external party | Fast-track |
+
+Preliminary data is welcome — the quality level is a declaration, not a gatekeep. Labs can upgrade quality by submitting a follow-up PR with updated metadata.
 
 ## Licenses
 
@@ -95,9 +115,9 @@ docs/                 Reference documentation
 
 ## Links
 
-- [Mokunet Platform](https://mokunet.us)
-- [Research Commons Console](https://mokunet.us/lahui/research-commons)
-- [Contribute Data Form](https://mokunet.us/lahui/contribute)
+- [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) — Browse, query, and contribute research data
+- [Mokunet Platform](https://mokunet.us) — API backend and data pipeline
+- [Contribute Data](https://huikoeaina.ainadesign.org/contribute) — Prepare a contribution through HKA
 - [Metadata Schema Reference](schemas/metadata.schema.json)
 
 ## License
