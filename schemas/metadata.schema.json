@@ -24,9 +24,7 @@
         "file",
         "title",
         "license",
-        "moku_ids",
         "topics",
-        "sdg_codes",
         "quality",
         "schema",
         "required_fields"
@@ -59,12 +57,17 @@
         },
         "moku_ids": {
           "type": "array",
-          "description": "Moku district IDs this dataset covers (see docs/moku-districts.md)",
+          "description": "Moku district IDs this dataset covers (optional — auto-derived from coordinates when possible)",
           "items": {
             "type": "string",
             "pattern": "^[a-z]+-[a-z-]+$"
-          },
-          "minItems": 1
+          }
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Free-text geographic scope (required when data lacks coordinate columns and moku_ids are not provided)",
+          "minLength": 10,
+          "maxLength": 500
         },
         "topics": {
           "type": "array",
@@ -88,7 +91,7 @@
         },
         "sdg_codes": {
           "type": "array",
-          "description": "UN Sustainable Development Goal codes this dataset relates to",
+          "description": "UN Sustainable Development Goal codes (optional — auto-derived from topics at ingestion)",
           "items": {
             "type": "string",
             "enum": [
@@ -102,8 +105,7 @@
               "sdg14",
               "sdg15"
             ]
-          },
-          "minItems": 1
+          }
         },
         "quality": {
           "type": "string",

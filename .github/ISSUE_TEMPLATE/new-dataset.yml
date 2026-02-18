@@ -22,7 +22,7 @@ body:
     id: dataset_title
     attributes:
       label: Dataset Title
-      placeholder: "e.g., Wetland Survey — Ko'olaupoko 2025"
+      placeholder: "e.g., Wetland Survey — Windward O'ahu 2025"
     validations:
       required: true
 
@@ -44,6 +44,7 @@ body:
     id: topics
     attributes:
       label: Topics
+      description: Select all research topics that apply
       options:
         - label: "land_environment"
         - label: "water"
@@ -57,13 +58,11 @@ body:
         - label: "demographics"
 
   - type: textarea
-    id: moku_ids
+    id: coverage
     attributes:
-      label: Moku Coverage
-      description: Which moku districts does this dataset cover?
-      placeholder: "e.g., oahu-koolaupoko, oahu-kona"
-    validations:
-      required: true
+      label: Geographic Coverage
+      description: Describe where your data was collected. If your data includes latitude/longitude columns, moku assignment is automatic.
+      placeholder: "e.g., Windward O'ahu coastal wetlands, or Statewide census tract data"
 
   - type: dropdown
     id: quality

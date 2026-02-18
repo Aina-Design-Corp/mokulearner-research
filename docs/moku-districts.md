@@ -2,6 +2,8 @@
 
 Mokunet recognizes 33 traditional Hawaiian moku (district) boundaries across 7 islands. Each moku has a compound ID in the format `{island}-{normalized-name}`.
 
+**Note for contributors:** You do not need to specify moku IDs in your contribution metadata. When your data includes coordinates, the platform automatically assigns records to the correct moku districts. If you do know which districts your data covers, you can optionally include `moku_ids` in your `metadata.json`.
+
 ## O'ahu (6 moku)
 
 | Moku ID | Traditional Name |

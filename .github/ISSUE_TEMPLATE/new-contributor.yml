@@ -52,8 +52,8 @@ body:
   - type: checkboxes
     id: focus_areas
     attributes:
-      label: Research Focus Areas
-      description: Select all topics that apply to your planned contributions
+      label: Research Focus Areas (optional)
+      description: Select topics that apply to your planned contributions
       options:
         - label: "land_environment"
         - label: "water"
@@ -76,13 +76,6 @@ body:
         - Both CSV and GeoJSON
     validations:
       required: true
-
-  - type: textarea
-    id: moku_coverage
-    attributes:
-      label: Geographic Coverage
-      description: Which moku districts does your research cover? (See docs/moku-districts.md)
-      placeholder: "e.g., All O'ahu moku, or specifically oahu-koolaupoko and oahu-kona"
 
   - type: textarea
     id: description

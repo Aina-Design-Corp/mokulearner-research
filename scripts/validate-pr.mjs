@@ -10,7 +10,8 @@
  * 5. Value types match declared schema
  * 6. Coordinates within Hawaii bounds (lat 18-23, lng -161 to -154)
  * 7. No duplicate site_id values
- * 8. All moku_ids are valid
+ * 8. moku_ids validated when provided (warning only)
+ * 9. Coverage required when data lacks coordinates and moku_ids
  *
  * Usage:
  *   CHANGED_DIRS="uh-ctahr/soil-koolaupoko-2025" node scripts/validate-pr.mjs
@@ -142,12 +143,27 @@ function validateContribution(dirPath) {
       continue
     }
 
-    // Validate moku_ids
-    for (const mokuId of dataset.moku_ids) {
-      if (!validMokuIds.includes(mokuId)) {
-        result.errors.push(`Invalid moku_id: "${mokuId}" in dataset "${dataset.title}"`)
-        result.valid = false
+    // Validate moku_ids when provided (optional — warning only for invalid IDs)
+    if (Array.isArray(dataset.moku_ids) && dataset.moku_ids.length > 0) {
+      for (const mokuId of dataset.moku_ids) {
+        if (!validMokuIds.includes(mokuId)) {
+          result.warnings.push(`Unknown moku_id: "${mokuId}" in dataset "${dataset.title}" — verify against docs/moku-districts.md`)
+        }
       }
+    }
+
+    // Check geographic coverage: datasets need coordinates, moku_ids, or a coverage description
+    const schemaFields = Object.keys(dataset.schema || {})
+    const hasCoordinates = schemaFields.includes('latitude') && schemaFields.includes('longitude')
+    const hasMokuIds = Array.isArray(dataset.moku_ids) && dataset.moku_ids.length > 0
+    const hasCoverage = typeof dataset.coverage === 'string' && dataset.coverage.length >= 10
+
+    if (!hasCoordinates && !hasMokuIds && !hasCoverage) {
+      result.errors.push(
+        `Dataset "${dataset.title}" has no coordinate columns, no moku_ids, and no coverage description. ` +
+        `Provide at least one: latitude/longitude columns in schema, moku_ids, or a coverage text field.`
+      )
+      result.valid = false
     }
 
     // If CSV, validate records

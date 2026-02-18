@@ -3,15 +3,14 @@
   "datasets": [
     {
       "file": "your-data-file.csv",
-      "title": "Dataset Title — Moku District Year",
+      "title": "Dataset Title — Location Year",
       "description": "Brief description of methods, coverage, and purpose.",
       "license": "CC-BY-4.0",
       "citation": "Author et al., Year. Title. Institution.",
-      "moku_ids": ["oahu-koolaupoko"],
       "topics": ["land_environment"],
-      "sdg_codes": ["sdg15"],
       "quality": "preliminary",
       "access_level": "public",
+      "coverage": "Describe the geographic scope of your data (required if no coordinate columns)",
       "temporal_coverage": {
         "start": "2025-01-01",
         "end": "2025-12-31"

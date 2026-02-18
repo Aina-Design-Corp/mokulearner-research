@@ -7,6 +7,8 @@
       "description": "Representative sample of 50 wetland features from the USFWS National Wetlands Inventory for O'ahu. Includes estuarine, marine, freshwater, and riverine wetland polygons with NWI classification codes and acreage. Centroids computed from polygon geometry.",
       "license": "CC0",
       "citation": "U.S. Fish and Wildlife Service. National Wetlands Inventory. https://www.fws.gov/program/national-wetlands-inventory",
+      "topics": ["water", "biodiversity", "coastal"],
+      "coverage": "All six traditional moku districts of O'ahu, with sampling sites concentrated in estuarine and coastal wetland areas",
       "moku_ids": [
         "oahu-koolauloa",
         "oahu-koolaupoko",
@@ -15,7 +17,6 @@
         "oahu-waianae",
         "oahu-waialua"
       ],
-      "topics": ["water", "biodiversity", "coastal"],
       "sdg_codes": ["sdg6", "sdg14", "sdg15"],
       "quality": "verified",
       "access_level": "public",

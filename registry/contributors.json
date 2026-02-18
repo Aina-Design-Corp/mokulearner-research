@@ -9,7 +9,6 @@
       "website": "https://mokunet.us",
       "focus_areas": ["water", "biodiversity", "coastal"],
       "moku_coverage": null,
-      "sdg_alignment": ["sdg6", "sdg14", "sdg15"],
       "status": "approved",
       "approved_at": "2026-02-15"
     },
@@ -21,7 +20,6 @@
       "website": "https://ssri.hawaii.edu",
       "focus_areas": ["demographics", "infrastructure"],
       "moku_coverage": null,
-      "sdg_alignment": ["sdg8", "sdg11"],
       "status": "approved",
       "approved_at": "2026-02-15"
     }

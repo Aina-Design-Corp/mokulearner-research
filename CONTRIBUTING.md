@@ -2,13 +2,12 @@
 
 Thank you for contributing research data to Hawai'i's shared research commons. This guide walks through the full contribution process — from registration to ingestion.
 
-Your contributed data becomes part of the [Mokunet](https://mokunet.us) provenance graph, anchored to traditional moku districts and queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
+Your contributed data becomes part of the [Mokunet](https://mokunet.us) provenance graph, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
 
 ## Prerequisites
 
 - A GitHub account
 - A dataset in CSV or GeoJSON format
-- Knowledge of which moku districts your data covers (see [docs/moku-districts.md](docs/moku-districts.md))
 
 If your lab already uses Git for code, this workflow will feel familiar. If not, the steps below walk through everything.
 
@@ -32,13 +31,11 @@ You only need to do this once. After approval, you can submit unlimited contribu
 - **CSV** — One row per observation/record, with headers matching your declared schema
 - **GeoJSON** — FeatureCollection with properties on each feature
 
-### Recommended Columns
+### Location Data
 
-At minimum, your data should include:
-- `site_id` — Unique identifier for each observation site
-- `latitude` and `longitude` — WGS84 coordinates (Hawai'i bounds: lat 18-23, lng -161 to -154)
+If your data includes coordinates (`latitude` and `longitude` columns in WGS84), the platform will automatically assign records to the appropriate moku districts. This is the easiest path — just include the coordinates you already have.
 
-Additional columns depend on your research domain. Declare them in your `metadata.json` and the validation system will check them automatically.
+If your data does not include coordinates, add a `coverage` field to your `metadata.json` describing the geographic scope (e.g., "Windward O'ahu coastal wetlands" or "Statewide census tract data"). You can also optionally provide `moku_ids` if you know which districts apply.
 
 ### Metadata
 
@@ -52,17 +49,16 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].description` | No | Brief description of methods and coverage |
 | `datasets[].license` | Yes | Open data license (CC-BY-4.0, CC0, etc.) |
 | `datasets[].citation` | No | Preferred citation for your dataset |
-| `datasets[].moku_ids` | Yes | Array of moku district IDs your data covers |
 | `datasets[].topics` | Yes | Array from: land_environment, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics |
-| `datasets[].sdg_codes` | Yes | Array of SDG codes: sdg2, sdg6, sdg7, sdg8, sdg11, sdg12, sdg13, sdg14, sdg15 |
 | `datasets[].quality` | Yes | One of: preliminary, verified, peer_reviewed |
+| `datasets[].coverage` | When needed | Text description of geographic scope (required if data lacks coordinate columns and no `moku_ids` provided) |
+| `datasets[].schema` | Yes | Column name to type mapping (`string`, `number`, `date`, `boolean`) |
+| `datasets[].required_fields` | Yes | Columns that must be non-null in every record |
 | `datasets[].access_level` | No | public (default), attributed, or restricted |
 | `datasets[].temporal_coverage` | No | `{ "start": "YYYY-MM-DD", "end": "YYYY-MM-DD" }` |
-| `datasets[].schema` | Yes | Column name to type mapping (`string`, `number`, `date`, `boolean`) |
 | `datasets[].sample_context` | No | Environmental sample metadata (see [docs/topics.md](docs/topics.md#sample-context-optional)) |
-| `datasets[].required_fields` | Yes | Columns that must be non-null in every record |
-
-**Tip**: If you're unsure about moku IDs, use the [HKA map](https://huikoeaina.ainadesign.org) to look up which districts your sampling sites fall within.
+| `datasets[].moku_ids` | No | Array of moku district IDs (optional — auto-derived from coordinates) |
+| `datasets[].sdg_codes` | No | SDG codes (optional — auto-derived from topics) |
 
 ### Example
 
@@ -100,10 +96,11 @@ contributions/
 Once your PR is merged:
 
 1. Your data enters the Mokunet provenance graph as `ResearchContribution` and `ResearchRecord` nodes
-2. Records are linked to moku districts via `COVERS_DISTRICT` and `LOCATED_IN` edges
-3. Your contribution becomes queryable via the [Mokunet Research API](https://mokunet.us/api/research)
-4. The data appears on [HKA](https://huikoeaina.ainadesign.org) maps and search results
-5. Other researchers and community partners can discover and build on your work
+2. If your data has coordinates, records are automatically linked to moku districts
+3. SDG codes are assigned based on your topic selections
+4. Your contribution becomes queryable via the [Mokunet Research API](https://mokunet.us/api/research)
+5. The data appears on [HKA](https://huikoeaina.ainadesign.org) maps and search results
+6. Other researchers and community partners can discover and build on your work
 
 ## Updating Existing Contributions
 
