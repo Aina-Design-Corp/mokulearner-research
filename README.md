@@ -6,7 +6,9 @@ Open research data for Hawai'i — contributed by University and community resea
 
 This repository is how University and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets extend learned knowledge in the ([Mokunet](https://mokunet.us)) provenance graph, linked to research topics and community sustainability objectives.
 
-When your data includes coordinates, the platform automatically assigns it to the zoned moku districts and attempts to use any metadata such as headers and column titles to map ([UN SDGs](https://sdgs.un.org/goals)). A simple text description of geographic scope and search topic is all that's needed.
+**Why it matters:** Hawai'i's counties have federal baseline indicators — population, poverty rate, median income, unemployment, housing costs, and more — sourced from the [Data Commons](https://datacommons.org/) knowledge graph. These county-level baselines tell you *where things stand*, but they can't tell you *why* at the moku or site level. Your field research fills that gap. When you contribute local data, the platform automatically compares it against the relevant county baselines so communities can see how site-level conditions relate to broader trends.
+
+When your data includes coordinates, the platform automatically assigns it to the appropriate traditional moku districts and [H3 hexagonal cells](https://h3geo.org/). When it doesn't, a simple text description of geographic scope is all that's needed.
 
 **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors browse, query, and visualize aggregated data . Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
@@ -14,6 +16,7 @@ When your data includes coordinates, the platform automatically assigns it to th
 - Version-controlled with full Git provenance
 - Validated automatically via GitHub Actions
 - Reviewed by community maintainers before ingestion
+- Compared against county-level baselines from Data Commons
 - Publicly accessible as commons data (default)
 
 ## Why This Matters?
@@ -32,7 +35,7 @@ Research labs across Hawai'i's university system and community organizations:
 | **Community organizations** | Watershed partnerships, conservation districts | Water, land environment |
 | **State & federal agencies** | DLNR, DOH, USGS, NOAA, USFWS | Multi-topic |
 
-Your research already has a place in the commons. Just bring your data — the platform handles geographic anchoring and sustainability goal linkage automatically.
+Your research already has a place in the commons. Just bring your data — the platform handles geographic anchoring, sustainability goal linkage, and baseline comparison automatically.
 
 ## How to Contribute
 
@@ -62,6 +65,7 @@ If your lab already uses Git for code, the same workflow applies to data.
 **You do NOT need to provide:**
 - Moku district IDs — auto-derived from coordinates, or inferred from your coverage description
 - SDG codes — auto-derived from your topic selections
+- Baseline comparisons — the platform links your data to county-level Data Commons indicators automatically
 
 ## Environmental Sample Labeling Service
 
@@ -79,7 +83,7 @@ See [docs/topics.md](docs/topics.md) for the full topic taxonomy, sample matrix 
 
 ## Topic Taxonomy
 
-Contributions are tagged with topics from a controlled vocabulary. Each topic maps to [ISO 37101](https://www.iso.org/standard/61885.html) community sustainability issues. SDG codes are automatically assigned based on your topic selections.
+Contributions are tagged with topics from a controlled vocabulary. Each topic maps to [ISO 37101](https://www.iso.org/standard/61885.html) community sustainability issues and aligns with Data Commons baseline indicators. SDG codes are automatically assigned based on your topic selections.
 
 | Topic | Description | Example Datasets |
 |---|---|---|

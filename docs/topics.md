@@ -48,20 +48,22 @@ Mokunet orchestrates research inputs through H3 cells and moku district contexts
 
 ## Platform-Assigned Linkage
 
-The platform automatically maps each topic to ISO 37101 community sustainability issues and UN Sustainable Development Goals. Contributors do not need to specify these — they are derived from topic selections during ingestion.
+The platform automatically maps each topic to ISO 37101 community sustainability issues, UN Sustainable Development Goals, and [Data Commons](https://datacommons.org/) baseline variables. Contributors do not need to specify these — they are derived from topic selections during ingestion.
 
-| Topic | ISO 37101 Issue | SDG Codes |
-|---|---|---|
-| land_environment | Living environment | SDG 2, 15 |
-| water | Living environment, Community infrastructure | SDG 6, 14 |
-| biodiversity | Biodiversity & ecosystem services | SDG 14, 15 |
-| agriculture | Economy & production | SDG 2, 12 |
-| coastal | Safety & security, Biodiversity | SDG 13, 14 |
-| climate | Community infrastructure | SDG 7, 13 |
-| forestry | Biodiversity & ecosystem services | SDG 15 |
-| food_safety | Health & care | SDG 2 |
-| infrastructure | Community infrastructure | SDG 6, 7, 11 |
-| demographics | Governance, empowerment | SDG 8, 11 |
+County-level baselines from Data Commons provide the federal reference point. Your local research refines these baselines at the moku level — the platform automatically identifies which indicators your contribution supplements.
+
+| Topic | ISO 37101 Issue | SDG Codes | Data Commons Baselines |
+|---|---|---|---|
+| land_environment | Living environment | SDG 2, 15 | Median household income, poverty rate |
+| water | Living environment, Community infrastructure | SDG 6, 14 | Population, housing units |
+| biodiversity | Biodiversity & ecosystem services | SDG 14, 15 | Population density |
+| agriculture | Economy & production | SDG 2, 12 | Median household income, unemployment rate |
+| coastal | Safety & security, Biodiversity | SDG 13, 14 | Population, housing units |
+| climate | Community infrastructure | SDG 7, 13 | Population, median household income |
+| forestry | Biodiversity & ecosystem services | SDG 15 | Population density |
+| food_safety | Health & care | SDG 2 | Poverty rate, median household income |
+| infrastructure | Community infrastructure | SDG 6, 7, 11 | Housing units, population, unemployment rate |
+| demographics | Governance, empowerment | SDG 8, 11 | All 16 county-level variables |
 
 ## Sample Context (Optional)
 

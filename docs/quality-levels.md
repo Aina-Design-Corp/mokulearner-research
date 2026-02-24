@@ -2,6 +2,8 @@
 
 Every contribution to the Mokunet Research Commons declares a quality level. This affects how the data is displayed, weighted in analytics, and reviewed during ingestion.
 
+Quality levels also determine how your data is used relative to county-level baselines. Even preliminary data can fill a gap where no local measurements exist — the quality level tells the platform (and other researchers) how much confidence to place in your observations when comparing against federal indicators.
+
 ## Levels
 
 ### preliminary
@@ -45,3 +47,7 @@ Every contribution to the Mokunet Research Commons declares a quality level. Thi
 ## Upgrading Quality
 
 You can upgrade a contribution's quality level at any time by opening a new PR that updates the `quality` field in `metadata.json`. For example, if preliminary data later gets published, update the quality to `peer_reviewed` and add the citation.
+
+## Baseline Coverage
+
+Every quality level contributes to moku-level baseline coverage. County-level indicators from Data Commons provide the federal reference point, but many moku districts have no local research supplementing those baselines. A moku with preliminary local data is better characterized than one with only county-level numbers — so don't wait for peer review to contribute. The platform tracks which moku districts have local research coverage and which still rely entirely on county baselines.

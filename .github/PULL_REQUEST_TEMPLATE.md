@@ -5,6 +5,7 @@
 **Topics:** <!-- e.g., water, biodiversity -->
 **Record Count:** <!-- number of records -->
 **Quality Level:** <!-- preliminary / verified / peer_reviewed -->
+**Moku districts covered:** <!-- e.g., oahu-koolaupoko, or "statewide" -->
 
 ## Checklist
 
@@ -15,6 +16,11 @@
 - [ ] I have declared an open data license
 - [ ] If my data lacks coordinate columns, I have included a `coverage` description or `moku_ids`
 - [ ] I have included a citation (if applicable)
+
+## Baseline Context
+
+<!-- Which county-level baselines does your data supplement? (optional — helps reviewers understand the contribution's role) -->
+<!-- e.g., "Local water quality measurements for Ko'olaupoko where only county population baselines exist" -->
 
 ## Notes
 

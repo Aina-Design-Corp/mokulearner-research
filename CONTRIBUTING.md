@@ -2,7 +2,7 @@
 
 Thank you for contributing research data to Hawai'i's shared research commons. This guide walks through the full contribution process — from registration to ingestion.
 
-Your contributed data becomes part of the [Mokunet](https://mokunet.us) provenance graph, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
+Your contributed data becomes part of the [Mokunet](https://mokunet.us) provenance graph, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal. Each contribution is automatically compared against county-level baselines from [Data Commons](https://datacommons.org/), so your site-level research helps communities understand how local conditions relate to broader indicators like poverty rate, median income, and unemployment.
 
 ## Prerequisites
 
@@ -96,11 +96,12 @@ contributions/
 Once your PR is merged:
 
 1. Your data enters the Mokunet provenance graph as `ResearchContribution` and `ResearchRecord` nodes
-2. If your data has coordinates, records are automatically linked to moku districts
+2. If your data has coordinates, records are automatically linked to moku districts and H3 cells
 3. SDG codes are assigned based on your topic selections
-4. Your contribution becomes queryable via the [Mokunet Research API](https://mokunet.us/api/research)
-5. The data appears on [HKA](https://huikoeaina.ainadesign.org) maps and search results
-6. Other researchers and community partners can discover and build on your work
+4. Your data is compared against county-level Data Commons baselines — the platform identifies which federal indicators your research supplements at the moku level
+5. Your contribution becomes queryable via the [Mokunet Research API](https://mokunet.us/api/research)
+6. The data appears on [HKA](https://huikoeaina.ainadesign.org) maps and search results
+7. Other researchers and community partners can discover and build on your work
 
 ## Updating Existing Contributions
 
