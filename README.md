@@ -6,7 +6,7 @@ Open research data for Hawai'i — contributed by University and community resea
 
 This repository is how University and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets extend learned knowledge in the [Mokunet](https://mokunet.us) provenance graph, linked to research topics and community sustainability objectives.
 
-When your data includes coordinates, the platform automatically assigns it to the zoned moku districts and [H3 hexagonal cells](https://h3geo.org/). When it doesn't, a simple text description of geographic scope is all that's needed.
+When your data includes coordinates, the platform automatically assigns it to the zoned moku districts and attempts to use any metadata such as headers and column titles to map [UN SDG's(https://sdgs.un.org/goals)]. A simple text description of geographic scope and search topic is all that's needed.
 
 **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors browse, query, and visualize aggregated data . Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
