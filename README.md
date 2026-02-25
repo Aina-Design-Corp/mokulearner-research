@@ -4,9 +4,9 @@ Open research data for Hawai'i — contributed by University and community resea
 
 ## What Is This?
 
-This repository is how University and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets extend learned knowledge in the [Mokunet](https://mokunet.us) provenance graph, linked to research topics and community sustainability objectives.
+This repository is how University and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets extend learned knowledge in the ([Mokunet](https://mokunet.us)) provenance graph, linked to research topics and community sustainability objectives.
 
-When your data includes coordinates, the platform automatically assigns it to the zoned moku districts and attempts to use any metadata such as headers and column titles to map [UN SDG's(https://sdgs.un.org/goals)]. A simple text description of geographic scope and search topic is all that's needed.
+When your data includes coordinates, the platform automatically assigns it to the zoned moku districts and attempts to use any metadata such as headers and column titles to map ([UN SDG's(https://sdgs.un.org/goals)]). A simple text description of geographic scope and search topic is all that's needed.
 
 **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors browse, query, and visualize aggregated data . Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
@@ -18,7 +18,7 @@ When your data includes coordinates, the platform automatically assigns it to th
 
 ## Why This Matters?
 
-Publicly availalble statisical data is intentionally single sourced through [Google's Data Commons](http://datacommons.org) developer community.  Localized data is meant to augment this data through controlled orchestration and context through **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) to address worforce development and career pathways uniquely identified as a learning graph system.
+Publicly availalble statisical data is intentionally single sourced through ([Google's Data Commons](http://datacommons.org)) developer community.  Localized data is meant to augment this data through controlled orchestration and context through **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) to address worforce development and career pathways uniquely identified as a learning graph system.
 
 ## Who Contributes?
 
@@ -63,9 +63,9 @@ If your lab already uses Git for code, the same workflow applies to data.
 - Moku district IDs — auto-derived from coordinates, or inferred from your coverage description
 - SDG codes — auto-derived from your topic selections
 
-## Environmental Samples
+## Environmental Sample Labeling Service
 
-Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. This commons does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can work with.
+Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. This commons does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can work with. Sample tracking is currently being developed to identify and link samples taken at a particular location mapped to a zone on the graph.
 
 **How this works in practice:**
 
