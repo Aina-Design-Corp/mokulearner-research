@@ -1,20 +1,24 @@
 # Mokunet Research Commons
 
-Open research data for Hawai'i — contributed by university and community researchers, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
+Open research data for Hawai'i — contributed by University and community researchers, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
 
 ## What Is This?
 
-This repository is how university and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://mokunet.us) provenance graph, linked to research topics and community sustainability objectives.
+This repository is how University and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets extend learned knowledge in the [Mokunet](https://mokunet.us) provenance graph, linked to research topics and community sustainability objectives.
 
-When your data includes coordinates, the platform automatically assigns it to the appropriate traditional moku districts and [H3 hexagonal cells](https://h3geo.org/). When it doesn't, a simple text description of geographic scope is all that's needed.
+When your data includes coordinates, the platform automatically assigns it to the zoned moku districts and [H3 hexagonal cells](https://h3geo.org/). When it doesn't, a simple text description of geographic scope is all that's needed.
 
-**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the public browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
+**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors browse, query, and visualize aggregated data . Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
 **Contributions are:**
 - Version-controlled with full Git provenance
 - Validated automatically via GitHub Actions
 - Reviewed by community maintainers before ingestion
 - Publicly accessible as commons data (default)
+
+## Why This Matters?
+
+Publicly availalble statisical data is intentionally single sourced through [Google's Data Commons](http://datacommons.org) developer community.  Localized data is meant to augment this data through controlled orchestration and context through **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) to address worforce development and career pathways uniquely identified as a learning graph system.
 
 ## Who Contributes?
 
@@ -92,7 +96,7 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 
 ## Moku Districts
 
-The platform recognizes 33 traditional moku districts across 7 islands. You don't need to know these — the system assigns moku from coordinates automatically. If you're curious, see [docs/moku-districts.md](docs/moku-districts.md) for the full list.
+The platform recognizes 33 zoned moku districts across 7 islands. You don't need to know these — the system assigns moku from coordinates automatically. If you're curious, see [docs/moku-districts.md](docs/moku-districts.md) for the full list.
 
 ## Quality Levels
 
