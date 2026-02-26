@@ -49,7 +49,7 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].description` | No | Brief description of methods and coverage |
 | `datasets[].license` | Yes | Open data license (CC-BY-4.0, CC0, etc.) |
 | `datasets[].citation` | No | Preferred citation for your dataset |
-| `datasets[].topics` | Yes | Array from: land_environment, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics |
+| `datasets[].topics` | Yes | Array from: land_environment, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics, community_wellbeing |
 | `datasets[].quality` | Yes | One of: preliminary, verified, peer_reviewed |
 | `datasets[].coverage` | When needed | Text description of geographic scope (required if data lacks coordinate columns and no `moku_ids` provided) |
 | `datasets[].schema` | Yes | Column name to type mapping (`string`, `number`, `date`, `boolean`) |

@@ -97,6 +97,7 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 | **food_safety** | Contamination and pathogen testing | Contamination testing, pathogens |
 | **infrastructure** | Built systems and capacity | Water system capacity, energy |
 | **demographics** | Population and governance data | Population, land ownership |
+| **community_wellbeing** | Community quality of life and social determinant indicators | Quality of life surveys, food insecurity rates, social trust indices, economic stress |
 
 ## Moku Districts
 
@@ -142,7 +143,6 @@ docs/                 Reference documentation
 
 - [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) — Browse, query, and contribute research data
 - [Mokunet Platform](https://mokunet.us) — API backend and data pipeline
-- [Contribute Data](https://huikoeaina.ainadesign.org/contribute) — Prepare a contribution through HKA
 - [Metadata Schema Reference](schemas/metadata.schema.json)
 
 ## License

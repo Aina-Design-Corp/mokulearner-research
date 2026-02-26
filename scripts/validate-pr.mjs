@@ -166,6 +166,16 @@ function validateContribution(dirPath) {
       result.valid = false
     }
 
+    // Cross-validate required_fields against declared schema keys
+    for (const field of dataset.required_fields) {
+      if (!Object.prototype.hasOwnProperty.call(dataset.schema || {}, field)) {
+        result.errors.push(
+          `required_field "${field}" is not declared in schema — add it to the schema column map`
+        )
+        result.valid = false
+      }
+    }
+
     // If CSV, validate records
     if (dataset.file.endsWith('.csv')) {
       const csvContent = readFileSync(dataPath, 'utf8')
@@ -183,6 +193,16 @@ function validateContribution(dirPath) {
       // Check required fields
       if (records.length > 0) {
         const headers = Object.keys(records[0])
+
+        // If the coverage gate passed because latitude/longitude were declared in schema,
+        // verify those columns are actually present in the file
+        if (hasCoordinates && (!headers.includes('latitude') || !headers.includes('longitude'))) {
+          result.errors.push(
+            `Dataset "${dataset.title}" declares latitude/longitude in schema but these columns are missing from ${dataset.file}`
+          )
+          result.valid = false
+        }
+
         for (const field of dataset.required_fields) {
           if (!headers.includes(field)) {
             result.errors.push(
@@ -254,7 +274,7 @@ function validateContribution(dirPath) {
       }
     }
 
-    // GeoJSON validation (basic)
+    // GeoJSON validation
     if (dataset.file.endsWith('.geojson')) {
       try {
         const geojson = JSON.parse(readFileSync(dataPath, 'utf8'))
@@ -262,7 +282,91 @@ function validateContribution(dirPath) {
           result.errors.push(`${dataset.file}: expected FeatureCollection, got ${geojson.type}`)
           result.valid = false
         } else {
-          totalRecords += geojson.features?.length || 0
+          const features = geojson.features || []
+          totalRecords += features.length
+
+          if (features.length > 0) {
+            const propKeys = Object.keys(features[0].properties || {})
+
+            // Check required_fields exist in feature properties
+            for (const field of dataset.required_fields) {
+              if (!propKeys.includes(field)) {
+                result.errors.push(
+                  `Required field "${field}" not found in GeoJSON feature properties. Available: ${propKeys.join(', ')}`
+                )
+                result.valid = false
+              }
+            }
+
+            // Check declared schema fields exist in feature properties
+            for (const field of Object.keys(dataset.schema)) {
+              if (!propKeys.includes(field)) {
+                result.warnings.push(
+                  `Schema field "${field}" not found in GeoJSON feature properties`
+                )
+              }
+            }
+          }
+
+          const siteIds = new Set()
+          for (let i = 0; i < features.length; i++) {
+            const feature = features[i]
+            const props = feature.properties || {}
+            const row = i + 1
+
+            // Required fields non-null
+            for (const field of dataset.required_fields) {
+              if (props[field] === undefined || props[field] === null || props[field] === '') {
+                result.errors.push(`Feature ${row}: required field "${field}" is empty`)
+                totalRejected++
+                result.valid = false
+              }
+            }
+
+            // Type checking for number fields
+            for (const [field, type] of Object.entries(dataset.schema)) {
+              if (type === 'number' && props[field] !== undefined && props[field] !== null && props[field] !== '') {
+                if (isNaN(Number(props[field]))) {
+                  result.errors.push(`Feature ${row}: field "${field}" expected number, got "${props[field]}"`)
+                  totalRejected++
+                  result.valid = false
+                }
+              }
+            }
+
+            // Coordinate bounds check from geometry
+            if (feature.geometry?.coordinates) {
+              let lat, lng
+              const geomType = feature.geometry.type
+              if (geomType === 'Point') {
+                ;[lng, lat] = feature.geometry.coordinates
+              } else if (geomType === 'MultiPoint') {
+                ;[lng, lat] = feature.geometry.coordinates[0]
+              } else if (geomType === 'Polygon' || geomType === 'MultiLineString') {
+                ;[lng, lat] = feature.geometry.coordinates[0][0]
+              } else if (geomType === 'MultiPolygon') {
+                ;[lng, lat] = feature.geometry.coordinates[0][0][0]
+              }
+              if (lat !== undefined && lng !== undefined && !isNaN(lat) && !isNaN(lng)) {
+                if (lat < 18 || lat > 23 || lng < -161 || lng > -154) {
+                  result.warnings.push(
+                    `Feature ${row}: coordinates (${lat}, ${lng}) outside Hawaii bounds`
+                  )
+                  totalFlagged++
+                }
+              }
+            }
+
+            // Duplicate site_id check
+            if (props.site_id) {
+              if (siteIds.has(props.site_id)) {
+                result.errors.push(`Feature ${row}: duplicate site_id "${props.site_id}"`)
+                totalRejected++
+                result.valid = false
+              }
+              siteIds.add(props.site_id)
+            }
+          }
         }
       } catch (e) {
         result.errors.push(`GeoJSON parse error in ${dataset.file}: ${e.message}`)
