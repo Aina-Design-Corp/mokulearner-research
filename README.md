@@ -1,16 +1,20 @@
 # Mokunet Research Commons
 
-Open research data for Hawai'i — contributed by University and community researchers, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal.
+Localizing cross-domain metrics for Hawai'i — bridging the gap between federal county-level baselines and the 33 traditional moku districts where community governance actually happens.
 
 ## What Is This?
 
-This repository is how University and community researchers contribute environmental, agricultural, and community data to Hawai'i's shared research commons. Contributed datasets extend learned knowledge in the ([Mokunet](https://mokunet.us)) provenance graph, linked to research topics and community sustainability objectives.
+This repository is how university and community researchers contribute local data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://mokunet.us) provenance graph, linked to research topics and UN Sustainable Development Goal classifications.
 
-**Why it matters:** Hawai'i's counties have federal baseline indicators — population, poverty rate, median income, unemployment, housing costs, and more — sourced from the [Data Commons](https://datacommons.org/) knowledge graph. These county-level baselines tell you *where things stand*, but they can't tell you *why* at the moku or site level. Your field research fills that gap. When you contribute local data, the platform automatically compares it against the relevant county baselines so communities can see how site-level conditions relate to broader trends.
+**The resolution gap:** Hawai'i has 5 counties but 33 moku districts. Federal baseline indicators — farm counts, unemployment rates, median income, rainfall, energy production — are published at county resolution through the [Data Commons](https://datacommons.org/) knowledge graph. The Mokunet platform presents these as *island-effect baselines*: they tell you where things stand at the island level, but every moku within a county shows the same values. The platform does not fabricate sub-county disaggregation.
 
-When your data includes coordinates, the platform automatically assigns it to the appropriate traditional moku districts and [H3 hexagonal cells](https://h3geo.org/). When it doesn't, a simple text description of geographic scope is all that's needed.
+**Your research fills the gap.** When you contribute geocoded field data, the platform assigns it to specific moku districts and H3 hexagonal cells, then compares it against the relevant county baselines. This creates the first cross-domain view where communities can see how site-level conditions relate to broader island trends — and where district-level variation becomes visible for the first time.
 
-**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors browse, query, and visualize aggregated data . Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
+**Cross-domain metrics** means your soil chemistry data, water quality readings, species surveys, and community health assessments all flow through the same spatial backbone and are classified against the same SDG framework. A water quality study in Maunalua Bay and a food security survey in Waianae both resolve to specific moku, link to their county baselines, and map to SDG goals — making cross-domain comparison possible at the district level.
+
+When your data includes coordinates, the platform automatically assigns it to the appropriate moku districts and [H3 hexagonal cells](https://h3geo.org/) (resolution 8). When it doesn't, a simple text description of geographic scope is all that's needed.
+
+**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the public browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
 **Contributions are:**
 - Version-controlled with full Git provenance
@@ -18,10 +22,6 @@ When your data includes coordinates, the platform automatically assigns it to th
 - Reviewed by community maintainers before ingestion
 - Compared against county-level baselines from Data Commons
 - Publicly accessible as commons data (default)
-
-## Why This Matters?
-
-Publicly availalble statisical data is intentionally single sourced through ([Google's Data Commons](http://datacommons.org)) developer community.  Localized data is meant to augment this data through controlled orchestration and context through **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) to address worforce development and career pathways uniquely identified as a learning graph system.
 
 ## Who Contributes?
 
@@ -67,9 +67,9 @@ If your lab already uses Git for code, the same workflow applies to data.
 - SDG codes — auto-derived from your topic selections
 - Baseline comparisons — the platform links your data to county-level Data Commons indicators automatically
 
-## Environmental Sample Labeling Service
+## Environmental Samples
 
-Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. This commons does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can work with. Sample tracking is currently being developed to identify and link samples taken at a particular location mapped to a zone on the graph.
+Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. This commons does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can work with.
 
 **How this works in practice:**
 
@@ -100,7 +100,7 @@ Contributions are tagged with topics from a controlled vocabulary. Each topic ma
 
 ## Moku Districts
 
-The platform recognizes 33 zoned moku districts across 7 islands. You don't need to know these — the system assigns moku from coordinates automatically. If you're curious, see [docs/moku-districts.md](docs/moku-districts.md) for the full list.
+The platform recognizes 33 traditional moku districts across 7 islands. You don't need to know these — the system assigns moku from coordinates automatically. If you're curious, see [docs/moku-districts.md](docs/moku-districts.md) for the full list.
 
 ## Quality Levels
 
@@ -142,6 +142,7 @@ docs/                 Reference documentation
 
 - [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) — Browse, query, and contribute research data
 - [Mokunet Platform](https://mokunet.us) — API backend and data pipeline
+- [Contribute Data](https://huikoeaina.ainadesign.org/contribute) — Prepare a contribution through HKA
 - [Metadata Schema Reference](schemas/metadata.schema.json)
 
 ## License
