@@ -4,9 +4,9 @@ Localizing cross-domain metrics for Hawai'i — bridging the gap between federal
 
 ## What Is This?
 
-This repository is how university and community researchers contribute local data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://mokunet.us) provenance graph, linked to research topics and UN Sustainable Development Goal classifications.
+This repository is how university and community researchers contribute local data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://hawaii.mokunet.us) provenance graph, linked to research topics and UN Sustainable Development Goal classifications.
 
-**The resolution gap:** Hawai'i has 5 counties but 33 moku districts. Federal baseline indicators — farm counts, unemployment rates, median income, rainfall, energy production — are published at county resolution through the [Data Commons](https://datacommons.org/) knowledge graph. The Mokunet platform presents these as *island-effect baselines*: they tell you where things stand at the island level, but every moku within a county shows the same values. The platform does not fabricate sub-county disaggregation.
+**The resolution gap:** Hawai'i has 5 counties but 33 moku districts. Federal baseline indicators — farm counts, unemployment rates, median income, rainfall, energy production — are published at county resolution through the [Data Commons](https://datacommons.org/) knowledge graph. The Mokunet platform presents these as *island-effect baselines*: they tell you where things stand at the island level. Research gaps often occur within the island model.
 
 **Your research fills the gap.** When you contribute geocoded field data, the platform assigns it to specific moku districts and H3 hexagonal cells, then compares it against the relevant county baselines. This creates the first cross-domain view where communities can see how site-level conditions relate to broader island trends — and where district-level variation becomes visible for the first time.
 
@@ -14,7 +14,7 @@ This repository is how university and community researchers contribute local dat
 
 When your data includes coordinates, the platform automatically assigns it to the appropriate moku districts and [H3 hexagonal cells](https://h3geo.org/) (resolution 8). When it doesn't, a simple text description of geographic scope is all that's needed.
 
-**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the public browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
+**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the learning community browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
 **Contributions are:**
 - Version-controlled with full Git provenance
