@@ -46,6 +46,10 @@ Mokunet orchestrates research inputs through H3 cells and moku district contexts
 ### demographics
 - **Example datasets:** Population counts, land ownership records, employment data, housing statistics
 
+### community_wellbeing
+- **Scope:** Community quality of life surveys, social determinant indicators, wellbeing assessments, disaster preparedness, social cohesion, and economic stress data at community, county, or neighborhood resolution
+- **Example datasets:** Quality of life surveys, food insecurity rates, mental health day counts, social trust indices, disaster preparedness assessments, outmigration intent surveys, economic stress indicators
+
 ## Platform-Assigned Linkage
 
 The platform automatically maps each topic to ISO 37101 community sustainability issues, UN Sustainable Development Goals, and [Data Commons](https://datacommons.org/) baseline variables. Contributors do not need to specify these — they are derived from topic selections during ingestion.
@@ -64,6 +68,7 @@ County-level baselines from Data Commons provide the federal reference point. Yo
 | food_safety | Health & care | SDG 2 | Poverty rate, median household income |
 | infrastructure | Community infrastructure | SDG 6, 7, 11 | Housing units, population, unemployment rate |
 | demographics | Governance, empowerment | SDG 8, 11 | All 16 county-level variables |
+| community_wellbeing | Health & care | SDG 8, 11 | Population, median household income, poverty rate |
 
 ## Sample Context (Optional)
 

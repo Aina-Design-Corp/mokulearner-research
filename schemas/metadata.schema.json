@@ -84,7 +84,8 @@
               "forestry",
               "food_safety",
               "infrastructure",
-              "demographics"
+              "demographics",
+              "community_wellbeing"
             ]
           },
           "minItems": 1
