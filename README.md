@@ -142,7 +142,7 @@ docs/                 Reference documentation
 ## Links
 
 - [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) — Browse, query, and contribute research data
-- [Mokunet Platform](https://mokunet.us) — API backend and data pipeline
+- [Mokunet Platform](https://hawaii.mokunet.us) — API backend and data pipeline
 - [Metadata Schema Reference](schemas/metadata.schema.json)
 
 ## License
