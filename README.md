@@ -50,6 +50,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full step-by-step guide.
 
 If your lab already uses Git for code, the same workflow applies to data.
 
+**Working with ArcGIS Online?** Many Hawai'i research organizations publish geospatial data through ArcGIS Online feature services. See the [ArcGIS Online Workflow Guide](docs/arcgis-workflow.md) for step-by-step instructions on discovering, downloading, and transforming ArcGIS data into the contribution format.
+
 ## What You Need to Provide
 
 | Field | Required | Description |
