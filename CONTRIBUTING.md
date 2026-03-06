@@ -78,9 +78,20 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].moku_ids` | No | Array of moku district IDs (optional — auto-derived from coordinates) |
 | `datasets[].sdg_codes` | No | SDG codes (optional — auto-derived from topics) |
 
-### Example
+### Example: Federal Data (One-Time Import)
 
-See [contributions/_example/](contributions/_example/) for a complete working example using O'ahu wetland data from the USFWS National Wetlands Inventory.
+See [contributions/_example/](contributions/_example/) for a working example using O'ahu wetland data from the USFWS National Wetlands Inventory. This shows a typical one-time import of a verified federal dataset.
+
+### Example: Community-Sourced Observations (Ongoing Sampling)
+
+See [contributions/manaolana/ewa-water-quality/](contributions/manaolana/ewa-water-quality/) for a working example of community-based water quality monitoring. This demonstrates the pattern for ongoing sampling programs:
+
+- **Time-series `site_id`**: When the same site is sampled across multiple dates, use composite IDs like `loc1-2026-02-10` to keep each record unique while preserving the `location_code` for grouping
+- **Chemistry columns with units**: Column names encode units (e.g., `dissolved_oxygen_mg_l`, `conductivity_us_cm`, `turbidity_ntu`) so downstream consumers don't need to guess
+- **Auto-derived fields**: The Manaolana dashboard exports `latitude`/`longitude` and compound `moku_ids` (`oahu-ewa`) automatically — the platform handles H3 spatial assignment from there
+- **Incremental updates**: As new sampling events occur, export the updated dataset and open a new PR. The ingestion system uses MERGE operations — existing records stay, new records are added
+
+This pattern applies to any community monitoring program (not just water quality). If your group collects geocoded field observations on a regular schedule, this is the contribution shape to follow.
 
 ## Step 4: Fork and Add Your Contribution
 

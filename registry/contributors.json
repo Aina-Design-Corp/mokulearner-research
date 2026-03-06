@@ -13,6 +13,17 @@
       "approved_at": "2026-02-15"
     },
     {
+      "slug": "manaolana",
+      "name": "Manaolana Project",
+      "institution": "Aina Design Corp",
+      "contact_name": "Joe Hagedorn",
+      "website": "https://manaolanaproject.net",
+      "focus_areas": ["water"],
+      "moku_coverage": null,
+      "status": "approved",
+      "approved_at": "2026-03-06"
+    },
+    {
       "slug": "uh-ssri",
       "name": "UH Manoa SSRI / Health Policy Initiative",
       "institution": "University of Hawaii at Manoa",

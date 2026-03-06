@@ -1,0 +1,55 @@
+{
+  "contributor": "manaolana",
+  "datasets": [
+    {
+      "file": "ewa-water-quality-sample.csv",
+      "title": "Keehi Lagoon Aquaculture Pond Water Quality — Ewa, O'ahu",
+      "description": "Community-based water quality monitoring from the Manaolana Project. Field observations with chemistry measurements (pH, ORP, dissolved oxygen, conductivity, temperature, turbidity, salinity) collected at established aquaculture pond test sites in the Ewa moku. Data exported from the Manaolana tech dashboard via commons-aligned export utility.",
+      "license": "CC-BY-4.0",
+      "contribution_type": "observation",
+      "topics": ["water"],
+      "quality": "verified",
+      "moku_ids": ["oahu-ewa"],
+      "temporal_coverage": {
+        "start": "2026-02-10",
+        "end": "2026-02-17"
+      },
+      "sample_context": {
+        "matrix": ["water"],
+        "collection_method": "field grab sampling",
+        "preservation": "none",
+        "equipment": "multi-parameter water quality meter",
+        "depth_protocol": "surface grab at 0.3m below water line"
+      },
+      "schema": {
+        "record_id": "number",
+        "site_id": "string",
+        "sample_date": "date",
+        "observation_time": "string",
+        "location_code": "string",
+        "location_name": "string",
+        "moku": "string",
+        "island": "string",
+        "latitude": "number",
+        "longitude": "number",
+        "pond_depth_ft": "number",
+        "weather_conditions": "string",
+        "site_conditions": "string",
+        "quality_level": "string",
+        "ph": "number",
+        "orp_mv": "number",
+        "dissolved_oxygen_mg_l": "number",
+        "conductivity_us_cm": "number",
+        "temperature_c": "number",
+        "turbidity_ntu": "number",
+        "salinity_ppt": "number",
+        "matrix": "string",
+        "collection_method": "string",
+        "preservation": "string",
+        "license": "string",
+        "topics": "string"
+      },
+      "required_fields": ["site_id", "sample_date", "latitude", "longitude"]
+    }
+  ]
+}
