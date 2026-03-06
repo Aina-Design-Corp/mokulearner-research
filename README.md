@@ -4,15 +4,18 @@ Localizing cross-domain metrics for Hawai'i — bridging the gap between federal
 
 ## What Is This?
 
-This repository is how university and community researchers contribute local data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://hawaii.mokunet.us) provenance graph, linked to research topics and UN Sustainable Development Goal classifications.
+This repository is how university and community researchers contribute local data to Hawai'i's shared research commons. Contributed datasets become nodes in the [Mokunet](https://hawaii.mokunet.us) provenance graph, where they create graph-grounded SDG alignment through `MEASURES_SDG` edges — the only SDG measurement in the platform backed by graph relationships.
 
 **The resolution gap:** Hawai'i has 5 counties but 33 moku districts. Federal baseline indicators — farm counts, unemployment rates, median income, rainfall, energy production — are published at county resolution through the [Data Commons](https://datacommons.org/) knowledge graph. The Mokunet platform presents these as *island-effect baselines*: they tell you where things stand at the island level. Research gaps often occur within the island model.
 
-**Your research fills the gap.** When you contribute geocoded field data, the platform assigns it to specific moku districts and H3 hexagonal cells, then compares it against the relevant county baselines. This creates the first cross-domain view where communities can see how site-level conditions relate to broader island trends — and where district-level variation becomes visible for the first time.
+**Your research fills the gap — through two pathways:**
 
-**Cross-domain metrics** means your soil chemistry data, water quality readings, species surveys, and community health assessments all flow through the same spatial backbone and are classified against the same SDG framework. A water quality study in Maunalua Bay and a food security survey in Waianae both resolve to specific moku, link to their county baselines, and map to SDG goals — making cross-domain comparison possible at the district level.
+- **Environmental observations** (water quality, soil tests, species surveys, air monitoring) populate the spatial measurement layer. Geocoded records are assigned to moku districts and H3 cells, then linked to SDGGoal nodes through `MEASURES_SDG` edges.
+- **Community indicators** (demographics, employment, wellbeing surveys, infrastructure) refine the county-level federal statistics at the moku level. These create `MEASURES_SDG` edges plus `REFINES_BASELINE` edges that explicitly track which county baselines are being supplemented.
 
-When your data includes coordinates, the platform automatically assigns it to the appropriate moku districts and [H3 hexagonal cells](https://h3geo.org/) (resolution 8). When it doesn't, a simple text description of geographic scope is all that's needed.
+Both pathways resolve to specific moku, link to SDG goals through graph edges, and enable cross-domain comparison at the district level. A water quality study in Maunalua Bay and a food security survey in Waianae both flow through the same spatial backbone — making district-level variation visible for the first time.
+
+When your data includes coordinates, the platform automatically assigns it to the appropriate moku districts and [H3 hexagonal cells](https://h3geo.org/) (resolution 8). For observation data without coordinates, a text description of geographic scope is sufficient. For indicator data that refines baselines, coordinates or explicit `moku_ids` are required for spatial resolution.
 
 **Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the learning community browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawai'i and Hawai'i Pacific University research labs looking to de-silo their data.
 
@@ -58,10 +61,13 @@ If your lab already uses Git for code, the same workflow applies to data.
 |---|---|---|
 | Data file | Yes | CSV or GeoJSON with your research data |
 | Title | Yes | Human-readable name for the dataset |
-| Topics | Yes | What domain your research addresses (e.g. `water`, `agriculture`) |
+| Contribution type | Yes | `observation`, `indicator`, or `spatial_overlay` — how your data integrates with the governance graph |
+| Topics | Yes | What domain your research addresses (e.g. `water`, `demographics`) |
 | License | Yes | Open data license (CC-BY-4.0 recommended) |
 | Quality level | Yes | `preliminary`, `verified`, or `peer_reviewed` |
 | Schema | Yes | Column names and types in your data file |
+| Sample context | For observations | What was physically collected (soil, water, sediment, etc.) |
+| Baseline context | For indicators | Which Data Commons variables your data supplements |
 | Coverage | When needed | Text description of geographic scope (only if data lacks coordinates) |
 
 **You do NOT need to provide:**
@@ -69,37 +75,49 @@ If your lab already uses Git for code, the same workflow applies to data.
 - SDG codes — auto-derived from your topic selections
 - Baseline comparisons — the platform links your data to county-level Data Commons indicators automatically
 
-## Environmental Samples
+## Contribution Types
 
-Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. This commons does not attempt to define interfaces for each sample type. Instead, every contribution carries a standard metadata envelope that the platform can work with.
+Every dataset declares a `contribution_type` that determines how it integrates with the spatial governance graph:
 
-**How this works in practice:**
+### Observations (Environmental Samples)
 
-- **Topics** identify the domain question your research addresses (e.g. `land_environment`, `water`, `coastal`). The platform uses topics for graph discovery and automatically links to sustainability goals.
-- **`sample_context`** is an optional block in your `metadata.json` where you describe what was physically collected. Only the `matrix` field is controlled (`soil`, `water`, `sediment`, `air`, `tissue`, `sludge`, `mixed`); everything else is free-form for your research context.
-- **Your CSV columns** are declared in `schema` and validated, but the platform stores them as-is.
+Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. Observation contributions carry a `sample_context` block describing what was physically collected.
 
-This means a single contribution can span multiple sample matrices under one topic. A land environment study collecting soil cores, stream sediment, and composting facility sludge from the same sites submits one dataset with `"matrix": ["soil", "sediment", "sludge"]`.
+- **Topics** identify the domain question (e.g. `land_environment`, `water`, `coastal`). The platform uses topics for graph discovery and creates `MEASURES_SDG` edges to SDGGoal nodes.
+- **`sample_context`** is required — only the `matrix` field is controlled (`soil`, `water`, `sediment`, `air`, `tissue`, `sludge`, `mixed`); everything else is free-form.
+- A single contribution can span multiple sample matrices under one topic. A land environment study collecting soil cores, stream sediment, and composting facility sludge from the same sites submits one dataset with `"matrix": ["soil", "sediment", "sludge"]`.
 
-See [docs/topics.md](docs/topics.md) for the full topic taxonomy, sample matrix vocabulary, and `sample_context` examples.
+### Indicators (Community Statistics)
+
+Indicator contributions provide sub-county statistical data that refines the county-level federal baselines shown on the [Island Baselines](https://hawaii.mokunet.us/place-types) page. These carry a `baseline_context` block declaring which Data Commons variables they supplement.
+
+- **Topics** like `demographics`, `community_wellbeing`, and `infrastructure` are typical indicator topics.
+- **`baseline_context`** declares which county-level variables this dataset refines (e.g., `UnemploymentRate_Person`, `Median_Income_Household`), enabling `REFINES_BASELINE` edges.
+- **Spatial precision required:** Indicator contributions must include coordinate columns or explicit `moku_ids` — a text coverage description alone cannot be spatially resolved to refine baselines.
+
+### Spatial Overlays
+
+GIS layers (wetland boundaries, land use classification, parcel boundaries) that enhance zone coverage in the spatial backbone. These typically use GeoJSON format.
+
+See [docs/topics.md](docs/topics.md) for the full topic taxonomy, contribution type guidance, and metadata examples.
 
 ## Topic Taxonomy
 
 Contributions are tagged with topics from a controlled vocabulary. Each topic maps to [ISO 37101](https://www.iso.org/standard/61885.html) community sustainability issues and aligns with Data Commons baseline indicators. SDG codes are automatically assigned based on your topic selections.
 
-| Topic | Description | Example Datasets |
-|---|---|---|
-| **land_environment** | Terrestrial substrates and environmental characterization | Soil surveys, sediment analysis, substrate testing |
-| **water** | Water quality and hydrology | Water quality, streamflow, effluent |
-| **biodiversity** | Species and ecosystem surveys | Species surveys, habitat mapping |
-| **agriculture** | Crop and production data | Crop trials, production data |
-| **coastal** | Shoreline and marine systems | Erosion rates, sea level, coral |
-| **climate** | Weather, emissions, and energy | Temperature, rainfall, emissions |
-| **forestry** | Forest and canopy systems | Canopy cover, native species |
-| **food_safety** | Contamination and pathogen testing | Contamination testing, pathogens |
-| **infrastructure** | Built systems and capacity | Water system capacity, energy |
-| **demographics** | Population and governance data | Population, land ownership |
-| **community_wellbeing** | Community quality of life and social determinant indicators | Quality of life surveys, food insecurity rates, social trust indices, economic stress |
+| Topic | Typical Type | Description | Example Datasets |
+|---|---|---|---|
+| **land_environment** | observation | Terrestrial substrates and environmental characterization | Soil surveys, sediment analysis, substrate testing |
+| **water** | observation | Water quality and hydrology | Water quality, streamflow, effluent |
+| **biodiversity** | observation | Species and ecosystem surveys | Species surveys, habitat mapping |
+| **agriculture** | either | Crop and production data | Crop trials (obs), farm production by moku (ind) |
+| **coastal** | observation | Shoreline and marine systems | Erosion rates, sea level, coral |
+| **climate** | either | Weather, emissions, and energy | Weather stations (obs), solar generation by district (ind) |
+| **forestry** | observation | Forest and canopy systems | Canopy cover, native species |
+| **food_safety** | observation | Contamination and pathogen testing | Contamination testing, pathogens |
+| **infrastructure** | indicator | Built systems and capacity | Water system capacity, broadband coverage |
+| **demographics** | indicator | Population and governance data | Population by moku, employment by census tract |
+| **community_wellbeing** | indicator | Community quality of life and social determinant indicators | QOL surveys, food insecurity rates, social trust indices |
 
 ## Moku Districts
 

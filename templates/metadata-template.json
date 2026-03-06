@@ -7,6 +7,7 @@
       "description": "Brief description of methods, coverage, and purpose.",
       "license": "CC-BY-4.0",
       "citation": "Author et al., Year. Title. Institution.",
+      "contribution_type": "observation",
       "topics": ["land_environment"],
       "quality": "preliminary",
       "access_level": "public",

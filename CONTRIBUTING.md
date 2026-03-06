@@ -24,7 +24,21 @@ You only need to do this once. After approval, you can submit unlimited contribu
 
 **University labs**: Use your department or lab group as the contributor identity (e.g., `uh-ctahr-soil-lab`, `hpu-marine-science`). This keeps contributions organized by research group.
 
-## Step 2: Prepare Your Data
+## Step 2: Choose Your Contribution Type
+
+Mokunet distinguishes between datasets based on how they integrate with the spatial governance graph. Before preparing your data, identify which type applies:
+
+| Type | When to Use | SDG Alignment | Required Metadata |
+|---|---|---|---|
+| **observation** | Geocoded environmental samples (water quality, soil tests, species surveys, air monitoring) | Graph-grounded via `MEASURES_SDG` edges | `sample_context` with matrix |
+| **indicator** | Sub-county statistical data that refines county-level baselines (demographics, employment, wellbeing surveys) | Graph-grounded via `MEASURES_SDG` + `REFINES_BASELINE` edges | `baseline_context` with supplements; requires coordinates or `moku_ids` |
+| **spatial_overlay** | GIS layers that enhance zone coverage (wetland boundaries, land use, parcels) | Enhances backbone zones | GeoJSON format typical |
+
+**Why this matters:** The Island Baselines page currently shows county-level statistics from federal sources with editorial SDG labels. Only contributed research data creates graph-grounded SDG measurement. Observation data populates the environment zone layer; indicator data is the mechanism that bridges county statistics to moku-level governance.
+
+See [docs/topics.md](docs/topics.md#contribution-types) for detailed guidance on choosing your type.
+
+## Step 3: Prepare Your Data
 
 ### Data Format
 
@@ -36,6 +50,8 @@ You only need to do this once. After approval, you can submit unlimited contribu
 If your data includes coordinates (`latitude` and `longitude` columns in WGS84), the platform will automatically assign records to the appropriate moku districts. This is the easiest path — just include the coordinates you already have.
 
 If your data does not include coordinates, add a `coverage` field to your `metadata.json` describing the geographic scope (e.g., "Windward O'ahu coastal wetlands" or "Statewide census tract data"). You can also optionally provide `moku_ids` if you know which districts apply.
+
+**Note for indicator contributions:** Contributions with `contribution_type: "indicator"` require either coordinate columns or explicit `moku_ids` — a text coverage description alone cannot be spatially resolved to refine baselines.
 
 ### Metadata
 
@@ -49,6 +65,7 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].description` | No | Brief description of methods and coverage |
 | `datasets[].license` | Yes | Open data license (CC-BY-4.0, CC0, etc.) |
 | `datasets[].citation` | No | Preferred citation for your dataset |
+| `datasets[].contribution_type` | Yes | `observation`, `indicator`, or `spatial_overlay` (see Step 2) |
 | `datasets[].topics` | Yes | Array from: land_environment, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics, community_wellbeing |
 | `datasets[].quality` | Yes | One of: preliminary, verified, peer_reviewed |
 | `datasets[].coverage` | When needed | Text description of geographic scope (required if data lacks coordinate columns and no `moku_ids` provided) |
@@ -56,7 +73,8 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].required_fields` | Yes | Columns that must be non-null in every record |
 | `datasets[].access_level` | No | public (default), attributed, or restricted |
 | `datasets[].temporal_coverage` | No | `{ "start": "YYYY-MM-DD", "end": "YYYY-MM-DD" }` |
-| `datasets[].sample_context` | No | Environmental sample metadata (see [docs/topics.md](docs/topics.md#sample-context-optional)) |
+| `datasets[].sample_context` | For observations | Environmental sample metadata (see [docs/topics.md](docs/topics.md#sample-context-for-observation-contributions)) |
+| `datasets[].baseline_context` | For indicators | Baseline refinement metadata (see [docs/topics.md](docs/topics.md#baseline-context-for-indicator-contributions)) |
 | `datasets[].moku_ids` | No | Array of moku district IDs (optional — auto-derived from coordinates) |
 | `datasets[].sdg_codes` | No | SDG codes (optional — auto-derived from topics) |
 
@@ -64,7 +82,7 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 
 See [contributions/_example/](contributions/_example/) for a complete working example using O'ahu wetland data from the USFWS National Wetlands Inventory.
 
-## Step 3: Fork and Add Your Contribution
+## Step 4: Fork and Add Your Contribution
 
 1. **Fork** this repository to your GitHub account
 2. **Create** a directory: `contributions/{your-slug}/{dataset-slug}/`
@@ -82,7 +100,7 @@ contributions/
       your-data-file.csv
 ```
 
-## Step 4: Open a Pull Request
+## Step 5: Open a Pull Request
 
 1. **Commit** your changes to your fork
 2. **Open a pull request** against `main` on this repository

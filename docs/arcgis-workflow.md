@@ -4,44 +4,63 @@ This guide covers the end-to-end process of acquiring geospatial data from ArcGI
 
 For the general contribution workflow (registration, PR process, what happens after merge), see [CONTRIBUTING.md](../CONTRIBUTING.md). This document focuses specifically on the ArcGIS Online data acquisition path.
 
+## Scope: What Belongs Here vs. the Spatial Backbone
+
+The Mokunet spatial backbone already includes 18 internally managed datasets — zone overlays for parcels, zoning, wetlands (NWI), conservation reserves, parks, trails, highways, schools, agricultural lands, and more. These are maintained through the [transforms pipeline](https://github.com/Aina-Design-Corp/mokulearner-node) and updated independently from source agencies. **Do not contribute datasets that duplicate backbone zone layers.**
+
+Datasets that **belong in the Research Commons** (this repository):
+- Field research data with site-specific observations (water quality, soil tests, species surveys)
+- Sub-county statistical indicators that refine county-level baselines (neighborhood surveys, moku-level demographics)
+- Specialized research layers not covered by the backbone (e.g., coral reef surveys, stream biosurveys, community health assessments)
+
+Datasets that are **managed internally** and should NOT be contributed here:
+- Administrative boundaries (parcels, zoning, moku boundaries)
+- NWI wetland polygons (already in backbone as `wetland` zone type)
+- Conservation reserves and forest reserves (already `reserves` zone type)
+- State parks and trails (already `park` and `trail` zone types)
+- Road networks and highway segments (already `highway` zone type)
+- Government land ownership (already `stewards` zone type)
+- Important Agricultural Lands / ag baseline (already `ial` and `ag_baseline` zone types)
+- Schools and post-secondary campuses (already `school` and `post_secondary` zone types)
+- Rail alignments and stations (already `rail` and `station` zone types)
+- Planning/zoning overlays (already `planning` zone type)
+- Opportunity zones (already `opportunity` zone type)
+
+If you find an ArcGIS dataset that updates or improves a backbone layer, open an [issue](https://github.com/Aina-Design-Corp/mokulearner-research/issues) describing what you found rather than contributing it as research data. The maintainers will assess whether to update the internal transforms pipeline.
+
 ## Hawai'i ArcGIS Online Data Sources
 
-These organizations publish Hawai'i geospatial data on ArcGIS Online. Start with the statewide geoportal for the broadest catalog, then check individual agency hubs for specialized datasets.
+These organizations publish Hawai'i geospatial data on ArcGIS Online. Focus on research-grade observational and indicator data, not administrative boundary layers.
 
-| Organization | Portal / Hub | Typical Data |
+| Organization | Portal / Hub | Relevant Research Data |
 |---|---|---|
-| Hawai'i Statewide GIS Program | `geoportal.hawaii.gov` | Parcels, zoning, administrative boundaries, infrastructure |
-| Hawai'i DLNR | Search ArcGIS Online for `owner:DLNR*` | Watersheds, forest reserves, aquatic resources, conservation lands |
-| Hawai'i DOH | `health.hawaii.gov` + ArcGIS Online | Water quality, contamination sites, environmental health |
-| DBEDT | `dbedt.hawaii.gov` | Demographics, economic indicators, energy data |
-| UH Manoa | Search ArcGIS Online for `owner:UHManoa*` | Varied research outputs (marine science, geography, agriculture) |
-| NOAA Pacific Islands | ArcGIS Online search for `NOAA PIFSC` | Coral reef surveys, marine habitats, ocean chemistry |
-| USGS Pacific Islands | ArcGIS Online search for `USGS Hawaii` | Ecosystems, geology, hydrology, volcanic hazards |
-| USFWS | ArcGIS Online search for `USFWS` | Wetlands (NWI), endangered species habitat, refuges |
+| Hawai'i DOH | `health.hawaii.gov` + ArcGIS Online | Water quality monitoring, contamination sites, environmental health indicators |
+| DBEDT | `dbedt.hawaii.gov` | Economic indicators, energy data, demographic breakdowns below county level |
+| UH Manoa | Search ArcGIS Online for `owner:UHManoa*` | Marine science observations, agricultural field trials, geography research |
+| NOAA Pacific Islands | ArcGIS Online search for `NOAA PIFSC` | Coral reef surveys, ocean chemistry, marine habitat monitoring |
+| USGS Pacific Islands | ArcGIS Online search for `USGS Hawaii` | Hydrological monitoring, volcanic hazards, ecosystem surveys |
+| Hawai'i DLNR | Search ArcGIS Online for `owner:DLNR*` | Aquatic biosurveys, stream monitoring, wildlife surveys |
 
-**Tip:** Many agencies publish through the statewide geoportal as well as their own hubs. Searching `geoportal.hawaii.gov` first often turns up data from multiple agencies in one place.
+## Mapping ArcGIS Data to Repository Topics and Contribution Types
 
-## Mapping ArcGIS Data to Repository Topics
+Use this table to select the right [topic](topics.md) tags and `contribution_type` when you find an ArcGIS dataset.
 
-Use this table to select the right [topic](topics.md) tags when you find an ArcGIS dataset. Most datasets map to one or two topics.
+| ArcGIS Layer Theme | Topic(s) | Contribution Type | Notes |
+|---|---|---|---|
+| Stream gauges, water quality monitoring sites | `water` | observation | Include sample_context with matrix |
+| Coral reef surveys, marine habitat monitoring | `coastal`, `biodiversity` | observation | Include sample_context |
+| Aquatic biosurveys, species counts | `water`, `biodiversity` | observation | Include sample_context |
+| Crop field trials, pest surveys, irrigation monitoring | `agriculture` | observation | Site-specific field data |
+| Farm production data, ag employment by district | `agriculture` | indicator | Include baseline_context |
+| Temperature stations, rainfall gauges, air quality | `climate` | observation | Point-source monitoring data |
+| Renewable energy output by district | `climate` | indicator | Include baseline_context |
+| Environmental health sites, contamination screening | `food_safety`, `land_environment` | observation | Include sample_context |
+| Census-tract demographics below county level | `demographics` | indicator | Requires coordinates or moku_ids |
+| Employment, income by neighborhood or district | `demographics` | indicator | Include baseline_context |
+| Community health surveys, food insecurity | `community_wellbeing` | indicator | Include baseline_context |
+| Water system capacity, broadband coverage | `infrastructure` | indicator | Include baseline_context |
 
-| ArcGIS Layer Theme | Repository Topic(s) | Notes |
-|---|---|---|
-| Parcels, land use, zoning, soil surveys | `land_environment` | Land use layers may need simplification |
-| Watershed boundaries, stream gauges, groundwater | `water`, `land_environment` | |
-| Coral reef surveys, marine habitats | `coastal`, `biodiversity` | |
-| Shoreline erosion, sea level rise, coastal inundation | `coastal`, `climate` | |
-| Forest reserves, native species, canopy cover | `forestry`, `biodiversity` | |
-| Crop data, ag land use, irrigation | `agriculture` | |
-| Census tracts, population, housing | `demographics` | May need coordinate enrichment |
-| Employment, income, land ownership | `demographics` | |
-| Water systems, energy grid, roads, broadband | `infrastructure` | |
-| Drinking water quality, wastewater | `water`, `infrastructure` | |
-| Environmental health sites, contamination | `food_safety`, `land_environment` | |
-| Temperature, rainfall, emissions, energy output | `climate` | |
-| Community health, food insecurity | `community_wellbeing` | |
-
-See [topics.md](topics.md) for full scope definitions and SDG mappings.
+See [topics.md](topics.md) for full scope definitions, contribution type guidance, and SDG mappings.
 
 ## Step-by-Step Workflow
 
@@ -53,7 +72,9 @@ Search for Hawai'i datasets at `www.arcgis.com/home/search.html` or through `geo
 - **Type:** Feature Service or Map Service (these are queryable; static PDFs and images are not)
 - **Owner:** Filter by agency (e.g., `owner:DLNR_Hawaii`)
 - **Extent:** Zoom to the Hawaiian Islands to filter by geographic extent
-- **Keywords:** Use domain terms like "watershed", "coral", "water quality", "census"
+- **Keywords:** Use domain terms like "water quality", "coral", "biosurvey", "census tract"
+
+**Before downloading, verify** the dataset does not duplicate a backbone zone layer (see [scope section](#scope-what-belongs-here-vs-the-spatial-backbone) above).
 
 ### Step 2: Evaluate a Feature Service
 
@@ -62,7 +83,7 @@ Open the item page for a dataset and check these details before downloading:
 | Check | Where to find it | Why it matters |
 |---|---|---|
 | Spatial reference | Item details or REST endpoint | Must be convertible to WGS84 (EPSG:4326) |
-| Field list | REST endpoint → Fields section | Determines your `schema` mapping |
+| Field list | REST endpoint -> Fields section | Determines your `schema` mapping |
 | Record count | REST endpoint or item description | Large datasets (>10k features) need pagination or GUI export |
 | Update frequency | Item description | Affects your `temporal_coverage` dates |
 | License / Terms of Use | Item page bottom section | Determines your `license` field |
@@ -85,8 +106,8 @@ See the [Programmatic Access](#programmatic-access-via-arcgis-rest-api) section 
 ArcGIS exports need adjustments before they fit the repository format.
 
 **Field naming:**
-- ArcGIS uses CamelCase or UPPERCASE field names (e.g., `WETLAND_TYPE`, `Acres`, `GlobalID`)
-- The repository convention is lowercase with underscores (e.g., `wetland_type`, `acres`)
+- ArcGIS uses CamelCase or UPPERCASE field names (e.g., `STATION_ID`, `Species_Count`, `GlobalID`)
+- The repository convention is lowercase with underscores (e.g., `station_id`, `species_count`)
 - Rename fields in your CSV headers or GeoJSON properties
 
 **Remove system fields:**
@@ -111,7 +132,10 @@ Start from the [metadata template](../templates/metadata-template.json) and fill
 
 | Field | Guidance for ArcGIS data |
 |---|---|
-| `topics` | Use the [mapping table](#mapping-arcgis-data-to-repository-topics) above |
+| `contribution_type` | `observation` for site-specific monitoring data; `indicator` for statistical/survey data that refines county baselines; `spatial_overlay` for GIS layers (rare — check it doesn't duplicate a backbone layer first) |
+| `topics` | Use the [mapping table](#mapping-arcgis-data-to-repository-topics-and-contribution-types) above |
+| `sample_context` | Required for `observation` type — declare the matrix (water, soil, sediment, etc.) and collection methods |
+| `baseline_context` | Recommended for `indicator` type — list the Data Commons variable DCIDs your data supplements |
 | `quality` | Government agency data is typically `verified` (QA'd by agency). Published reports: `peer_reviewed`. Raw downloads without agency QA documentation: `preliminary`. See [quality-levels.md](quality-levels.md) |
 | `license` | Check the item page "Terms of Use". Federal agencies (USGS, NOAA, USFWS): use `CC0`. State of Hawai'i data: check terms, typically `CC-BY-4.0` with attribution. If unclear, use `CC-BY-4.0` and note the source in `citation` |
 | `citation` | Use the Credits/Source field from the ArcGIS item page |
@@ -181,6 +205,8 @@ For very large datasets, consider using the GUI "Export Data" button instead, wh
 
 ## Common Pitfalls
 
+**Duplicating backbone layers:** The most common mistake is contributing administrative or infrastructure layers that the spatial backbone already manages (wetlands, parks, zoning, roads, schools, etc.). Always check the [scope section](#scope-what-belongs-here-vs-the-spatial-backbone) first. If in doubt, open an issue.
+
 **Coordinate system mismatch:** ArcGIS services may use Hawai'i State Plane (EPSG:2783/2784) or UTM Zone 4N (EPSG:32604). Always use `outSR=4326` in REST queries. GUI GeoJSON exports auto-convert to WGS84, but CSV exports may not. Symptom: the validation script flags coordinates outside lat 18-23, lng -161 to -154.
 
 **Field naming conventions:** ArcGIS field names are UPPERCASE or CamelCase. The repository expects lowercase_underscore. Rename all field names before contributing.
@@ -222,7 +248,7 @@ Download O'ahu records as GeoJSON:
 
 ### 3. Transform the Data
 
-**Original ArcGIS field names → Renamed fields:**
+**Original ArcGIS field names -> Renamed fields:**
 
 | ArcGIS Field | Renamed Field | Type |
 |---|---|---|
@@ -236,7 +262,7 @@ Download O'ahu records as GeoJSON:
 
 **Removed:** `OBJECTID`, `GlobalID`, `Shape__Area`
 
-**Date conversion:** `1672531200000` → `2023-01-01`
+**Date conversion:** `1672531200000` -> `2023-01-01`
 
 ### 4. Create metadata.json
 
@@ -250,12 +276,18 @@ Download O'ahu records as GeoJSON:
       "description": "Stream biosurvey station data from the DLNR Division of Aquatic Resources, filtered to O'ahu. Includes species counts per station.",
       "license": "CC-BY-4.0",
       "citation": "Hawai'i DLNR Division of Aquatic Resources. DAR Aquatic Biosurvey. ArcGIS Online.",
+      "contribution_type": "observation",
       "topics": ["water", "biodiversity"],
       "quality": "verified",
       "coverage": "Stream survey stations across all six moku districts of O'ahu",
       "temporal_coverage": {
         "start": "2019-01-01",
         "end": "2024-12-31"
+      },
+      "sample_context": {
+        "matrix": ["water"],
+        "collection_method": "field survey — electrofishing and visual counts",
+        "source_agency": "DLNR Division of Aquatic Resources"
       },
       "schema": {
         "station_id": "string",
@@ -272,7 +304,9 @@ Download O'ahu records as GeoJSON:
 }
 ```
 
-**Topic selection rationale:** `water` (stream survey, hydrological context) + `biodiversity` (species counts). See the [mapping table](#mapping-arcgis-data-to-repository-topics).
+**Contribution type:** `observation` — this is geocoded field data with site-specific species counts, not a statistical indicator.
+
+**Topic selection rationale:** `water` (stream survey, hydrological context) + `biodiversity` (species counts). See the [mapping table](#mapping-arcgis-data-to-repository-topics-and-contribution-types).
 
 **Quality rationale:** `verified` — DLNR data is collected using standardized field protocols and QA'd by the agency before publication.
 
@@ -287,7 +321,7 @@ CHANGED_DIRS="your-slug/oahu-aquatic-biosurvey" node scripts/validate-pr.mjs
 ## Additional Resources
 
 - [CONTRIBUTING.md](../CONTRIBUTING.md) — Full contribution workflow (registration, PR process, post-merge)
-- [topics.md](topics.md) — Topic definitions, SDG mappings, sample_context vocabulary
+- [topics.md](topics.md) — Topic definitions, contribution types, SDG mappings, sample_context and baseline_context vocabulary
 - [moku-districts.md](moku-districts.md) — All 33 moku district IDs
 - [quality-levels.md](quality-levels.md) — Quality level definitions and selection guidance
 - [Metadata template](../templates/metadata-template.json) — Starting point for metadata.json

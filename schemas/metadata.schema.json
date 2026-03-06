@@ -24,6 +24,7 @@
         "file",
         "title",
         "license",
+        "contribution_type",
         "topics",
         "quality",
         "schema",
@@ -54,6 +55,11 @@
         "citation": {
           "type": "string",
           "description": "Preferred citation for this dataset"
+        },
+        "contribution_type": {
+          "type": "string",
+          "enum": ["observation", "indicator", "spatial_overlay"],
+          "description": "How this dataset integrates with the spatial governance graph. observation = geocoded environmental samples (populates environment zone layer, creates MEASURES_SDG edges). indicator = sub-county statistical data that refines county-level baselines at the moku level. spatial_overlay = GIS layers that enhance zone coverage (wetlands, land use, parcels)."
         },
         "moku_ids": {
           "type": "array",
@@ -139,7 +145,7 @@
         },
         "sample_context": {
           "type": "object",
-          "description": "Standard container for environmental sample metadata. The matrix field uses a controlled vocabulary; all other fields are free-form for the research analyst.",
+          "description": "Environmental sample metadata. Required for contribution_type 'observation', not applicable for 'indicator'. The matrix field uses a controlled vocabulary; all other fields are free-form for the research analyst.",
           "required": ["matrix"],
           "properties": {
             "matrix": {
@@ -153,6 +159,28 @@
             }
           },
           "additionalProperties": true
+        },
+        "baseline_context": {
+          "type": "object",
+          "description": "Baseline refinement metadata for contribution_type 'indicator'. Declares which county-level Data Commons variables this dataset supplements at the moku level.",
+          "required": ["supplements"],
+          "additionalProperties": false,
+          "properties": {
+            "supplements": {
+              "type": "array",
+              "description": "Data Commons variable DCIDs that this dataset refines at sub-county resolution (e.g., 'UnemploymentRate_Person', 'Median_Income_Household')",
+              "items": { "type": "string" },
+              "minItems": 1
+            },
+            "resolution_gain": {
+              "type": "string",
+              "description": "How this dataset improves on county resolution (e.g., 'moku-level', 'neighborhood-level', 'census-tract')"
+            },
+            "comparison_method": {
+              "type": "string",
+              "description": "How contributed values relate to the county baseline (e.g., 'direct comparison', 'proxy indicator', 'complementary measure')"
+            }
+          }
         },
         "schema": {
           "type": "object",

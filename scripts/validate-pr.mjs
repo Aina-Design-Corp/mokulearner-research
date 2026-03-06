@@ -152,6 +152,30 @@ function validateContribution(dirPath) {
       }
     }
 
+    // Validate contribution_type-specific rules
+    const contribType = dataset.contribution_type
+    if (contribType === 'observation' && !dataset.sample_context) {
+      result.errors.push(
+        `Dataset "${dataset.title}": contribution_type "observation" requires a sample_context block with at least a matrix field`
+      )
+      result.valid = false
+    }
+    if (contribType === 'indicator' && dataset.sample_context) {
+      result.warnings.push(
+        `Dataset "${dataset.title}": contribution_type "indicator" should not include sample_context — indicator data represents statistical measures, not physical samples`
+      )
+    }
+    if (contribType === 'indicator' && !dataset.baseline_context) {
+      result.warnings.push(
+        `Dataset "${dataset.title}": contribution_type "indicator" should include a baseline_context block declaring which Data Commons variables this dataset supplements`
+      )
+    }
+    if (contribType !== 'indicator' && dataset.baseline_context) {
+      result.warnings.push(
+        `Dataset "${dataset.title}": baseline_context is only meaningful for contribution_type "indicator"`
+      )
+    }
+
     // Check geographic coverage: datasets need coordinates, moku_ids, or a coverage description
     const schemaFields = Object.keys(dataset.schema || {})
     const hasCoordinates = schemaFields.includes('latitude') && schemaFields.includes('longitude')
@@ -162,6 +186,15 @@ function validateContribution(dirPath) {
       result.errors.push(
         `Dataset "${dataset.title}" has no coordinate columns, no moku_ids, and no coverage description. ` +
         `Provide at least one: latitude/longitude columns in schema, moku_ids, or a coverage text field.`
+      )
+      result.valid = false
+    }
+
+    // Indicator contributions that refine baselines need spatial precision — coverage text is insufficient
+    if (contribType === 'indicator' && !hasCoordinates && !hasMokuIds) {
+      result.errors.push(
+        `Dataset "${dataset.title}": contribution_type "indicator" requires either coordinate columns or explicit moku_ids ` +
+        `to enable moku-level baseline refinement. A coverage text description alone cannot be spatially resolved.`
       )
       result.valid = false
     }

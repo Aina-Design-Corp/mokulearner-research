@@ -30,7 +30,7 @@ Mokunet recognizes 33 traditional Hawaiian moku (district) boundaries across 7 i
 | `maui-kahikinui` | Kahikinui |
 | `maui-honuaula` | Honua'ula |
 | `maui-kula` | Kula |
-| `maui-puali-komohana` | Pua'ali Komohana |
+| `maui-pualikomohana` | Pua'ali Komohana |
 
 ## Hawai'i Island (6 moku)
 
