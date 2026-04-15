@@ -65,6 +65,7 @@ body:
         - label: "food_safety"
         - label: "infrastructure"
         - label: "demographics"
+        - label: "community_wellbeing"
 
   - type: dropdown
     id: data_format

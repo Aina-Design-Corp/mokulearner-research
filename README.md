@@ -46,12 +46,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full step-by-step guide.
 
 **Quick overview:**
 1. [Register as a contributor](https://github.com/Aina-Design-Corp/mokulearner-research/issues/new?template=new-contributor.yml) (GitHub issue)
-2. Fork this repository
+2. Fork this repository *(click "Fork" at the top-right of this page — this creates your own copy to edit)*
 3. Add your data to `contributions/{your-slug}/{dataset-slug}/`
 4. Include a `metadata.json` (use [the template](templates/metadata-template.json))
 5. Open a pull request — GitHub Actions validates automatically
 
 If your lab already uses Git for code, the same workflow applies to data.
+
+**New to GitHub?** See the [GitHub for Researchers guide](docs/github-for-researchers.md) for a plain-language walkthrough — no software installation required.
 
 **Working with ArcGIS Online?** Many Hawai'i research organizations publish geospatial data through ArcGIS Online feature services. See the [ArcGIS Online Workflow Guide](docs/arcgis-workflow.md) for step-by-step instructions on discovering, downloading, and transforming ArcGIS data into the contribution format.
 

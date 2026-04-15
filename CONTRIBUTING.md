@@ -6,10 +6,12 @@ Your contributed data becomes part of the [Mokunet](https://mokunet.us) provenan
 
 ## Prerequisites
 
-- A GitHub account
+- A GitHub account ([sign up free at github.com](https://github.com/signup))
 - A dataset in CSV or GeoJSON format
 
-If your lab already uses Git for code, this workflow will feel familiar. If not, the steps below walk through everything.
+**No git installation required.** You can complete the entire contribution using the GitHub website — no software to install. Steps 4 and 5 below include both the GitHub website path (recommended for researchers new to git) and the command-line git path for labs that already use git.
+
+New to GitHub entirely? See [docs/github-for-researchers.md](docs/github-for-researchers.md) for a plain-language walkthrough with step-by-step instructions.
 
 ## Step 1: Register as a Contributor
 
@@ -95,14 +97,44 @@ This pattern applies to any community monitoring program (not just water quality
 
 ## Step 4: Fork and Add Your Contribution
 
-1. **Fork** this repository to your GitHub account
-2. **Create** a directory: `contributions/{your-slug}/{dataset-slug}/`
-   - `{your-slug}` is your registered contributor slug
-   - `{dataset-slug}` is a short, descriptive name (e.g., `koolaupoko-soil-survey-2025`)
-3. **Add** your data file (CSV or GeoJSON) to the directory
-4. **Add** your `metadata.json` to the same directory
+### Option A: Using the GitHub Website (no git installation required)
 
-Your directory should look like:
+1. Click **Fork** at the top-right corner of this repository's page. This creates your own copy of the repository under your GitHub account.
+2. In your fork, click into the `contributions/` folder in the file browser.
+3. Click **Add file → Create new file**.
+4. In the filename box, type the full path including slashes, for example:
+   `your-slug/dataset-slug/metadata.json`
+   GitHub automatically creates the folders when you include `/` in the filename.
+5. Paste in your completed `metadata.json` content (start from the [template](templates/metadata-template.json)).
+6. Click **Commit changes** at the bottom of the page.
+7. Navigate back to `contributions/your-slug/dataset-slug/` in your fork.
+8. Click **Add file → Upload files** to upload your CSV or GeoJSON data file into the same folder.
+9. Click **Commit changes**.
+
+### Option B: Using Git on the command line
+
+1. **Fork** this repository to your GitHub account (click "Fork" at the top-right of this page).
+2. **Clone** your fork locally:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/mokulearner-research.git
+   cd mokulearner-research
+   ```
+3. **Create** the contribution directory and add your files:
+   ```bash
+   mkdir -p contributions/your-slug/dataset-slug
+   # Copy your data file and metadata.json into that directory
+   ```
+4. **Commit and push:**
+   ```bash
+   git add contributions/your-slug/
+   git commit -m "Add your-slug/dataset-slug contribution"
+   git push origin main
+   ```
+
+---
+
+In either case, your directory should contain:
+
 ```
 contributions/
   your-slug/
@@ -113,12 +145,25 @@ contributions/
 
 ## Step 5: Open a Pull Request
 
-1. **Commit** your changes to your fork
-2. **Open a pull request** against `main` on this repository
-3. **Fill in** the PR template checklist
-4. **Wait** for automated validation (GitHub Actions checks your metadata and data)
-5. **Address** any validation errors flagged by the automated checks
-6. A community maintainer will **review and merge** your contribution
+### Option A: From the GitHub Website
+
+1. After uploading your files, go to the **original** repository at
+   [github.com/Aina-Design-Corp/mokulearner-research](https://github.com/Aina-Design-Corp/mokulearner-research).
+2. GitHub will show a yellow banner saying your fork is ahead — click **"Compare & pull request"**.
+3. **Fill in** the PR template checklist.
+4. Click **"Create pull request"**.
+5. **Wait** for automated validation — GitHub Actions checks your metadata and data file, and posts results as a comment on your PR.
+6. **Address** any validation errors flagged by the automated checks by editing your files in your fork (changes sync automatically to the open PR).
+7. A community maintainer will **review and merge** your contribution.
+
+### Option B: From the Command Line
+
+1. **Push** your branch if you haven't already: `git push origin main`
+2. **Open a pull request** by visiting the original repository and clicking **"Compare & pull request"**, or use the GitHub CLI: `gh pr create`
+3. **Fill in** the PR template checklist.
+4. **Wait** for automated validation (GitHub Actions checks your metadata and data).
+5. **Address** any validation errors flagged by the automated checks.
+6. A community maintainer will **review and merge** your contribution.
 
 ## What Happens After Merge
 
