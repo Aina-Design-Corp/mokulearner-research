@@ -146,13 +146,17 @@ Start from the [metadata template](../templates/metadata-template.json) and fill
 
 ### Step 6: Validate and Submit
 
-Run the local validation script before opening a PR:
+**Optional local check:** If you have Node.js installed, you can validate your contribution before opening a PR:
 
 ```bash
 CHANGED_DIRS="your-slug/dataset-slug" node scripts/validate-pr.mjs
 ```
 
-Fix any errors (schema violations, missing fields, coordinates out of bounds). Then follow the PR process in [CONTRIBUTING.md](../CONTRIBUTING.md).
+Fix any errors (schema violations, missing fields, coordinates out of bounds).
+
+**If you don't have Node.js**, skip this step — GitHub Actions runs the same validation automatically when you open the pull request and posts results as a comment on your PR. Simply open your PR and address any issues the automated check reports.
+
+Then follow the PR process in [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 ## Programmatic Access via ArcGIS REST API
 
