@@ -57,6 +57,8 @@ If your lab already uses Git for code, the same workflow applies to data.
 
 **Working with ArcGIS Online?** Many Hawai'i research organizations publish geospatial data through ArcGIS Online feature services. See the [ArcGIS Online Workflow Guide](docs/arcgis-workflow.md) for step-by-step instructions on discovering, downloading, and transforming ArcGIS data into the contribution format.
 
+**Using Claude Code?** This repo ships with a project-local Claude Code skill at [.claude/skills/sample-submission/](.claude/skills/sample-submission/) that guides preparation of a contribution from a raw lab return — PDF lab report, xlsx submission form, wide-format lab CSV, or GeoJSON layer. Create a `samples/` directory at the repo root (gitignored by default), drop your files in, and ask Claude to *"prepare a contribution from this sample"*. The skill handles PDF-to-CSV translation, PII extraction from submission forms, geographic anchoring (decimal lat/long, moku assignment, or coverage text), `metadata.json` assembly, and validation against the repo schema before you open a PR. The skill works alongside the manual workflow — read [CONTRIBUTING.md](CONTRIBUTING.md) for the underlying steps it automates.
+
 ## What You Need to Provide
 
 | Field | Required | Description |
@@ -153,12 +155,15 @@ All contributions must use an open data license:
 ## Repository Structure
 
 ```
-schemas/              JSON Schema for metadata validation
-templates/            Starter files for new contributions
-registry/             Approved contributor registry
-contributions/        Contributed datasets (one directory per dataset)
-docs/                 Reference documentation
-.github/workflows/    Automated PR validation
+schemas/                    JSON Schema for metadata validation
+templates/                  Starter files for new contributions
+registry/                   Approved contributor registry
+contributions/              Contributed datasets (one directory per dataset)
+docs/                       Reference documentation
+samples/                    Private inbox for raw lab returns (gitignored)
+.claude/skills/             Project-local Claude Code skills
+scripts/validate-pr.mjs     Local validator (run before opening a PR)
+.github/workflows/          Automated PR validation
 ```
 
 ## Links

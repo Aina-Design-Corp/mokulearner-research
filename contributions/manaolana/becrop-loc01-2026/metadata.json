@@ -1,0 +1,71 @@
+{
+  "contributor": "manaolana",
+  "datasets": [
+    {
+      "file": "becrop-loc01-2026.csv",
+      "title": "BeCrop Soil Microbiome Test — KMO Garden Entry (LOC_01), Honolulu, March 2026",
+      "description": "Soil microbiome characterization for a flower-crop site (KMO Garden Entry, internal label LOC_01) in Honolulu, O'ahu, analyzed by Biome Makers using the BeCrop Test v4.0 ITS3 + 16S4 sequencing panel. Long-format CSV: each row is a single metric (numeric or ordinal class) reported by the lab, covering biosustainability summary, microbiome quantification, macro/minor nutrient cycling, pathogen panel, biocontrol agents, hormone production, and stress adaptation. Site coordinates and submission metadata sourced from the contributor's BeCrop sample registration form. The source PDF report (DU5000_KMO-SAMPLE-01.pdf) is included alongside the CSV for full provenance.",
+      "license": "CC-BY-4.0",
+      "citation": "Biome Makers Inc. 2026. BeCrop Test v4.0 Microbiome Analysis Report DU5000 (sample KMO_SAMPLE_01). Davis, CA / Valladolid, Spain.",
+      "contribution_type": "observation",
+      "topics": ["land_environment", "agriculture"],
+      "quality": "verified",
+      "access_level": "public",
+      "moku_ids": ["oahu-kona"],
+      "temporal_coverage": {
+        "start": "2026-03-26",
+        "end": "2026-03-26"
+      },
+      "sample_context": {
+        "matrix": ["soil"],
+        "lab_name": "Biome Makers",
+        "lab_facility": "Biome Makers, Davis CA / Valladolid Spain",
+        "assay": "BeCrop Test v4.0",
+        "assay_barcode": "BC-R-Test-ITS3-16S4-BPP4.0-2026-04-13-DU5000",
+        "lab_code": "DU5000",
+        "sample_reference": "KMO - Sample-01",
+        "sample_id": "KMO_SAMPLE_01",
+        "site_label": "LOC_01",
+        "field_name": "KMO Garden Entry",
+        "city": "Honolulu",
+        "state": "HI",
+        "coordinates_dms": "21.333455°N 157.895294°W",
+        "latitude": 21.333455,
+        "longitude": -157.895294,
+        "client_label": "Aina Design Corp (DU5)",
+        "crop_general": "Decorative Plants",
+        "crop_target": "flowers",
+        "variety": "Single Species",
+        "soil_type_form_value": "Surface",
+        "organic_management": "Unknown",
+        "biodynamic_methods": "No",
+        "grower": "Mana'olana",
+        "comments": "Estabishing baseline for best practtices",
+        "collection_date": "2026-03-26",
+        "lab_received_date": "2026-04-02",
+        "report_date": "2026-04-13",
+        "sequencing_panel": "ITS3 (fungi) + 16S4 (bacteria)",
+        "species_detected": 681,
+        "ordinal_class_scale": ["very_low", "low", "medium", "high", "very_high", "not_detected", "detected", "only_ectomycorrhiza"],
+        "report_pdf": "DU5000_KMO-SAMPLE-01.pdf",
+        "submission_form": "Becrop_Samples_DU5.xlsx (kept private in /samples; contains submitter PII)"
+      },
+      "schema": {
+        "record_id": "string",
+        "location_id": "string",
+        "sample_id": "string",
+        "lab_code": "string",
+        "sample_date": "date",
+        "latitude": "number",
+        "longitude": "number",
+        "metric_category": "string",
+        "metric_name": "string",
+        "value_numeric": "number",
+        "value_class": "string",
+        "units": "string",
+        "notes": "string"
+      },
+      "required_fields": ["record_id", "location_id", "sample_id", "sample_date", "latitude", "longitude", "metric_category", "metric_name"]
+    }
+  ]
+}

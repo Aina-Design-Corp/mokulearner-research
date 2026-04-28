@@ -1,0 +1,64 @@
+record_id,location_id,sample_id,lab_code,sample_date,latitude,longitude,metric_category,metric_name,value_numeric,value_class,units,notes
+LOC_01-summary-biosustainability_index,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,summary,biosustainability_index,47,medium,index,Soil biosustainability composite score (0-100)
+LOC_01-summary-global_nitrogen,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,summary,global_nitrogen,,low,,Top-line nutrition rating
+LOC_01-summary-phytohormone_production,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,summary,global_microbial_phytohormone_production,,very_low,,Top-line stress mgmt and hormone production rating
+LOC_01-summary-global_stress_adaptation,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,summary,global_stress_adaptation,,low,,Top-line stress adaptation rating
+LOC_01-summary-overall_health,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,summary,overall_health,,very_high,,Crop health based on detected pathogens
+LOC_01-microbiome-total_bacteria,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,microbiome_quantification,total_bacteria,10000000000,,units/gr,Reported as 1e+10 units/gr
+LOC_01-microbiome-total_fungi,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,microbiome_quantification,total_fungi,10000000,,units/gr,Reported as 1e+7 units/gr
+LOC_01-microbiome-am_em_ratio,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,microbiome_quantification,arbuscular_ectomycorrhiza_ratio,,only_ectomycorrhiza,,Only ectomycorrhiza detected; no arbuscular detected
+LOC_01-microbiome-fb_ratio,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,microbiome_quantification,fungi_bacterial_ratio_inverse,302,,bacteria_per_fungus,Reported as 1:302 (fungi:bacteria)
+LOC_01-microbiome-species_detected,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,microbiome_quantification,species_detected,681,,count,Distinct species across ITS3 + 16S4 panel
+LOC_01-nutrition_macro-carbon_overall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,carbon_overall,,high,,Element-level rating
+LOC_01-nutrition_macro-carbon_gain_fixation,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,carbon_gain_carbon_fixation,,high,,Pathway: GAIN
+LOC_01-nutrition_macro-carbon_gain_organic_degradation,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,carbon_gain_organic_compounds_degradation,,medium,,Pathway: GAIN
+LOC_01-nutrition_macro-carbon_loss_aerobic_respiration,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,carbon_loss_aerobic_respiration,,low,,Pathway: LOSS
+LOC_01-nutrition_macro-carbon_loss_fermentation,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,carbon_loss_fermentation,,medium,,Pathway: LOSS
+LOC_01-nutrition_macro-carbon_methanogenesis,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,carbon_pathway_methanogenesis,,medium,,Pathway: PATHWAYS
+LOC_01-nutrition_macro-nitrogen_overall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_overall,,low,,Element-level rating
+LOC_01-nutrition_macro-nitrogen_gain_from_gas,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_gain_from_gas,,medium,,Pathway: GAIN
+LOC_01-nutrition_macro-nitrogen_gain_to_ammonia,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_gain_to_ammonia,,low,,Pathway: GAIN
+LOC_01-nutrition_macro-nitrogen_gain_to_nitrate,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_gain_to_nitrate,,low,,Pathway: GAIN
+LOC_01-nutrition_macro-nitrogen_loss_to_gas,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_loss_to_gas,,medium,,Pathway: LOSS
+LOC_01-nutrition_macro-nitrogen_loss_urea_volatilization,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_loss_urea_volatilization,,medium,,Pathway: LOSS
+LOC_01-nutrition_macro-nitrogen_loss_to_biomass,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,nitrogen_loss_to_biomass,,very_high,,Pathway: PATHWAYS
+LOC_01-nutrition_macro-phosphorus_overall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,phosphorus_overall,,medium,,Element-level rating
+LOC_01-nutrition_macro-phosphorus_p_solubilization,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,phosphorus_inorganic_p_solubilization,,medium,,Pathway: NUTRIENT SUPPLY
+LOC_01-nutrition_macro-phosphorus_p_consumption,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,phosphorus_inorganic_p_consumption,,medium,,Pathway: NUTRIENT COMPETITION
+LOC_01-nutrition_macro-potassium_overall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,potassium_overall,,high,,Element-level rating
+LOC_01-nutrition_macro-potassium_export,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,potassium_export,,low,,Pathway: NUTRIENT SUPPLY
+LOC_01-nutrition_macro-potassium_consumption,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_macro,potassium_consumption,,low,,Pathway: NUTRIENT COMPETITION
+LOC_01-nutrition_minor-iron,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,iron_assimilation,,medium,,Element: Fe
+LOC_01-nutrition_minor-zinc,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,zinc_transport_equilibrium,,very_low,,Element: Zn
+LOC_01-nutrition_minor-manganese,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,manganese_transport_equilibrium,,very_high,,Element: Mn
+LOC_01-nutrition_minor-sulfur,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,sulfur_cycle_equilibrium,,high,,Element: S
+LOC_01-nutrition_minor-calcium,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,calcium_transport,,high,,Element: Ca
+LOC_01-nutrition_minor-copper,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,copper_export,,high,,Element: Cu
+LOC_01-nutrition_minor-magnesium,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,magnesium_transport,,very_low,,Element: Mg
+LOC_01-nutrition_minor-chlorine,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,nutrition_minor,chlorine_transport,,high,,Element: Cl
+LOC_01-pathogen-armillaria_root_rot,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,armillaria_root_rot,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-bacterial_spot,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,bacterial_spot,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-black_spot,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,black_spot,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-botrytis_blight,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,botrytis_blight,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-crown_gall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,crown_gall,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-damping_off,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,damping_off,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-downy_mildew,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,downy_mildew,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-phytophthora_root_and_crown_rot,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,phytophthora_root_and_crown_rot,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-powdery_mildew,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,powdery_mildew,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-pathogen-stem_canker,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_pathogen,stem_canker,,not_detected,,Pathogen panel (presence/absence)
+LOC_01-biocontrol-fungicide,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_biocontrol,fungicide_agents,,medium,,Biocontrol agent class
+LOC_01-biocontrol-bactericide,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_biocontrol,bactericide_agents,,not_detected,,Biocontrol agent class
+LOC_01-biocontrol-insecticide,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_biocontrol,insecticide_agents,,low,,Biocontrol agent class
+LOC_01-biocontrol-nematicide,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,health_biocontrol,nematicide_agents,,very_high,,Biocontrol agent class
+LOC_01-hormone-overall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,hormone_production,hormone_production_overall,3,very_low,count,3 species detected
+LOC_01-hormone-auxin,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,hormone_production,auxin_production,,very_low,,"Traits: cell division, stem elongation"
+LOC_01-hormone-cytokinin,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,hormone_production,cytokinin_production,,medium,,"Traits: cell proliferation, cell differentiation"
+LOC_01-hormone-gibberellin,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,hormone_production,gibberellin_production,,low,,"Traits: stem elongation, germination, flowering"
+LOC_01-stress-overall,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,stress_adaptation_overall,7,low,count,7 species detected
+LOC_01-stress-exopolysaccharide,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,exopolysaccharide_production,,very_low,,"Traits: nutrient trap, salinity protect., drought protect."
+LOC_01-stress-acc_deaminase,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,acc_deaminase,,medium,,"Traits: pathogen protect., salinity protect., drought protect."
+LOC_01-stress-heavy_metal_resistance,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,heavy_metal_resistance,,very_low,,"Traits: bioremediation, detoxification, alleviate heavy metal stress"
+LOC_01-stress-salicylic_acid,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,salicylic_acid,,medium,,"Traits: drought protect., salinity protect., alleviate heavy metal stress"
+LOC_01-stress-salt_tolerance,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,salt_tolerance,,low,,"Traits: salinity protect., root growth promotion"
+LOC_01-stress-abscisic_acid,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,abscisic_acid,,high,,"Traits: growth regulation, plant resistance, increase yields"
+LOC_01-stress-siderophore,LOC_01,KMO_SAMPLE_01,DU5000,2026-03-26,21.333455,-157.895294,stress_adaptation,siderophore_production,,medium,,"Traits: iron availability, biofertilizer"
