@@ -1,0 +1,22 @@
+{
+  "$schema": "../mokulearner-node/docs/general-specs/coordination.schema.json",
+  "repo": "mokulearner-research",
+  "role": "Git-based screened dataset workflows — the network's direct source of qualified, cleansed datasets. PR-reviewed before ingestion; researcher/org-facing.",
+  "updated": "2026-06-19",
+  "spec": "../mokulearner-node/docs/general-specs/CROSS-REPO-COORDINATION.md",
+  "reconciledBy": "mokunet-org/leo",
+  "managedBy": ["huikoeaina"],
+  "provides": [
+    {
+      "id": "research.contributions",
+      "kind": "dataset",
+      "surface": "contributions/{contributor}/{dataset}/metadata.json + CSV/GeoJSON, validated against schemas/metadata.schema.json (GitHub Actions, scripts/validate-pr.mjs)",
+      "auth": "public",
+      "status": "built",
+      "version": "v1",
+      "consumers": ["mokulearner-node"],
+      "note": "Single validation authority for both the git-PR path and the on-prem field/gateway path (see docs/ingestion-paths.md). Qualified/cleansed; field/agent-authored readings stay quality_level: preliminary until reviewed."
+    }
+  ],
+  "consumes": []
+}
