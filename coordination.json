@@ -2,7 +2,7 @@
   "$schema": "../mokulearner-node/docs/general-specs/coordination.schema.json",
   "repo": "mokulearner-research",
   "role": "Git-based screened dataset workflows — the network's direct source of qualified, cleansed datasets. PR-reviewed before ingestion; researcher/org-facing.",
-  "updated": "2026-06-19",
+  "updated": "2026-06-30",
   "spec": "../mokulearner-node/docs/general-specs/CROSS-REPO-COORDINATION.md",
   "reconciledBy": "mokunet-org/leo",
   "managedBy": ["huikoeaina"],
@@ -18,5 +18,14 @@
       "note": "Single validation authority for both the git-PR path and the on-prem field/gateway path (see docs/ingestion-paths.md). Qualified/cleansed; field/agent-authored readings stay quality_level: preliminary until reviewed."
     }
   ],
-  "consumes": []
+  "consumes": [
+    {
+      "id": "commons.water-quality",
+      "from": "manaolana",
+      "expects": "Commons-format water-quality CSV + metadata.json (contributor: manaolana) conforming to schemas/metadata.schema.json, submitted via Git PR to contributions/manaolana/ for the standard validate-pr screening.",
+      "pinnedVersion": "v1",
+      "status": "planned",
+      "note": "Pairs with manaolana provides[].commons.water-quality. manaolana generates the export client-side (src/utils/water-testing-export.ts) today; PR submission into this repo is not yet wired (hence planned). Once a PR lands, the screened result flows on through provides[].research.contributions to node — manaolana is an upstream contributor, not a separate ingestion path."
+    }
+  ]
 }
