@@ -20,7 +20,7 @@
 ## Baseline Context
 
 <!-- Which county-level baselines does your data supplement? (optional — helps reviewers understand the contribution's role) -->
-<!-- e.g., "Local water quality measurements for Ko'olaupoko where only county population baselines exist" -->
+<!-- e.g., "Local water quality measurements for Koʻolaupoko where only county population baselines exist" -->
 
 ## Notes
 

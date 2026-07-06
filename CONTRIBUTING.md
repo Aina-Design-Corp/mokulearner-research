@@ -1,8 +1,8 @@
 # Contributing to the Research Commons
 
-Thank you for contributing research data to Hawai'i's shared research commons. This guide walks through the full contribution process — from registration to ingestion.
+Thank you for contributing research data to Hawaiʻi's shared research commons. This guide walks through the full contribution process — from registration to ingestion.
 
-Your contributed data becomes part of the [Mokunet](https://mokunet.us) provenance graph, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal. Each contribution is automatically compared against county-level baselines from [Data Commons](https://datacommons.org/), so your site-level research helps communities understand how local conditions relate to broader indicators like poverty rate, median income, and unemployment.
+Your contributed data becomes part of the [Mokunet](https://hawaii.mokunet.us) provenance graph, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal. Each contribution is automatically compared against county-level baselines from [Data Commons](https://datacommons.org/), so your site-level research helps communities understand how local conditions relate to broader indicators like poverty rate, median income, and unemployment.
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ See [docs/topics.md](docs/topics.md#contribution-types) for detailed guidance on
 
 If your data includes coordinates (`latitude` and `longitude` columns in WGS84), the platform will automatically assign records to the appropriate moku districts. This is the easiest path — just include the coordinates you already have.
 
-If your data does not include coordinates, add a `coverage` field to your `metadata.json` describing the geographic scope (e.g., "Windward O'ahu coastal wetlands" or "Statewide census tract data"). You can also optionally provide `moku_ids` if you know which districts apply.
+If your data does not include coordinates, add a `coverage` field to your `metadata.json` describing the geographic scope (e.g., "Windward Oʻahu coastal wetlands" or "Statewide census tract data"). You can also optionally provide `moku_ids` if you know which districts apply.
 
 **Note for indicator contributions:** Contributions with `contribution_type: "indicator"` require either coordinate columns or explicit `moku_ids` — a text coverage description alone cannot be spatially resolved to refine baselines.
 
@@ -82,7 +82,7 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 
 ### Example: Federal Data (One-Time Import)
 
-See [contributions/_example/](contributions/_example/) for a working example using O'ahu wetland data from the USFWS National Wetlands Inventory. This shows a typical one-time import of a verified federal dataset.
+See [contributions/_example/](contributions/_example/) for a working example using Oʻahu wetland data from the USFWS National Wetlands Inventory. This shows a typical one-time import of a verified federal dataset.
 
 ### Example: Community-Sourced Observations (Ongoing Sampling)
 
@@ -173,7 +173,7 @@ Once your PR is merged:
 2. If your data has coordinates, records are automatically linked to moku districts and H3 cells
 3. SDG codes are assigned based on your topic selections
 4. Your data is compared against county-level Data Commons baselines — the platform identifies which federal indicators your research supplements at the moku level
-5. Your contribution becomes queryable via the [Mokunet Research API](https://mokunet.us/api/research)
+5. Your contribution becomes queryable via the [Mokunet Research API](https://hawaii.mokunet.us/api/research)
 6. The data appears on [HKA](https://huikoeaina.ainadesign.org) maps and search results
 7. Other researchers and community partners can discover and build on your work
 

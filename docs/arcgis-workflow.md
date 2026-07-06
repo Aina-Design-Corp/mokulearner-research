@@ -1,4 +1,4 @@
-# ArcGIS Online Workflow for Hawai'i Research Data
+# ArcGIS Online Workflow for Hawaiʻi Research Data
 
 This guide covers the end-to-end process of acquiring geospatial data from ArcGIS Online, transforming it for the Research Commons contribution format, and submitting it as a pull request.
 
@@ -28,18 +28,18 @@ Datasets that are **managed internally** and should NOT be contributed here:
 
 If you find an ArcGIS dataset that updates or improves a backbone layer, open an [issue](https://github.com/Aina-Design-Corp/mokulearner-research/issues) describing what you found rather than contributing it as research data. The maintainers will assess whether to update the internal transforms pipeline.
 
-## Hawai'i ArcGIS Online Data Sources
+## Hawaiʻi ArcGIS Online Data Sources
 
-These organizations publish Hawai'i geospatial data on ArcGIS Online. Focus on research-grade observational and indicator data, not administrative boundary layers.
+These organizations publish Hawaiʻi geospatial data on ArcGIS Online. Focus on research-grade observational and indicator data, not administrative boundary layers.
 
 | Organization | Portal / Hub | Relevant Research Data |
 |---|---|---|
-| Hawai'i DOH | `health.hawaii.gov` + ArcGIS Online | Water quality monitoring, contamination sites, environmental health indicators |
+| Hawaiʻi DOH | `health.hawaii.gov` + ArcGIS Online | Water quality monitoring, contamination sites, environmental health indicators |
 | DBEDT | `dbedt.hawaii.gov` | Economic indicators, energy data, demographic breakdowns below county level |
-| UH Manoa | Search ArcGIS Online for `owner:UHManoa*` | Marine science observations, agricultural field trials, geography research |
+| UH Mānoa | Search ArcGIS Online for `owner:UHManoa*` | Marine science observations, agricultural field trials, geography research |
 | NOAA Pacific Islands | ArcGIS Online search for `NOAA PIFSC` | Coral reef surveys, ocean chemistry, marine habitat monitoring |
 | USGS Pacific Islands | ArcGIS Online search for `USGS Hawaii` | Hydrological monitoring, volcanic hazards, ecosystem surveys |
-| Hawai'i DLNR | Search ArcGIS Online for `owner:DLNR*` | Aquatic biosurveys, stream monitoring, wildlife surveys |
+| Hawaiʻi DLNR | Search ArcGIS Online for `owner:DLNR*` | Aquatic biosurveys, stream monitoring, wildlife surveys |
 
 ## Mapping ArcGIS Data to Repository Topics and Contribution Types
 
@@ -66,7 +66,7 @@ See [topics.md](topics.md) for full scope definitions, contribution type guidanc
 
 ### Step 1: Discover Data on ArcGIS Online
 
-Search for Hawai'i datasets at `www.arcgis.com/home/search.html` or through `geoportal.hawaii.gov`.
+Search for Hawaiʻi datasets at `www.arcgis.com/home/search.html` or through `geoportal.hawaii.gov`.
 
 **Useful search filters:**
 - **Type:** Feature Service or Map Service (these are queryable; static PDFs and images are not)
@@ -87,7 +87,7 @@ Open the item page for a dataset and check these details before downloading:
 | Record count | REST endpoint or item description | Large datasets (>10k features) need pagination or GUI export |
 | Update frequency | Item description | Affects your `temporal_coverage` dates |
 | License / Terms of Use | Item page bottom section | Determines your `license` field |
-| Geographic extent | Map preview on item page | Should cover Hawai'i (lat 18-23, lng -161 to -154) |
+| Geographic extent | Map preview on item page | Should cover Hawaiʻi (lat 18-23, lng -161 to -154) |
 
 **Finding the REST endpoint:** On the item page, look for a "URL" link in the item details, or click "View" to open the service and find the REST Services Directory link.
 
@@ -137,11 +137,11 @@ Start from the [metadata template](../templates/metadata-template.json) and fill
 | `sample_context` | Required for `observation` type — declare the matrix (water, soil, sediment, etc.) and collection methods |
 | `baseline_context` | Recommended for `indicator` type — list the Data Commons variable DCIDs your data supplements |
 | `quality` | Government agency data is typically `verified` (QA'd by agency). Published reports: `peer_reviewed`. Raw downloads without agency QA documentation: `preliminary`. See [quality-levels.md](quality-levels.md) |
-| `license` | Check the item page "Terms of Use". Federal agencies (USGS, NOAA, USFWS): use `CC0`. State of Hawai'i data: check terms, typically `CC-BY-4.0` with attribution. If unclear, use `CC-BY-4.0` and note the source in `citation` |
+| `license` | Check the item page "Terms of Use". Federal agencies (USGS, NOAA, USFWS): use `CC0`. State of Hawaiʻi data: check terms, typically `CC-BY-4.0` with attribution. If unclear, use `CC-BY-4.0` and note the source in `citation` |
 | `citation` | Use the Credits/Source field from the ArcGIS item page |
 | `schema` | Map each retained column to `string`, `number`, `date`, or `boolean` |
 | `required_fields` | At minimum include your identifier and coordinate columns (e.g., `["site_id", "latitude", "longitude"]`) |
-| `coverage` | Required if your data lacks coordinate columns. Describe the geographic scope (e.g., "Windward O'ahu watersheds") |
+| `coverage` | Required if your data lacks coordinate columns. Describe the geographic scope (e.g., "Windward Oʻahu watersheds") |
 | `temporal_coverage` | Use the date range from the item page or layer description |
 
 ### Step 6: Validate and Submit
@@ -211,7 +211,7 @@ For very large datasets, consider using the GUI "Export Data" button instead, wh
 
 **Duplicating backbone layers:** The most common mistake is contributing administrative or infrastructure layers that the spatial backbone already manages (wetlands, parks, zoning, roads, schools, etc.). Always check the [scope section](#scope-what-belongs-here-vs-the-spatial-backbone) first. If in doubt, open an issue.
 
-**Coordinate system mismatch:** ArcGIS services may use Hawai'i State Plane (EPSG:2783/2784) or UTM Zone 4N (EPSG:32604). Always use `outSR=4326` in REST queries. GUI GeoJSON exports auto-convert to WGS84, but CSV exports may not. Symptom: the validation script flags coordinates outside lat 18-23, lng -161 to -154.
+**Coordinate system mismatch:** ArcGIS services may use Hawaiʻi State Plane (EPSG:2783/2784) or UTM Zone 4N (EPSG:32604). Always use `outSR=4326` in REST queries. GUI GeoJSON exports auto-convert to WGS84, but CSV exports may not. Symptom: the validation script flags coordinates outside lat 18-23, lng -161 to -154.
 
 **Field naming conventions:** ArcGIS field names are UPPERCASE or CamelCase. The repository expects lowercase_underscore. Rename all field names before contributing.
 
@@ -225,7 +225,7 @@ For very large datasets, consider using the GUI "Export Data" button instead, wh
 
 **License ambiguity:** Some ArcGIS items lack explicit license declarations:
 - U.S. federal agencies (USGS, NOAA, USFWS): public domain, use `CC0`
-- State of Hawai'i agencies: check the item's "Terms of Use". Most state data is public — use `CC0` or `CC-BY-4.0` with attribution
+- State of Hawaiʻi agencies: check the item's "Terms of Use". Most state data is public — use `CC0` or `CC-BY-4.0` with attribution
 - University research: check with the publishing lab; often `CC-BY-4.0`
 
 **Large polygon files:** Very large GeoJSON files with complex polygon geometries may exceed GitHub's file size recommendations. Filter to relevant subsets or simplify geometries.
@@ -244,7 +244,7 @@ https://services.arcgis.com/AbCdEf123/arcgis/rest/services/DAR_Aquatic_Biosurvey
 
 ### 2. Query a Subset
 
-Download O'ahu records as GeoJSON:
+Download Oʻahu records as GeoJSON:
 
 ```
 .../FeatureServer/0/query?where=Island%3D'Oahu'&outFields=STATION_ID,LATITUDE,LONGITUDE,SURVEY_DATE,SPECIES_COUNT,STREAM_NAME,ISLAND&outSR=4326&f=geojson
@@ -276,14 +276,14 @@ Download O'ahu records as GeoJSON:
   "datasets": [
     {
       "file": "oahu-aquatic-biosurvey.csv",
-      "title": "DAR Aquatic Biosurvey — O'ahu Streams 2019-2024",
-      "description": "Stream biosurvey station data from the DLNR Division of Aquatic Resources, filtered to O'ahu. Includes species counts per station.",
+      "title": "DAR Aquatic Biosurvey — Oʻahu Streams 2019-2024",
+      "description": "Stream biosurvey station data from the DLNR Division of Aquatic Resources, filtered to Oʻahu. Includes species counts per station.",
       "license": "CC-BY-4.0",
-      "citation": "Hawai'i DLNR Division of Aquatic Resources. DAR Aquatic Biosurvey. ArcGIS Online.",
+      "citation": "Hawaiʻi DLNR Division of Aquatic Resources. DAR Aquatic Biosurvey. ArcGIS Online.",
       "contribution_type": "observation",
       "topics": ["water", "biodiversity"],
       "quality": "verified",
-      "coverage": "Stream survey stations across all six moku districts of O'ahu",
+      "coverage": "Stream survey stations across all six moku districts of Oʻahu",
       "temporal_coverage": {
         "start": "2019-01-01",
         "end": "2024-12-31"
@@ -314,7 +314,7 @@ Download O'ahu records as GeoJSON:
 
 **Quality rationale:** `verified` — DLNR data is collected using standardized field protocols and QA'd by the agency before publication.
 
-**License rationale:** `CC-BY-4.0` — State of Hawai'i data with no explicit CC0 declaration; attribution to DLNR is appropriate.
+**License rationale:** `CC-BY-4.0` — State of Hawaiʻi data with no explicit CC0 declaration; attribution to DLNR is appropriate.
 
 ### 5. Validate
 
