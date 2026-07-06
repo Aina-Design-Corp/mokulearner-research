@@ -4,35 +4,35 @@ Mokunet recognizes 33 traditional Hawaiian moku (district) boundaries across 7 i
 
 **Note for contributors:** You do not need to specify moku IDs in your contribution metadata. When your data includes coordinates, the platform automatically assigns records to the correct moku districts. If you do know which districts your data covers, you can optionally include `moku_ids` in your `metadata.json`.
 
-## O'ahu (6 moku)
+## Oʻahu (6 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
-| `oahu-koolauloa` | Ko'olauloa |
-| `oahu-koolaupoko` | Ko'olaupoko |
+| `oahu-koolauloa` | Koʻolauloa |
+| `oahu-koolaupoko` | Koʻolaupoko |
 | `oahu-kona` | Kona |
-| `oahu-ewa` | 'Ewa |
-| `oahu-waianae` | Wai'anae |
+| `oahu-ewa` | ʻEwa |
+| `oahu-waianae` | Waiʻanae |
 | `oahu-waialua` | Waialua |
 
 ## Maui (12 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
-| `maui-kaanapali` | Ka'anapali |
+| `maui-kaanapali` | Kāʻanapali |
 | `maui-wailuku` | Wailuku |
 | `maui-hamakuapoko` | Hāmākuapoko |
 | `maui-hamakualoa` | Hāmākualoa |
-| `maui-koolau` | Ko'olau |
+| `maui-koolau` | Koʻolau |
 | `maui-hana` | Hāna |
 | `maui-kipahulu` | Kīpahulu |
 | `maui-kaupo` | Kaupō |
 | `maui-kahikinui` | Kahikinui |
-| `maui-honuaula` | Honua'ula |
+| `maui-honuaula` | Honuaʻula |
 | `maui-kula` | Kula |
-| `maui-pualikomohana` | Pua'ali Komohana |
+| `maui-pualikomohana` | Puaʻali Komohana |
 
-## Hawai'i Island (6 moku)
+## Hawaiʻi Island (6 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
@@ -40,40 +40,40 @@ Mokunet recognizes 33 traditional Hawaiian moku (district) boundaries across 7 i
 | `hawaii-hamakua` | Hāmākua |
 | `hawaii-hilo` | Hilo |
 | `hawaii-puna` | Puna |
-| `hawaii-kau` | Ka'ū |
+| `hawaii-kau` | Kaʻū |
 | `hawaii-kona` | Kona |
 
-## Kaua'i (5 moku)
+## Kauaʻi (5 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
 | `kauai-kona` | Kona |
 | `kauai-puna` | Puna |
-| `kauai-koolau` | Ko'olau |
-| `kauai-halele-a` | Halele'a |
+| `kauai-koolau` | Koʻolau |
+| `kauai-halele-a` | Haleleʻa |
 | `kauai-napali` | Nā Pali |
 
-## Moloka'i (2 moku)
+## Molokaʻi (2 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
-| `molokai-koolau` | Ko'olau |
+| `molokai-koolau` | Koʻolau |
 | `molokai-kona` | Kona |
 
-## Lāna'i (1 moku)
+## Lānaʻi (1 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
 | `lanai-kona` | Kona |
 
-## Ni'ihau (1 moku)
+## Niʻihau (1 moku)
 
 | Moku ID | Traditional Name |
 |---|---|
-| `niihau-niihau` | Ni'ihau |
+| `niihau-niihau` | Niʻihau |
 
-**Note:** Ni'ihau has `status: restricted` in the Mokunet system. Kaho'olawe is excluded from the district system.
+**Note:** Niʻihau has `status: restricted` in the Mokunet system. Kahoʻolawe is excluded from the district system.
 
 ## Source
 
-Moku boundaries are derived from the State of Hawaiʻi GIS datasets, stored in the `moku_districts` Supabase table. See the [Mokunet documentation](https://mokunet.us/lahui/research-commons/districts) for an interactive map.
+Moku boundaries are derived from the State of Hawaiʻi GIS datasets, stored in the `moku_districts` Supabase table. See the [Mokunet documentation](https://hawaii.mokunet.us/lahui/research-commons/districts) for an interactive map.

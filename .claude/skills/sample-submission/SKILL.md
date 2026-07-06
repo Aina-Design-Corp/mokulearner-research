@@ -73,15 +73,15 @@ The PDF cannot be the data file. Convert to CSV.
 | `moku_ids` array in metadata | All types | Compound IDs like `oahu-kona`, `oahu-koolaupoko`. Full list: [docs/moku-districts.md](docs/moku-districts.md). Schema validates ID format only; the validator warns on unknown IDs. |
 | `coverage` text (≥10 chars) in metadata | `observation` and `spatial_overlay` only | **Insufficient for `indicator`** — indicators must have lat/long or moku_ids ([scripts/validate-pr.mjs:194](scripts/validate-pr.mjs#L194)). |
 
-When the source provides DMS coordinates (e.g., `21.333455°N 157.895294°W`), convert to decimal degrees (negative for W longitude in Hawai'i) and store both: decimal in `latitude`/`longitude` columns and `sample_context.latitude`/`longitude`, original DMS string in `sample_context.coordinates_dms`.
+When the source provides DMS coordinates (e.g., `21.333455°N 157.895294°W`), convert to decimal degrees (negative for W longitude in Hawaiʻi) and store both: decimal in `latitude`/`longitude` columns and `sample_context.latitude`/`longitude`, original DMS string in `sample_context.coordinates_dms`.
 
-Common O'ahu moku assignments by general location:
+Common Oʻahu moku assignments by general location:
 - Honolulu / downtown / Punchbowl / Mānoa / Makiki → `oahu-kona`
-- Kailua / Kāne'ohe / Waimānalo / Ka'a'awa → `oahu-koolaupoko`
-- Hau'ula / Lā'ie / Kahuku → `oahu-koolauloa`
-- Hale'iwa / Waialua → `oahu-waialua`
-- Wai'anae coast → `oahu-waianae`
-- Pearl City / 'Ewa Beach / Kapolei / Mākaha to Wai'anae transition / Keehi → `oahu-ewa`
+- Kailua / Kāneʻohe / Waimānalo / Kaʻaʻawa → `oahu-koolaupoko`
+- Hauʻula / Lāʻie / Kahuku → `oahu-koolauloa`
+- Haleʻiwa / Waialua → `oahu-waialua`
+- Waiʻanae coast → `oahu-waianae`
+- Pearl City / ʻEwa Beach / Kapolei / Mākaha to Waiʻanae transition / Keehi → `oahu-ewa`
 
 ### Step 5 — Build `metadata.json`
 

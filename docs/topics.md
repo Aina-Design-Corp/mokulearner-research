@@ -58,7 +58,7 @@ These topics describe statistical or survey data that can refine county-level fe
 
 ### demographics
 - **Scope:** Population, land ownership, employment, housing at sub-county resolution
-- **Example datasets:** Population counts by neighborhood, land ownership records by ahupua'a, employment data by census tract, housing statistics by moku
+- **Example datasets:** Population counts by neighborhood, land ownership records by ahupuaʻa, employment data by census tract, housing statistics by moku
 - **Baseline refinement:** Directly refines county-level ACS/Census variables (e.g., `Count_Person`, `Median_Income_Household`, `UnemploymentRate_Person`)
 
 ### community_wellbeing
@@ -79,7 +79,7 @@ These topics may use either contribution type depending on whether the data repr
 - **As observation:** Crop trials, pest surveys, irrigation measurements at specific sites
 - **As indicator:** Production data, farm counts, agricultural employment at sub-county resolution
 - **Example datasets (observation):** Soil nutrient profiles for crop plots, pest survey transects
-- **Example datasets (indicator):** Farm production by ahupua'a, agricultural employment by moku
+- **Example datasets (indicator):** Farm production by ahupuaʻa, agricultural employment by moku
 
 ### climate
 - **As observation:** Temperature sensors, rainfall gauges, air quality monitoring stations
@@ -160,7 +160,7 @@ Contributions with `contribution_type: "indicator"` should include a `baseline_c
 }
 ```
 
-- **supplements** (required): Array of Data Commons variable DCIDs from the [pillar catalog](https://mokunet.us/place-types). Common variables: `Count_Farm`, `Area_Farm`, `Mean_Rainfall`, `UnemploymentRate_Person`, `Median_Income_Household`, `Count_Person_BelowPovertyLevelInThePast12Months`, `Count_Person`, `Count_FloodEvent`.
+- **supplements** (required): Array of Data Commons variable DCIDs from the [pillar catalog](https://hawaii.mokunet.us/place-types). Common variables: `Count_Farm`, `Area_Farm`, `Mean_Rainfall`, `UnemploymentRate_Person`, `Median_Income_Household`, `Count_Person_BelowPovertyLevelInThePast12Months`, `Count_Person`, `Count_FloodEvent`.
 - **resolution_gain**: How this dataset improves on county resolution (e.g., "moku-level", "neighborhood-level", "census-tract").
 - **comparison_method**: How contributed values relate to the county baseline (e.g., "direct comparison", "proxy indicator", "complementary measure").
 

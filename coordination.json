@@ -27,5 +27,16 @@
       "status": "planned",
       "note": "Pairs with manaolana provides[].commons.water-quality. manaolana generates the export client-side (src/utils/water-testing-export.ts) today; PR submission into this repo is not yet wired (hence planned). Once a PR lands, the screened result flows on through provides[].research.contributions to node — manaolana is an upstream contributor, not a separate ingestion path."
     }
+  ],
+  "acknowledges": [
+    {
+      "change": "2026-07-03-public-copy-conformance",
+      "domain": "public-fact",
+      "authorizedBy": "mokunet-org",
+      "status": "applied",
+      "at": "2026-07-06",
+      "by": "leo",
+      "note": "Public-copy conformance per CANON/VOICE: 4 stale-host links fixed (incl. topics.md place-types link to hawaii.mokunet.us), README opening reframed outside-in (graph internals kept in a 'How Contributions Are Wired into the Graph' section), 66 diacritical fixes across 7 files; validate-pr.mjs passes. Deep contributor docs keep technical vocabulary per the 2026-07-03 exemption ruling. Forward-ported from the stale leo/conformance-2026-07-03 branch (docs only; no coordination.json changes on that branch)."
+    }
   ]
 }
