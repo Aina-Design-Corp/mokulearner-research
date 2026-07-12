@@ -69,7 +69,7 @@ The PDF cannot be the data file. Convert to CSV.
 
 | Method | Sufficient for | Notes |
 |---|---|---|
-| Per-row `latitude` + `longitude` columns in the CSV/GeoJSON | All types | **Preferred** — enables H3 cell assignment and moku resolution downstream. Hawaii bounds: lat 18–23, lng −161 to −154. Outside → validator warning. |
+| Per-row `latitude` + `longitude` columns in the CSV/GeoJSON | All types | **Preferred** — enables H3 cell assignment and moku resolution downstream. Hawaiʻi bounds: lat 18–23, lng −161 to −154. Outside → validator warning. |
 | `moku_ids` array in metadata | All types | Compound IDs like `oahu-kona`, `oahu-koolaupoko`. Full list: [docs/moku-districts.md](docs/moku-districts.md). Schema validates ID format only; the validator warns on unknown IDs. |
 | `coverage` text (≥10 chars) in metadata | `observation` and `spatial_overlay` only | **Insufficient for `indicator`** — indicators must have lat/long or moku_ids ([scripts/validate-pr.mjs:194](scripts/validate-pr.mjs#L194)). |
 
@@ -132,7 +132,7 @@ Common failures and fixes:
 | `Required field "X" is empty` at row N | A `required_fields` column has an empty cell at that row. |
 | `expected number, got "..."` at row N | A schema-declared `number` column has a non-numeric value. Convert or fix. |
 | `duplicate site_id "..."` | Wide-format CSV has duplicate `site_id` values, **or** you accidentally added `site_id` to a long-format CSV (don't — use `record_id`/`location_id`). |
-| `coordinates outside Hawaii bounds` | Warning, not error. Verify lat/long signs (W longitude must be negative). |
+| `coordinates outside Hawaiʻi bounds` | Warning, not error. Verify lat/long signs (W longitude must be negative). |
 | `Contributor "..." is not approved in registry/contributors.json` | Blocker. Onboard the contributor via GitHub issue first. |
 | `contribution_type "observation" requires a sample_context block` | Add `sample_context.matrix` at minimum. |
 | `contribution_type "indicator" requires either coordinate columns or explicit moku_ids` | Coverage text alone is insufficient for indicators. Add lat/long columns or `moku_ids`. |

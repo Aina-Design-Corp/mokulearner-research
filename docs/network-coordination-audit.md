@@ -26,7 +26,7 @@ huikoeaina (web-only) ──► student-app + edge devices ─────┘
 | Repo | Intended role |
 |---|---|
 | `mokulearner-research` (this repo) | Git-based dataset workflows; screening + rigor; researcher/org-facing |
-| `mokulearner-node` | Gateway + keeper of the spatial backbone; APIs; offloads messaging/mapping |
+| `mokulearner-node` | Cloud backend orchestrator + keeper of the spatial backbone; APIs; offloads messaging/mapping (the *gateway* tier is `magoonlab`, below — wording fixed 2026-07-12; see `onprem-pipeline-reconciliation.md`) |
 | `mokunet-org` | Owner of general messaging + the moku map + onboarding/skills (offloaded from node) |
 | `huikoeaina` | Web-only app; hands off student work + data acquisition to on-prem |
 | `magoonlab` (on-prem) | Gateway: ingests student-app HTTP + edge MQTT → mokunet/Supabase; hosts field-guide skill-agent |

@@ -15,7 +15,7 @@ When a community measures its water or soil, that reading should count — and s
 
 Both pathways resolve to specific moku districts and connect to shared sustainability goals, so a water quality study in Maunalua Bay and a food security survey in Waiʻanae become comparable side by side — making district-level variation visible for the first time. When your data includes coordinates, the platform anchors it to the right district automatically; for observation data without coordinates, a text description of geographic scope is sufficient. (For the underlying mechanics — nodes, edges, spatial cells — see [How contributions are wired into the graph](#how-contributions-are-wired-into-the-graph).)
 
-**Hui Koe Aina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the learning community browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawaiʻi and Hawaiʻi Pacific University research labs looking to de-silo their data.
+**Hui Koʻe ʻĀina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the learning community browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawaiʻi and Hawaiʻi Pacific University research labs looking to de-silo their data.
 
 **Contributions are:**
 - Version-controlled with full Git provenance

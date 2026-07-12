@@ -2,7 +2,7 @@
   "$schema": "../mokulearner-node/docs/general-specs/coordination.schema.json",
   "repo": "mokulearner-research",
   "role": "Git-based screened dataset workflows — the network's direct source of qualified, cleansed datasets. PR-reviewed before ingestion; researcher/org-facing.",
-  "updated": "2026-06-30",
+  "updated": "2026-07-12",
   "spec": "../mokulearner-node/docs/general-specs/CROSS-REPO-COORDINATION.md",
   "reconciledBy": "mokunet-org/leo",
   "managedBy": ["huikoeaina"],
@@ -29,6 +29,24 @@
     }
   ],
   "acknowledges": [
+    {
+      "change": "2026-07-12-public-copy-family-sweep",
+      "domain": "public-fact",
+      "authorizedBy": "mokunet-org",
+      "status": "applied",
+      "at": "2026-07-12",
+      "by": "leo (steward-directed session)",
+      "note": "Applied on leo/sweep-2026-07-12: README 'Hui Koe Aina' → 'Hui Koʻe ʻĀina' (CANON §8 2026-07-05 canonical diacriticals), 'Hawaii' → 'Hawaiʻi' in the sample-submission skill doc + the validate-pr.mjs warning strings it quotes (kept in sync). Merge owed — PUBLIC repo, push = publish."
+    },
+    {
+      "change": "2026-07-12-technical-fact-sweep",
+      "domain": "technical-contract",
+      "authorizedBy": "mokulearner-node",
+      "status": "applied",
+      "at": "2026-07-12",
+      "by": "leo (steward-directed session)",
+      "note": "Applied on leo/sweep-2026-07-12: network-coordination-audit.md repo table no longer calls node the 'Gateway' (gateway = magoonlab; pointer to onprem-pipeline-reconciliation.md added). Merge owed."
+    },
     {
       "change": "2026-07-03-public-copy-conformance",
       "domain": "public-fact",

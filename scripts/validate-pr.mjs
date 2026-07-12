@@ -288,7 +288,7 @@ function validateContribution(dirPath) {
           if (!isNaN(lat) && !isNaN(lng)) {
             if (lat < 18 || lat > 23 || lng < -161 || lng > -154) {
               result.warnings.push(
-                `Row ${row}: coordinates (${lat}, ${lng}) outside Hawaii bounds`
+                `Row ${row}: coordinates (${lat}, ${lng}) outside Hawaiʻi bounds`
               )
               totalFlagged++
             }
@@ -383,7 +383,7 @@ function validateContribution(dirPath) {
               if (lat !== undefined && lng !== undefined && !isNaN(lat) && !isNaN(lng)) {
                 if (lat < 18 || lat > 23 || lng < -161 || lng > -154) {
                   result.warnings.push(
-                    `Feature ${row}: coordinates (${lat}, ${lng}) outside Hawaii bounds`
+                    `Feature ${row}: coordinates (${lat}, ${lng}) outside Hawaiʻi bounds`
                   )
                   totalFlagged++
                 }
