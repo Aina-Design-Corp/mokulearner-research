@@ -2,7 +2,7 @@
 
 Thank you for contributing research data to Hawaiʻi's shared research commons. This guide walks through the full contribution process — from registration to ingestion.
 
-Your contributed data becomes part of the [Mokunet](https://hawaii.mokunet.us) provenance graph, queryable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal. Each contribution is automatically compared against county-level baselines from [Data Commons](https://datacommons.org/), so your site-level research helps communities understand how local conditions relate to broader indicators like poverty rate, median income, and unemployment.
+Your contributed data becomes part of the [Mokunet](https://hawaii.mokunet.us) research commons, browsable through the [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) portal. As the ingestion pipeline comes online, each contribution is compared against county-level baselines from [Data Commons](https://datacommons.org/), so your site-level research helps communities understand how local conditions relate to broader indicators like poverty rate, median income, and unemployment.
 
 ## Prerequisites
 
@@ -167,7 +167,7 @@ contributions/
 
 ## What Happens After Merge
 
-Once your PR is merged:
+Once your PR is merged, the ingestion pipeline — being brought online now — carries your contribution through these steps:
 
 1. Your data enters the Mokunet provenance graph as `ResearchContribution` and `ResearchRecord` nodes
 2. If your data has coordinates, records are automatically linked to moku districts and H3 cells
@@ -188,9 +188,9 @@ To update a dataset with new data or improved quality:
 
 ## Programmatic Access
 
-If your lab needs to query research data programmatically (for analysis scripts, dashboards, or CI pipelines), you can request an API subscription key. Contact the community maintainers or sign up through [HKA](https://huikoeaina.ainadesign.org).
+If your lab needs to query research data programmatically (for analysis scripts, dashboards, or CI pipelines), API access is being brought online. To request a subscription key when it opens, contact the community maintainers or sign up through [HKA](https://huikoeaina.ainadesign.org).
 
-API documentation: `GET /api/v1/research?moku=oahu-koolaupoko&topic=water`
+Planned API shape: `GET /api/v1/research?moku=oahu-koolaupoko&topic=water`
 
 ## Questions?
 

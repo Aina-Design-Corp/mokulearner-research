@@ -5,7 +5,9 @@
   "updated": "2026-07-12",
   "spec": "../mokulearner-node/docs/general-specs/CROSS-REPO-COORDINATION.md",
   "reconciledBy": "mokunet-org/leo",
-  "managedBy": ["huikoeaina"],
+  "managedBy": [
+    "huikoeaina"
+  ],
   "provides": [
     {
       "id": "research.contributions",
@@ -14,7 +16,9 @@
       "auth": "public",
       "status": "built",
       "version": "v1",
-      "consumers": ["mokulearner-node"],
+      "consumers": [
+        "mokulearner-node"
+      ],
       "note": "Single validation authority for both the git-PR path and the on-prem field/gateway path (see docs/ingestion-paths.md). Qualified/cleansed; field/agent-authored readings stay quality_level: preliminary until reviewed."
     }
   ],
@@ -55,6 +59,15 @@
       "at": "2026-07-06",
       "by": "leo",
       "note": "Public-copy conformance per CANON/VOICE: 4 stale-host links fixed (incl. topics.md place-types link to hawaii.mokunet.us), README opening reframed outside-in (graph internals kept in a 'How Contributions Are Wired into the Graph' section), 66 diacritical fixes across 7 files; validate-pr.mjs passes. Deep contributor docs keep technical vocabulary per the 2026-07-03 exemption ruling. Forward-ported from the stale leo/conformance-2026-07-03 branch (docs only; no coordination.json changes on that branch)."
+    },
+    {
+      "change": "2026-07-24-public-copy-family-sweep",
+      "domain": "public-fact",
+      "authorizedBy": "mokunet-org",
+      "status": "applied",
+      "at": "2026-07-24",
+      "by": "leo",
+      "note": "Staged on leo/sweep-2026-07-24: graph-wiring section relocated README → docs/topics.md (exempt deep doc) with an outside-in summary in its place; banned vocab (nodes/edges/spatial backbone/H3 res-8) off the non-exempt README surface; unbuilt-pipeline claims (auto-anchoring, research API) softened to being-brought-online; Oʻahu/Mānoa diacriticals in issue templates. The 'verified' QA-tier rename is held for steward ruling (not changed)."
     }
   ]
 }

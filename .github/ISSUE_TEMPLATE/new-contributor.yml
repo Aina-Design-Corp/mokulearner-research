@@ -14,7 +14,7 @@ body:
     attributes:
       label: Organization Name
       description: Full name of your research organization
-      placeholder: "e.g., UH Manoa College of Tropical Agriculture"
+      placeholder: "e.g., UH Mānoa College of Tropical Agriculture"
     validations:
       required: true
 
@@ -23,7 +23,7 @@ body:
     attributes:
       label: Parent Institution
       description: University, agency, or organization
-      placeholder: "e.g., University of Hawaii at Manoa"
+      placeholder: "e.g., University of Hawaiʻi at Mānoa"
     validations:
       required: true
 
@@ -83,7 +83,7 @@ body:
     attributes:
       label: Brief Description
       description: What kind of data does your organization plan to contribute?
-      placeholder: "e.g., We conduct quarterly environmental surveys across windward O'ahu agricultural lands."
+      placeholder: "e.g., We conduct quarterly environmental surveys across windward Oʻahu agricultural lands."
     validations:
       required: true
 

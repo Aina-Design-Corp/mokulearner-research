@@ -167,3 +167,12 @@ Contributions with `contribution_type: "indicator"` should include a `baseline_c
 ## Adding New Topics
 
 The topic vocabulary is extensible. If your research doesn't fit an existing topic, open a [GitHub issue](https://github.com/Aina-Design-Corp/mokulearner-research/issues) to propose a new one.
+
+## How Contributions Are Wired into the Graph
+
+Contributed datasets become nodes in the [Mokunet](https://hawaii.mokunet.us) provenance graph, where they create graph-grounded SDG alignment through `MEASURES_SDG` edges — the only SDG measurement in the platform backed by graph relationships.
+
+- **Observations** populate the spatial measurement layer. Geocoded records are assigned to moku districts and [H3 hexagonal cells](https://h3geo.org/) (resolution 8), then linked to SDGGoal nodes through `MEASURES_SDG` edges.
+- **Indicators** create `MEASURES_SDG` edges plus `REFINES_BASELINE` edges that explicitly track which county baselines are being supplemented. Because refinement requires spatial resolution, indicator data must include coordinates or explicit `moku_ids`.
+
+Both contribution types flow through the same spatial backbone, which is what enables cross-domain comparison at the district level.
