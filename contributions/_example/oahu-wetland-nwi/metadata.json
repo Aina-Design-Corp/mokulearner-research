@@ -3,13 +3,13 @@
   "datasets": [
     {
       "file": "oahu-wetland-nwi-sample.csv",
-      "title": "National Wetlands Inventory — O'ahu Sample (USFWS)",
-      "description": "Representative sample of 50 wetland features from the USFWS National Wetlands Inventory for O'ahu. Includes estuarine, marine, freshwater, and riverine wetland polygons with NWI classification codes and acreage. Centroids computed from polygon geometry.",
+      "title": "National Wetlands Inventory — Oʻahu Sample (USFWS)",
+      "description": "Representative sample of 50 wetland features from the USFWS National Wetlands Inventory for Oʻahu. Includes estuarine, marine, freshwater, and riverine wetland polygons with NWI classification codes and acreage. Centroids computed from polygon geometry.",
       "license": "CC0",
       "citation": "U.S. Fish and Wildlife Service. National Wetlands Inventory. https://www.fws.gov/program/national-wetlands-inventory",
       "contribution_type": "observation",
       "topics": ["water", "biodiversity", "coastal"],
-      "coverage": "All six traditional moku districts of O'ahu, with sampling sites concentrated in estuarine and coastal wetland areas",
+      "coverage": "All six traditional moku of Oʻahu, with sampling sites concentrated in estuarine and coastal wetland areas",
       "moku_ids": [
         "oahu-koolauloa",
         "oahu-koolaupoko",

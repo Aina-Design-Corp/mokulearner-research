@@ -4,7 +4,7 @@
     {
       "file": "becrop-loc01-2026.csv",
       "title": "BeCrop Soil Microbiome Test — KMO Garden Entry (LOC_01), Honolulu, March 2026",
-      "description": "Soil microbiome characterization for a flower-crop site (KMO Garden Entry, internal label LOC_01) in Honolulu, O'ahu, analyzed by Biome Makers using the BeCrop Test v4.0 ITS3 + 16S4 sequencing panel. Long-format CSV: each row is a single metric (numeric or ordinal class) reported by the lab, covering biosustainability summary, microbiome quantification, macro/minor nutrient cycling, pathogen panel, biocontrol agents, hormone production, and stress adaptation. Site coordinates and submission metadata sourced from the contributor's BeCrop sample registration form. The source PDF report (DU5000_KMO-SAMPLE-01.pdf) is included alongside the CSV for full provenance.",
+      "description": "Soil microbiome characterization for a flower-crop site (KMO Garden Entry, internal label LOC_01) in Honolulu, Oʻahu, analyzed by Biome Makers using the BeCrop Test v4.0 ITS3 + 16S4 sequencing panel. Long-format CSV: each row is a single metric (numeric or ordinal class) reported by the lab, covering biosustainability summary, microbiome quantification, macro/minor nutrient cycling, pathogen panel, biocontrol agents, hormone production, and stress adaptation. Site coordinates and submission metadata sourced from the contributor's BeCrop sample registration form. The source PDF report (DU5000_KMO-SAMPLE-01.pdf) is included alongside the CSV for full provenance.",
       "license": "CC-BY-4.0",
       "citation": "Biome Makers Inc. 2026. BeCrop Test v4.0 Microbiome Analysis Report DU5000 (sample KMO_SAMPLE_01). Davis, CA / Valladolid, Spain.",
       "contribution_type": "observation",
