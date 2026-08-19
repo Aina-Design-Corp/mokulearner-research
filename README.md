@@ -13,7 +13,7 @@ When a community measures its water or soil, that reading should count — and s
 - **Environmental observations** (water quality, soil tests, species surveys, air monitoring) show what conditions actually are at specific places.
 - **Community indicators** (demographics, employment, wellbeing surveys, infrastructure) refine the county-level federal statistics at the moku level.
 
-Both pathways resolve to specific moku districts and connect to shared sustainability goals, so a water quality study in Maunalua Bay and a food security survey in Waiʻanae become comparable side by side — making district-level variation visible for the first time. When your data includes coordinates, the platform anchors it to the right district automatically; for observation data without coordinates, a text description of geographic scope is sufficient. (For the underlying mechanics — nodes, edges, spatial cells — see [How contributions are wired into the graph](#how-contributions-are-wired-into-the-graph).)
+Both pathways resolve to specific moku districts and connect to shared sustainability goals, so a water quality study in Maunalua Bay and a food security survey in Waiʻanae become comparable side by side — making district-level variation visible for the first time. When your data includes coordinates, the platform anchors it to the right district automatically; for observation data without coordinates, a text description of geographic scope is sufficient. (For the underlying technical mechanics, see [docs/topics.md](docs/topics.md#how-contributions-are-wired-into-the-graph).)
 
 **Hui Koʻe ʻĀina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the learning community browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawaiʻi and Hawaiʻi Pacific University research labs looking to de-silo their data.
 
@@ -36,7 +36,7 @@ Research labs across Hawaiʻi's university system and community organizations:
 | **Community organizations** | Watershed partnerships, conservation districts | Water, land environment |
 | **State & federal agencies** | DLNR, DOH, USGS, NOAA, USFWS | Multi-topic |
 
-Your research already has a place in the commons. Just bring your data — the platform handles geographic anchoring, sustainability goal linkage, and baseline comparison automatically.
+Your research already has a place in the commons. Just bring your data — the contribution pipeline is designed to handle geographic anchoring, sustainability goal linkage, and baseline comparison, and that ingestion path is being brought online now.
 
 ## How to Contribute
 
@@ -85,7 +85,7 @@ Every dataset declares a `contribution_type` that determines how it integrates w
 
 Researchers collect a wide range of environmental samples — soil cores, water grabs, sediment profiles, sludge from treatment facilities, tissue biopsies, air quality readings. Observation contributions carry a `sample_context` block describing what was physically collected.
 
-- **Topics** identify the domain question (e.g. `land_environment`, `water`, `coastal`). The platform uses topics for graph discovery and creates `MEASURES_SDG` edges to SDGGoal nodes.
+- **Topics** identify the domain question (e.g. `land_environment`, `water`, `coastal`). The platform uses topics for discovery and ties each dataset to the sustainability goals it measures.
 - **`sample_context`** is required — only the `matrix` field is controlled (`soil`, `water`, `sediment`, `air`, `tissue`, `sludge`, `mixed`); everything else is free-form.
 - A single contribution can span multiple sample matrices under one topic. A land environment study collecting soil cores, stream sediment, and composting facility sludge from the same sites submits one dataset with `"matrix": ["soil", "sediment", "sludge"]`.
 
@@ -94,23 +94,28 @@ Researchers collect a wide range of environmental samples — soil cores, water 
 Indicator contributions provide sub-county statistical data that refines the county-level federal baselines shown on the [Island Baselines](https://hawaii.mokunet.us/place-types) page. These carry a `baseline_context` block declaring which Data Commons variables they supplement.
 
 - **Topics** like `demographics`, `community_wellbeing`, and `infrastructure` are typical indicator topics.
-- **`baseline_context`** declares which county-level variables this dataset refines (e.g., `UnemploymentRate_Person`, `Median_Income_Household`), enabling `REFINES_BASELINE` edges.
+- **`baseline_context`** declares which county-level variables this dataset refines (e.g., `UnemploymentRate_Person`, `Median_Income_Household`), enabling baseline-refinement links.
 - **Spatial precision required:** Indicator contributions must include coordinate columns or explicit `moku_ids` — a text coverage description alone cannot be spatially resolved to refine baselines.
 
 ### Spatial Overlays
 
-GIS layers (wetland boundaries, land use classification, parcel boundaries) that enhance zone coverage in the spatial backbone. These typically use GeoJSON format.
+GIS layers (wetland boundaries, land use classification, parcel boundaries) that enhance place coverage on the shared map. These typically use GeoJSON format.
 
 See [docs/topics.md](docs/topics.md) for the full topic taxonomy, contribution type guidance, and metadata examples.
 
-## How Contributions Are Wired into the Graph
+## How Contributions Join the Shared Map
 
-Contributed datasets become nodes in the [Mokunet](https://hawaii.mokunet.us) provenance graph, where they create graph-grounded SDG alignment through `MEASURES_SDG` edges — the only SDG measurement in the platform backed by graph relationships.
+Contributed datasets become part of the [Mokunet](https://hawaii.mokunet.us)
+shared map with their provenance intact — who gathered each record, where, and
+when. Geocoded observations are anchored to their moku and to location cells on
+the shared map, then tied to the UN Sustainable Development Goals they measure.
+Indicator datasets additionally track exactly which county baselines they
+refine, which is why they need coordinates or explicit `moku_ids`.
 
-- **Observations** populate the spatial measurement layer. Geocoded records are assigned to moku districts and [H3 hexagonal cells](https://h3geo.org/) (resolution 8), then linked to SDGGoal nodes through `MEASURES_SDG` edges.
-- **Indicators** create `MEASURES_SDG` edges plus `REFINES_BASELINE` edges that explicitly track which county baselines are being supplemented. Because refinement requires spatial resolution, indicator data must include coordinates or explicit `moku_ids`.
-
-Both contribution types flow through the same spatial backbone, which is what enables cross-domain comparison at the district level.
+Both contribution types land on the same shared map, which is what enables
+cross-domain comparison at the district level. (The technical wiring — graph
+records, links, and cell resolution — is documented in
+[docs/topics.md](docs/topics.md#how-contributions-are-wired-into-the-graph).)
 
 ## Topic Taxonomy
 
