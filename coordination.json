@@ -2,7 +2,7 @@
   "$schema": "../mokulearner-node/docs/general-specs/coordination.schema.json",
   "repo": "mokulearner-research",
   "role": "Git-based screened dataset workflows — the network's direct source of qualified, cleansed datasets. PR-reviewed before ingestion; researcher/org-facing.",
-  "updated": "2026-07-12",
+  "updated": "2026-08-18",
   "spec": "../mokulearner-node/docs/general-specs/CROSS-REPO-COORDINATION.md",
   "reconciledBy": "mokunet-org/leo",
   "managedBy": [
@@ -29,7 +29,7 @@
       "expects": "Commons-format water-quality CSV + metadata.json (contributor: manaolana) conforming to schemas/metadata.schema.json, submitted via Git PR to contributions/manaolana/ for the standard validate-pr screening.",
       "pinnedVersion": "v1",
       "status": "planned",
-      "note": "Pairs with manaolana provides[].commons.water-quality. manaolana generates the export client-side (src/utils/water-testing-export.ts) today; PR submission into this repo is not yet wired (hence planned). Once a PR lands, the screened result flows on through provides[].research.contributions to node — manaolana is an upstream contributor, not a separate ingestion path."
+      "note": "Pairs with manaolana provides[].commons.water-quality. manaolana generates the export client-side (src/utils/water-testing-export.ts) today; PR submission into this repo is not yet wired (hence planned). First manual delivery has landed on main (156e856, contributions/manaolana/ewa-water-quality — Commons-format CSV + metadata.json, validate-pr screened), so the data path is proven; the seam stays planned until manaolana wires the export→PR submission and flips its provide half. Once wired, the screened result flows on through provides[].research.contributions to node — manaolana is an upstream contributor, not a separate ingestion path."
     }
   ],
   "acknowledges": [
@@ -67,7 +67,25 @@
       "status": "applied",
       "at": "2026-07-24",
       "by": "leo",
-      "note": "Staged on leo/sweep-2026-07-24: graph-wiring section relocated README → docs/topics.md (exempt deep doc) with an outside-in summary in its place; banned vocab (nodes/edges/spatial backbone/H3 res-8) off the non-exempt README surface; unbuilt-pipeline claims (auto-anchoring, research API) softened to being-brought-online; Oʻahu/Mānoa diacriticals in issue templates. The 'verified' QA-tier rename is held for steward ruling (not changed)."
+      "note": "Staged on leo/sweep-2026-07-24: graph-wiring section relocated README → docs/topics.md (exempt deep doc) with an outside-in summary in its place; banned vocab (nodes/edges/spatial backbone/H3 res-8) off the non-exempt README surface; unbuilt-pipeline claims (auto-anchoring, research API) softened to being-brought-online; Oʻahu/Mānoa diacriticals in issue templates. The 'verified' QA-tier rename is held for steward ruling (not changed). PR #3 merged to main and published 2026-08-18 (97ab53a, steward-directed session)."
+    },
+    {
+      "change": "2026-06-23-commit-authorization-model",
+      "domain": "governance",
+      "authorizedBy": "mokunet-org",
+      "status": "acknowledged",
+      "at": "2026-08-18",
+      "by": "claude (mokulearner-research session), directed by steward",
+      "note": "Research consents to the domain-scoped commit-authorization model, the acknowledges[] machine handshake, and the folded-in 2026-07-01 waiveAcks amendment. Affected as a family member; no surface action beyond consent (matches the record's prose row). No objection stands. Recorded in research's own commit per the consent model."
+    },
+    {
+      "change": "2026-08-18-public-copy-family-sweep",
+      "domain": "public-fact",
+      "authorizedBy": "mokunet-org",
+      "status": "applied",
+      "at": "2026-08-18",
+      "by": "claude (mokulearner-research session), directed by steward",
+      "note": "Row cleared per close criteria: PR #3 (the staged 07-24 drift) merged to main and published (97ab53a); the two new items applied in this commit — diacriticals in registry/contributors.json (Manaʻolana, Āina Design Corp, UH Mānoa ×2) and contributions/**/metadata.json (Keʻehi/ʻEwa/Oʻahu/Manaʻolana in titles+descriptions; lab-form-verbatim provenance fields in sample_context left as recorded; machine slugs unchanged). The 'verified' QA-tier ruling remains with the steward — tracked in the 07-24 record, not changed here."
     }
   ]
 }

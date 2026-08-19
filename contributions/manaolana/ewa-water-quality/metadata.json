@@ -3,8 +3,8 @@
   "datasets": [
     {
       "file": "ewa-water-quality-sample.csv",
-      "title": "Keehi Lagoon Aquaculture Pond Water Quality — Ewa, O'ahu",
-      "description": "Community-based water quality monitoring from the Manaolana Project. Field observations with chemistry measurements (pH, ORP, dissolved oxygen, conductivity, temperature, turbidity, salinity) collected at established aquaculture pond test sites in the Ewa moku. Data exported from the Manaolana tech dashboard via commons-aligned export utility.",
+      "title": "Keʻehi Lagoon Aquaculture Pond Water Quality — ʻEwa, Oʻahu",
+      "description": "Community-based water quality monitoring from the Manaʻolana Project. Field observations with chemistry measurements (pH, ORP, dissolved oxygen, conductivity, temperature, turbidity, salinity) collected at established aquaculture pond test sites in the ʻEwa moku. Data exported from the Manaʻolana tech dashboard via commons-aligned export utility.",
       "license": "CC-BY-4.0",
       "contribution_type": "observation",
       "topics": ["water"],
