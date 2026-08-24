@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mokunet Research Commons — where Hawaiʻi researchers and community groups contribute environmental observations and community statistics, localizing cross-domain metrics from county-level baselines to the 33 traditional moku districts.">
+<title>Mokunet Research Commons</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <p class="kicker"><a href="index.html">Mokunet Research Commons</a></p>
+    <nav class="site-nav" aria-label="Site">
+      <a href="https://github.com/Aina-Design-Corp/mokulearner-research">Repository</a>
+      <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/CONTRIBUTING.md">Contributing guide</a>
+      <a href="https://huikoeaina.ainadesign.org">HKA portal</a>
+      <a href="https://hawaii.mokunet.us">Mokunet platform</a>
+    </nav>
+    <h1>Localizing cross-domain metrics for Hawaiʻi</h1>
+    <p class="tagline">Bridging the gap between federal county-level baselines and the 33 traditional
+    moku districts where community governance actually happens. When a community measures its water
+    or soil, that reading should count — and stay traceable to who gathered it, where, and when.</p>
+    <p class="meta">A public research commons · Āina Design Corp · Mokunet network</p>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+
+    <h2>The resolution gap</h2>
+    <div class="tiles">
+      <div class="tile"><span class="num">5</span><span class="lbl">Counties in federal baseline data</span></div>
+      <div class="tile"><span class="num">33</span><span class="lbl">Traditional moku districts</span></div>
+      <div class="tile"><span class="num">7</span><span class="lbl">Islands with recognized moku</span></div>
+      <div class="tile"><span class="num">11</span><span class="lbl">Research topics in the taxonomy</span></div>
+    </div>
+    <p>Hawaiʻi has 5 counties but 33 moku districts. Federal baseline indicators — farm counts,
+    unemployment rates, median income, rainfall, energy production — are published at county
+    resolution through the <a href="https://datacommons.org/">Data Commons</a> knowledge graph.
+    The Mokunet platform presents these as <em>island-effect baselines</em>: they tell you where
+    things stand at the island level. Research gaps often occur within the island model.</p>
+    <p>This repository is where Hawaiʻi researchers and community groups contribute environmental
+    observations and community statistics to a shared research commons, sharpening the picture of
+    what's actually happening in their moku. A water quality study in Maunalua Bay and a food
+    security survey in Waiʻanae become comparable side by side — making district-level variation
+    visible for the first time.</p>
+
+    <h2>Two pathways into the commons</h2>
+    <div class="cards-grid">
+      <div class="card pathway">
+        <h3>Environmental observations <span class="type-tag">observation</span></h3>
+        <p>Water quality, soil tests, species surveys, air monitoring — samples that show what
+        conditions actually are at specific places. Each dataset carries a
+        <code>sample_context</code> block describing what was physically collected: soil, water,
+        sediment, air, tissue, sludge, or mixed matrices under one topic.</p>
+      </div>
+      <div class="card pathway indicator">
+        <h3>Community indicators <span class="type-tag">indicator</span></h3>
+        <p>Demographics, employment, wellbeing surveys, infrastructure — sub-county statistics that
+        refine the county-level federal baselines at the moku level. Each dataset declares which
+        Data Commons variables it supplements, and needs coordinates or explicit moku IDs so
+        refinements resolve spatially.</p>
+      </div>
+      <div class="card pathway overlay">
+        <h3>Spatial overlays <span class="type-tag">spatial_overlay</span></h3>
+        <p>GIS layers — wetland boundaries, land use classification, parcel boundaries — that
+        enhance place coverage on the shared map. Typically contributed as GeoJSON.</p>
+      </div>
+    </div>
+    <p>Both research pathways resolve to specific moku districts and connect to shared
+    sustainability goals. When your data includes coordinates, the platform anchors it to the right
+    district automatically; observation data without coordinates needs only a text description of
+    geographic scope.</p>
+
+    <h2>What contributions are</h2>
+    <ul>
+      <li>Version-controlled with full Git provenance</li>
+      <li>Validated automatically via GitHub Actions</li>
+      <li>Reviewed by community maintainers before ingestion</li>
+      <li>Compared against county-level baselines from Data Commons</li>
+      <li>Publicly accessible as commons data (default)</li>
+    </ul>
+
+    <h2>Who contributes</h2>
+    <div class="table-scroll">
+    <table>
+      <caption>Research labs across Hawaiʻi's university system and community organizations.</caption>
+      <thead><tr><th scope="col">Institution</th><th scope="col">Example labs / groups</th><th scope="col">Focus areas</th></tr></thead>
+      <tbody>
+        <tr><td><strong>UH Mānoa</strong></td><td>SSRI, CTAHR, SOEST, WRRC</td><td>Demographics, agriculture, coastal, water</td></tr>
+        <tr><td><strong>UH Hilo</strong></td><td>Tropical Conservation Biology &amp; Environment</td><td>Forestry, biodiversity</td></tr>
+        <tr><td><strong>Hawaiʻi Pacific University</strong></td><td>Natural Sciences, Marine Science</td><td>Biodiversity, coastal</td></tr>
+        <tr><td><strong>Community organizations</strong></td><td>Watershed partnerships, conservation districts</td><td>Water, land environment</td></tr>
+        <tr><td><strong>State &amp; federal agencies</strong></td><td>DLNR, DOH, USGS, NOAA, USFWS</td><td>Multi-topic</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Your research already has a place in the commons. Just bring your data — the contribution
+    pipeline is designed to handle geographic anchoring, sustainability goal linkage, and baseline
+    comparison, and that ingestion path is being brought online now.</p>
+    <p><strong>Hui Koʻe ʻĀina</strong> (<a href="https://huikoeaina.ainadesign.org">huikoeaina.ainadesign.org</a>)
+    is the natural resource management portal where contributors and the learning community browse,
+    query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA
+    provides the community entry point for University of Hawaiʻi and Hawaiʻi Pacific University
+    research labs looking to de-silo their data.</p>
+
+    <h2>How to contribute</h2>
+    <ol class="steps">
+      <li><a href="https://github.com/Aina-Design-Corp/mokulearner-research/issues/new?template=new-contributor.yml">Register as a contributor</a> (GitHub issue)</li>
+      <li>Fork the <a href="https://github.com/Aina-Design-Corp/mokulearner-research">repository</a> — this creates your own copy to edit</li>
+      <li>Add your data to <code>contributions/{your-slug}/{dataset-slug}/</code></li>
+      <li>Include a <code>metadata.json</code> (use <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/templates/metadata-template.json">the template</a>)</li>
+      <li>Open a pull request — GitHub Actions validates automatically</li>
+    </ol>
+    <p>If your lab already uses Git for code, the same workflow applies to data. The full
+    step-by-step guide is in
+    <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+    <div class="cards-grid">
+      <div class="card"><h3><a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/github-for-researchers.md">New to GitHub?</a></h3>
+      <p>A plain-language walkthrough for researchers — no software installation required.</p></div>
+      <div class="card"><h3><a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/arcgis-workflow.md">Working with ArcGIS Online?</a></h3>
+      <p>Step-by-step instructions for discovering, downloading, and transforming ArcGIS feature
+      services into the contribution format.</p></div>
+      <div class="card"><h3><a href="https://github.com/Aina-Design-Corp/mokulearner-research/tree/main/.claude/skills/sample-submission">Using Claude Code?</a></h3>
+      <p>A project-local skill prepares a contribution from a raw lab return — PDF report, xlsx
+      form, lab CSV, or GeoJSON — through translation, geographic anchoring, metadata assembly,
+      and validation.</p></div>
+    </div>
+
+    <h2>What you provide — and what you don't</h2>
+    <div class="table-scroll">
+    <table>
+      <caption>Required fields for every contribution.</caption>
+      <thead><tr><th scope="col">Field</th><th scope="col">Required</th><th scope="col">Description</th></tr></thead>
+      <tbody>
+        <tr><td>Data file</td><td>Yes</td><td>CSV or GeoJSON with your research data</td></tr>
+        <tr><td>Title</td><td>Yes</td><td>Human-readable name for the dataset</td></tr>
+        <tr><td>Contribution type</td><td>Yes</td><td><code>observation</code>, <code>indicator</code>, or <code>spatial_overlay</code></td></tr>
+        <tr><td>Topics</td><td>Yes</td><td>What domain your research addresses (e.g. <code>water</code>, <code>demographics</code>)</td></tr>
+        <tr><td>License</td><td>Yes</td><td>Open data license (CC-BY-4.0 recommended)</td></tr>
+        <tr><td>Quality level</td><td>Yes</td><td><code>preliminary</code>, <code>verified</code>, or <code>peer_reviewed</code></td></tr>
+        <tr><td>Schema</td><td>Yes</td><td>Column names and types in your data file</td></tr>
+        <tr><td>Sample context</td><td>For observations</td><td>What was physically collected (soil, water, sediment, etc.)</td></tr>
+        <tr><td>Baseline context</td><td>For indicators</td><td>Which Data Commons variables your data supplements</td></tr>
+        <tr><td>Coverage</td><td>When needed</td><td>Text description of geographic scope (only if data lacks coordinates)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card gate">
+      <p><strong>You do NOT need to provide:</strong> moku district IDs (auto-derived from
+      coordinates, or inferred from your coverage description), SDG codes (auto-derived from your
+      topic selections), or baseline comparisons (the platform links your data to county-level
+      Data Commons indicators automatically).</p>
+    </div>
+
+    <h2>Topic taxonomy</h2>
+    <p>Contributions are tagged with topics from a controlled vocabulary. Each topic maps to
+    <a href="https://www.iso.org/standard/61885.html">ISO 37101</a> community sustainability issues
+    and aligns with Data Commons baseline indicators. SDG codes are assigned automatically from
+    your topic selections.</p>
+    <div class="table-scroll">
+    <table>
+      <caption>The controlled topic vocabulary. Full guidance in the repository's topics reference.</caption>
+      <thead><tr><th scope="col">Topic</th><th scope="col">Typical type</th><th scope="col">Description</th><th scope="col">Example datasets</th></tr></thead>
+      <tbody>
+        <tr><td><strong>land_environment</strong></td><td>observation</td><td>Terrestrial substrates and environmental characterization</td><td>Soil surveys, sediment analysis, substrate testing</td></tr>
+        <tr><td><strong>water</strong></td><td>observation</td><td>Water quality and hydrology</td><td>Water quality, streamflow, effluent</td></tr>
+        <tr><td><strong>biodiversity</strong></td><td>observation</td><td>Species and ecosystem surveys</td><td>Species surveys, habitat mapping</td></tr>
+        <tr><td><strong>agriculture</strong></td><td>either</td><td>Crop and production data</td><td>Crop trials (obs), farm production by moku (ind)</td></tr>
+        <tr><td><strong>coastal</strong></td><td>observation</td><td>Shoreline and marine systems</td><td>Erosion rates, sea level, coral</td></tr>
+        <tr><td><strong>climate</strong></td><td>either</td><td>Weather, emissions, and energy</td><td>Weather stations (obs), solar generation by district (ind)</td></tr>
+        <tr><td><strong>forestry</strong></td><td>observation</td><td>Forest and canopy systems</td><td>Canopy cover, native species</td></tr>
+        <tr><td><strong>food_safety</strong></td><td>observation</td><td>Contamination and pathogen testing</td><td>Contamination testing, pathogens</td></tr>
+        <tr><td><strong>infrastructure</strong></td><td>indicator</td><td>Built systems and capacity</td><td>Water system capacity, broadband coverage</td></tr>
+        <tr><td><strong>demographics</strong></td><td>indicator</td><td>Population and governance data</td><td>Population by moku, employment by census tract</td></tr>
+        <tr><td><strong>community_wellbeing</strong></td><td>indicator</td><td>Community quality of life and social determinant indicators</td><td>QOL surveys, food insecurity rates, social trust indices</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>See the <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/topics.md">topics reference</a>
+    for the full taxonomy, contribution type guidance, and metadata examples — including how
+    contributions are wired into the governance graph.</p>
+
+    <h2>Quality levels</h2>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Level</th><th scope="col">Meaning</th><th scope="col">Review</th></tr></thead>
+      <tbody>
+        <tr><td><strong>preliminary</strong></td><td>Raw field data, not yet QA'd</td><td>Spot-check</td></tr>
+        <tr><td><strong>verified</strong></td><td>QA'd by contributor, methods documented</td><td>Standard review</td></tr>
+        <tr><td><strong>peer_reviewed</strong></td><td>Published or reviewed by external party</td><td>Fast-track</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Preliminary data is welcome — the quality level is a declaration, not a gatekeep. Labs can
+    upgrade quality by submitting a follow-up PR with updated metadata.</p>
+
+    <h2>Licenses</h2>
+    <p>All contributions must use an open data license:</p>
+    <ul class="chips">
+      <li>CC-BY-4.0 (recommended)</li>
+      <li>CC-BY-SA-4.0</li>
+      <li>CC-BY-NC-4.0</li>
+      <li>CC0</li>
+      <li>ODbL</li>
+    </ul>
+
+    <h2>How contributions join the shared map</h2>
+    <p>Contributed datasets become part of the <a href="https://hawaii.mokunet.us">Mokunet</a>
+    shared map with their provenance intact — who gathered each record, where, and when. Geocoded
+    observations are anchored to their moku and to location cells on the shared map, then tied to
+    the UN Sustainable Development Goals they measure. Indicator datasets additionally track
+    exactly which county baselines they refine. Both contribution types land on the same shared
+    map, which is what enables cross-domain comparison at the district level.</p>
+    <p>The platform recognizes 33 traditional moku districts across 7 islands. You don't need to
+    know these — the system assigns moku from coordinates automatically. If you're curious, see the
+    <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/moku-districts.md">moku districts reference</a>.</p>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Mokunet Research Commons</strong> — public research data contributions to the Mokunet provenance graph.</p>
+    <p>Every contribution is version-controlled with full Git provenance, validated in CI, and reviewed by community maintainers before ingestion. Repository licensed <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/LICENSE">CC-BY-4.0</a>; individual contributions declare their own compatible open licenses.</p>
+    <p><a href="https://huikoeaina.ainadesign.org">HKA Natural Resource Management</a> · <a href="https://hawaii.mokunet.us">Mokunet Platform</a> · <a href="https://github.com/Aina-Design-Corp/mokulearner-research">GitHub repository</a> · Āina Design Corp</p>
+  </div>
+</footer>
+</body>
+</html>
