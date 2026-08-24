@@ -172,6 +172,7 @@ templates/                  Starter files for new contributions
 registry/                   Approved contributor registry
 contributions/              Contributed datasets (one directory per dataset)
 docs/                       Reference documentation
+site/                       Public GitHub Pages site (static, dependency-free)
 samples/                    Private inbox for raw lab returns (gitignored)
 .claude/skills/             Project-local Claude Code skills
 scripts/validate-pr.mjs     Local validator (run before opening a PR)
