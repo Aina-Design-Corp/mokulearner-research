@@ -99,4 +99,59 @@ footer.site p { margin: .35rem 0; }
 .site-nav { display: flex; flex-wrap: wrap; gap: .35rem 1.4rem; font-size: .88rem; margin: 0 0 .9rem; }
 .site-nav a { text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: 1px; }
 .site-nav a:hover, .site-nav a:focus { border-bottom-color: currentColor; }
+.site-nav a[aria-current="page"] { border-bottom: 2px solid currentColor; font-weight: 700; }
 @media print { .site-nav { display: none; } }
+
+/* dashboard section cards — the two big What&Why / How doors */
+.section-card { border-top: 4px solid var(--teal); }
+.section-card.how { border-top-color: var(--blue); }
+.section-card .lead-link { font-weight: 700; }
+.section-card ul { margin: .5rem 0 0; padding-left: 1.2rem; font-size: .92rem; }
+.section-card li { margin: .2rem 0; }
+
+/* interactive walkthrough (progressive enhancement: without JS all steps
+   render stacked as a numbered guide; JS turns them into a stepper) */
+.walkthrough {
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--sand); padding: 1.1rem 1.25rem; margin: 1rem 0;
+}
+.walkthrough[data-enhanced] { display: grid; grid-template-columns: 240px 1fr; gap: 0 1.4rem; }
+.wt-nav { grid-row: 1 / 3; margin: 0; padding: 0; list-style: none; }
+.wt-nav li { margin: 0 0 .35rem; }
+.wt-nav button {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  font: inherit; font-size: .9rem; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: 8px; padding: .45rem .7rem;
+}
+.wt-nav button[aria-current="step"] {
+  background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 700;
+}
+.wt-nav button.done { border-left: 4px solid var(--teal); }
+.wt-panel { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; margin: 0 0 .9rem; }
+.walkthrough[data-enhanced] .wt-panel[hidden] { display: none; }
+.wt-panel h3 { margin-top: 0; }
+.wt-panel .do { font-weight: 700; color: var(--teal-deep); margin-bottom: .2rem; }
+.wt-panel .see {
+  background: var(--sand); border-left: 4px solid var(--blue);
+  padding: .5rem .8rem; margin: .7rem 0 0; border-radius: 0 6px 6px 0; font-size: .92rem;
+}
+.wt-controls { display: flex; align-items: center; gap: .8rem; }
+.wt-controls button {
+  font: inherit; font-weight: 700; cursor: pointer; color: #fff;
+  background: var(--blue-deep); border: 1px solid var(--blue-deep);
+  border-radius: 8px; padding: .45rem 1.1rem;
+}
+.wt-controls button:disabled { background: var(--border); border-color: var(--border); color: #4a5a66; cursor: default; }
+.wt-progress { font-size: .9rem; color: #4a5a66; }
+@media (max-width: 720px) {
+  .walkthrough[data-enhanced] { grid-template-columns: 1fr; }
+  .wt-nav { grid-row: auto; display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .8rem; }
+  .wt-nav li { margin: 0; }
+  .wt-nav button { width: auto; }
+}
+@media print { .wt-controls { display: none; } }
+
+/* sub-page body width, matching the kuleana-portal doc pages */
+.doc-body { max-width: 62rem; }
+.crosslink { background: var(--sand); border: 1px solid var(--border); border-radius: 10px; padding: .85rem 1.1rem; margin: 2rem 0 0; }
