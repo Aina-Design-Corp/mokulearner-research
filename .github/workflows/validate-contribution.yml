@@ -6,6 +6,10 @@ on:
     paths:
       - 'contributions/**'
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   validate:
     name: Validate metadata and data
