@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="How to contribute to the Mokunet Research Commons: the workflow, required metadata fields, topic taxonomy, quality levels, and open data licenses.">
+<title>How to contribute — Mokunet Research Commons</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <p class="kicker"><a href="index.html">Mokunet Research Commons</a> · How to contribute</p>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Dashboard</a>
+      <a href="what-why.html">What &amp; why</a>
+      <a href="how.html" aria-current="page">How to contribute</a>
+      <a href="https://github.com/Aina-Design-Corp/mokulearner-research">Repository</a>
+      <a href="https://huikoeaina.ainadesign.org">HKA portal</a>
+      <a href="https://hawaii.mokunet.us">Mokunet platform</a>
+    </nav>
+    <h1>How to contribute</h1>
+    <p class="tagline">The whole contribution happens on the GitHub website — no software
+    installation required. Register once, fork the repository, add your data and metadata, and
+    open a pull request. Automated validation and a community maintainer take it from there.</p>
+    <p class="meta">A public research commons · Āina Design Corp · Mokunet network</p>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap doc-body">
+
+    <h2>The workflow at a glance</h2>
+    <ol class="steps">
+      <li><a href="https://github.com/Aina-Design-Corp/mokulearner-research/issues/new?template=new-contributor.yml">Register as a contributor</a> (GitHub issue — one time only)</li>
+      <li>Fork the <a href="https://github.com/Aina-Design-Corp/mokulearner-research">repository</a> — this creates your own copy to edit</li>
+      <li>Add your data to <code>contributions/{your-slug}/{dataset-slug}/</code></li>
+      <li>Include a <code>metadata.json</code> (use <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/templates/metadata-template.json">the template</a>)</li>
+      <li>Open a pull request — GitHub Actions validates automatically</li>
+    </ol>
+    <p>New to GitHub, or want each step spelled out with what you'll see on screen? Use the
+    <a href="index.html#walkthrough"><strong>interactive walkthrough on the dashboard</strong></a> —
+    it walks the same workflow one step at a time. If your lab already uses Git for code, the same
+    workflow applies to data; the full written guide is in
+    <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+
+    <h2>Tools that can help</h2>
+    <div class="cards-grid">
+      <div class="card"><h3><a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/github-for-researchers.md">New to GitHub?</a></h3>
+      <p>A plain-language walkthrough for researchers — no software installation required.</p></div>
+      <div class="card"><h3><a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/arcgis-workflow.md">Working with ArcGIS Online?</a></h3>
+      <p>Step-by-step instructions for discovering, downloading, and transforming ArcGIS feature
+      services into the contribution format.</p></div>
+      <div class="card"><h3><a href="https://github.com/Aina-Design-Corp/mokulearner-research/tree/main/.claude/skills/sample-submission">Using Claude Code?</a></h3>
+      <p>A project-local skill prepares a contribution from a raw lab return — PDF report, xlsx
+      form, lab CSV, or GeoJSON — through translation, geographic anchoring, metadata assembly,
+      and validation.</p></div>
+    </div>
+
+    <h2>What you provide — and what you don't</h2>
+    <div class="table-scroll">
+    <table>
+      <caption>Required fields for every contribution.</caption>
+      <thead><tr><th scope="col">Field</th><th scope="col">Required</th><th scope="col">Description</th></tr></thead>
+      <tbody>
+        <tr><td>Data file</td><td>Yes</td><td>CSV or GeoJSON with your research data</td></tr>
+        <tr><td>Title</td><td>Yes</td><td>Human-readable name for the dataset</td></tr>
+        <tr><td>Contribution type</td><td>Yes</td><td><code>observation</code>, <code>indicator</code>, or <code>spatial_overlay</code></td></tr>
+        <tr><td>Topics</td><td>Yes</td><td>What domain your research addresses (e.g. <code>water</code>, <code>demographics</code>)</td></tr>
+        <tr><td>License</td><td>Yes</td><td>Open data license (CC-BY-4.0 recommended)</td></tr>
+        <tr><td>Quality level</td><td>Yes</td><td><code>preliminary</code>, <code>verified</code>, or <code>peer_reviewed</code></td></tr>
+        <tr><td>Schema</td><td>Yes</td><td>Column names and types in your data file</td></tr>
+        <tr><td>Sample context</td><td>For observations</td><td>What was physically collected (soil, water, sediment, etc.)</td></tr>
+        <tr><td>Baseline context</td><td>For indicators</td><td>Which Data Commons variables your data supplements</td></tr>
+        <tr><td>Coverage</td><td>When needed</td><td>Text description of geographic scope (only if data lacks coordinates)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="card gate">
+      <p><strong>You do NOT need to provide:</strong> moku district IDs (auto-derived from
+      coordinates, or inferred from your coverage description), SDG codes (auto-derived from your
+      topic selections), or baseline comparisons (the platform links your data to county-level
+      Data Commons indicators automatically).</p>
+    </div>
+
+    <h2>Topic taxonomy</h2>
+    <p>Contributions are tagged with topics from a controlled vocabulary. Each topic maps to
+    <a href="https://www.iso.org/standard/61885.html">ISO 37101</a> community sustainability issues
+    and aligns with Data Commons baseline indicators. SDG codes are assigned automatically from
+    your topic selections.</p>
+    <div class="table-scroll">
+    <table>
+      <caption>The controlled topic vocabulary. Full guidance in the repository's topics reference.</caption>
+      <thead><tr><th scope="col">Topic</th><th scope="col">Typical type</th><th scope="col">Description</th><th scope="col">Example datasets</th></tr></thead>
+      <tbody>
+        <tr><td><strong>land_environment</strong></td><td>observation</td><td>Terrestrial substrates and environmental characterization</td><td>Soil surveys, sediment analysis, substrate testing</td></tr>
+        <tr><td><strong>water</strong></td><td>observation</td><td>Water quality and hydrology</td><td>Water quality, streamflow, effluent</td></tr>
+        <tr><td><strong>biodiversity</strong></td><td>observation</td><td>Species and ecosystem surveys</td><td>Species surveys, habitat mapping</td></tr>
+        <tr><td><strong>agriculture</strong></td><td>either</td><td>Crop and production data</td><td>Crop trials (obs), farm production by moku (ind)</td></tr>
+        <tr><td><strong>coastal</strong></td><td>observation</td><td>Shoreline and marine systems</td><td>Erosion rates, sea level, coral</td></tr>
+        <tr><td><strong>climate</strong></td><td>either</td><td>Weather, emissions, and energy</td><td>Weather stations (obs), solar generation by district (ind)</td></tr>
+        <tr><td><strong>forestry</strong></td><td>observation</td><td>Forest and canopy systems</td><td>Canopy cover, native species</td></tr>
+        <tr><td><strong>food_safety</strong></td><td>observation</td><td>Contamination and pathogen testing</td><td>Contamination testing, pathogens</td></tr>
+        <tr><td><strong>infrastructure</strong></td><td>indicator</td><td>Built systems and capacity</td><td>Water system capacity, broadband coverage</td></tr>
+        <tr><td><strong>demographics</strong></td><td>indicator</td><td>Population and governance data</td><td>Population by moku, employment by census tract</td></tr>
+        <tr><td><strong>community_wellbeing</strong></td><td>indicator</td><td>Community quality of life and social determinant indicators</td><td>QOL surveys, food insecurity rates, social trust indices</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>See the <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/topics.md">topics reference</a>
+    for the full taxonomy, contribution type guidance, and metadata examples — including how
+    contributions are wired into the governance graph.</p>
+
+    <h2>Quality levels</h2>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Level</th><th scope="col">Meaning</th><th scope="col">Review</th></tr></thead>
+      <tbody>
+        <tr><td><strong>preliminary</strong></td><td>Raw field data, not yet QA'd</td><td>Spot-check</td></tr>
+        <tr><td><strong>verified</strong></td><td>QA'd by contributor, methods documented</td><td>Standard review</td></tr>
+        <tr><td><strong>peer_reviewed</strong></td><td>Published or reviewed by external party</td><td>Fast-track</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Preliminary data is welcome — the quality level is a declaration, not a gatekeep. Labs can
+    upgrade quality by submitting a follow-up PR with updated metadata.</p>
+
+    <h2>Licenses</h2>
+    <p>All contributions must use an open data license:</p>
+    <ul class="chips">
+      <li>CC-BY-4.0 (recommended)</li>
+      <li>CC-BY-SA-4.0</li>
+      <li>CC-BY-NC-4.0</li>
+      <li>CC0</li>
+      <li>ODbL</li>
+    </ul>
+
+    <div class="crosslink">
+      <p><strong>Wondering where your data ends up, or whether it belongs here?</strong> The
+      <a href="what-why.html">What &amp; why</a> page explains the resolution gap the commons closes,
+      the two contribution pathways, and how datasets join the shared Mokunet map with provenance
+      intact.</p>
+    </div>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Mokunet Research Commons</strong> — public research data contributions to the Mokunet provenance graph.</p>
+    <p>Every contribution is version-controlled with full Git provenance, validated in CI, and reviewed by community maintainers before ingestion. Repository licensed <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/LICENSE">CC-BY-4.0</a>; individual contributions declare their own compatible open licenses.</p>
+    <p><a href="https://huikoeaina.ainadesign.org">HKA Natural Resource Management</a> · <a href="https://hawaii.mokunet.us">Mokunet Platform</a> · <a href="https://github.com/Aina-Design-Corp/mokulearner-research">GitHub repository</a> · Āina Design Corp</p>
+  </div>
+</footer>
+</body>
+</html>

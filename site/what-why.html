@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What the Mokunet Research Commons is and why it exists: closing the resolution gap between county-level federal baselines and Hawaiʻi's 33 traditional moku districts.">
+<title>What &amp; why — Mokunet Research Commons</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site">
+  <div class="wrap">
+    <p class="kicker"><a href="index.html">Mokunet Research Commons</a> · What &amp; why</p>
+    <nav class="site-nav" aria-label="Site">
+      <a href="index.html">Dashboard</a>
+      <a href="what-why.html" aria-current="page">What &amp; why</a>
+      <a href="how.html">How to contribute</a>
+      <a href="https://github.com/Aina-Design-Corp/mokulearner-research">Repository</a>
+      <a href="https://huikoeaina.ainadesign.org">HKA portal</a>
+      <a href="https://hawaii.mokunet.us">Mokunet platform</a>
+    </nav>
+    <h1>What the commons is — and why it exists</h1>
+    <p class="tagline">Bridging the gap between federal county-level baselines and the 33 traditional
+    moku districts where community governance actually happens. When a community measures its water
+    or soil, that reading should count — and stay traceable to who gathered it, where, and when.</p>
+    <p class="meta">A public research commons · Āina Design Corp · Mokunet network</p>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap doc-body">
+
+    <h2>Why: the resolution gap</h2>
+    <div class="tiles">
+      <div class="tile"><span class="num">5</span><span class="lbl">Counties in federal baseline data</span></div>
+      <div class="tile"><span class="num">33</span><span class="lbl">Traditional moku districts</span></div>
+      <div class="tile"><span class="num">7</span><span class="lbl">Islands with recognized moku</span></div>
+      <div class="tile"><span class="num">11</span><span class="lbl">Research topics in the taxonomy</span></div>
+    </div>
+    <p>Hawaiʻi has 5 counties but 33 moku districts. Federal baseline indicators — farm counts,
+    unemployment rates, median income, rainfall, energy production — are published at county
+    resolution through the <a href="https://datacommons.org/">Data Commons</a> knowledge graph.
+    The Mokunet platform presents these as <em>island-effect baselines</em>: they tell you where
+    things stand at the island level. Research gaps often occur within the island model.</p>
+    <p>This repository is where Hawaiʻi researchers and community groups contribute environmental
+    observations and community statistics to a shared research commons, sharpening the picture of
+    what's actually happening in their moku. A water quality study in Maunalua Bay and a food
+    security survey in Waiʻanae become comparable side by side — making district-level variation
+    visible for the first time.</p>
+
+    <h2>What: two pathways into the commons</h2>
+    <div class="cards-grid">
+      <div class="card pathway">
+        <h3>Environmental observations <span class="type-tag">observation</span></h3>
+        <p>Water quality, soil tests, species surveys, air monitoring — samples that show what
+        conditions actually are at specific places. Each dataset carries a
+        <code>sample_context</code> block describing what was physically collected: soil, water,
+        sediment, air, tissue, sludge, or mixed matrices under one topic.</p>
+      </div>
+      <div class="card pathway indicator">
+        <h3>Community indicators <span class="type-tag">indicator</span></h3>
+        <p>Demographics, employment, wellbeing surveys, infrastructure — sub-county statistics that
+        refine the county-level federal baselines at the moku level. Each dataset declares which
+        Data Commons variables it supplements, and needs coordinates or explicit moku IDs so
+        refinements resolve spatially.</p>
+      </div>
+      <div class="card pathway overlay">
+        <h3>Spatial overlays <span class="type-tag">spatial_overlay</span></h3>
+        <p>GIS layers — wetland boundaries, land use classification, parcel boundaries — that
+        enhance place coverage on the shared map. Typically contributed as GeoJSON.</p>
+      </div>
+    </div>
+    <p>Both research pathways resolve to specific moku districts and connect to shared
+    sustainability goals. When your data includes coordinates, the platform anchors it to the right
+    district automatically; observation data without coordinates needs only a text description of
+    geographic scope.</p>
+
+    <h2>What contributions are</h2>
+    <ul>
+      <li>Version-controlled with full Git provenance</li>
+      <li>Validated automatically via GitHub Actions</li>
+      <li>Reviewed by community maintainers before ingestion</li>
+      <li>Compared against county-level baselines from Data Commons</li>
+      <li>Publicly accessible as commons data (default)</li>
+    </ul>
+
+    <h2>Who contributes</h2>
+    <div class="table-scroll">
+    <table>
+      <caption>Research labs across Hawaiʻi's university system and community organizations.</caption>
+      <thead><tr><th scope="col">Institution</th><th scope="col">Example labs / groups</th><th scope="col">Focus areas</th></tr></thead>
+      <tbody>
+        <tr><td><strong>UH Mānoa</strong></td><td>SSRI, CTAHR, SOEST, WRRC</td><td>Demographics, agriculture, coastal, water</td></tr>
+        <tr><td><strong>UH Hilo</strong></td><td>Tropical Conservation Biology &amp; Environment</td><td>Forestry, biodiversity</td></tr>
+        <tr><td><strong>Hawaiʻi Pacific University</strong></td><td>Natural Sciences, Marine Science</td><td>Biodiversity, coastal</td></tr>
+        <tr><td><strong>Community organizations</strong></td><td>Watershed partnerships, conservation districts</td><td>Water, land environment</td></tr>
+        <tr><td><strong>State &amp; federal agencies</strong></td><td>DLNR, DOH, USGS, NOAA, USFWS</td><td>Multi-topic</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Your research already has a place in the commons. Just bring your data — the contribution
+    pipeline is designed to handle geographic anchoring, sustainability goal linkage, and baseline
+    comparison, and that ingestion path is being brought online now.</p>
+    <p><strong>Hui Koʻe ʻĀina</strong> (<a href="https://huikoeaina.ainadesign.org">huikoeaina.ainadesign.org</a>)
+    is the natural resource management portal where contributors and the learning community browse,
+    query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA
+    provides the community entry point for University of Hawaiʻi and Hawaiʻi Pacific University
+    research labs looking to de-silo their data.</p>
+
+    <h2>Why it matters: contributions join a shared map</h2>
+    <p>Contributed datasets become part of the <a href="https://hawaii.mokunet.us">Mokunet</a>
+    shared map with their provenance intact — who gathered each record, where, and when. Geocoded
+    observations are anchored to their moku and to location cells on the shared map, then tied to
+    the UN Sustainable Development Goals they measure. Indicator datasets additionally track
+    exactly which county baselines they refine. Both contribution types land on the same shared
+    map, which is what enables cross-domain comparison at the district level.</p>
+    <p>The platform recognizes 33 traditional moku districts across 7 islands. You don't need to
+    know these — the system assigns moku from coordinates automatically. If you're curious, see the
+    <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/docs/moku-districts.md">moku districts reference</a>.</p>
+
+    <div class="crosslink">
+      <p><strong>Ready to bring your data in?</strong> The <a href="how.html">How to contribute</a>
+      page covers the requirements, topic taxonomy, quality levels, and licenses — and the
+      <a href="index.html#walkthrough">interactive walkthrough on the dashboard</a> takes you through
+      GitHub step by step, no software installation required.</p>
+    </div>
+
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p><strong>Mokunet Research Commons</strong> — public research data contributions to the Mokunet provenance graph.</p>
+    <p>Every contribution is version-controlled with full Git provenance, validated in CI, and reviewed by community maintainers before ingestion. Repository licensed <a href="https://github.com/Aina-Design-Corp/mokulearner-research/blob/main/LICENSE">CC-BY-4.0</a>; individual contributions declare their own compatible open licenses.</p>
+    <p><a href="https://huikoeaina.ainadesign.org">HKA Natural Resource Management</a> · <a href="https://hawaii.mokunet.us">Mokunet Platform</a> · <a href="https://github.com/Aina-Design-Corp/mokulearner-research">GitHub repository</a> · Āina Design Corp</p>
+  </div>
+</footer>
+</body>
+</html>
