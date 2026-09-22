@@ -12,7 +12,7 @@ can specialize on its own topics + skills without re-litigating ownership.
 | Component | Role | Speaks |
 |---|---|---|
 | **magoonlab** | **On-prem gateway + source-of-truth for field data.** MQTT broker + subscriber, field skill-agent (claude-opus-4-8 tool-use loop), REST ingest + readback, normalizes everything into `measures[].point`. | MQTT (in), REST (in/out) |
-| **mokulab** | Platform for **BIM model creation** (`mokulab.io`). **NOT** the field gateway. Its `mokulab/#` MQTT root is for mokulab BIM `EdgeSignalDescriptor` devices, consumed by the magoonlab gateway. | MQTT (`mokulab/bim/#` — see §4) |
+| **mokulab** | **Systems lab for Design-Build workflows** (`mokulab.io`): BIM model creation for buildings (mass timber) and landscapes (living systems). **NOT** the field gateway. Its `mokulab/#` MQTT root is for mokulab BIM `EdgeSignalDescriptor` devices, consumed by the magoonlab gateway. | MQTT (`mokulab/bim/#` — see §4) |
 | **huikoeaina** | Web-only presentation; **owns the gateway CONTRACTS** (`docs/contracts/`) magoonlab implements. Read-only reflection of field data; not in the ingest path. | REST (out) |
 | **mokulab-student-app** | REST-only client of the magoonlab gateway. Human field entry + skill-agent chat over HTTP POST; displays sensor readings via REST GET. **Does not speak MQTT.** | REST (in/out) |
 | **bgoodfarms-magoon-rfid** | Separate on-prem RFID substrate at the same site. | MQTT (own broker — see §3) |

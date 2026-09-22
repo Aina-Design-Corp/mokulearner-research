@@ -30,7 +30,7 @@ huikoeaina (web-only) ──► student-app + edge devices ─────┘
 | `mokunet-org` | Owner of general messaging + the moku map + onboarding/skills (offloaded from node) |
 | `huikoeaina` | Web-only app; hands off student work + data acquisition to on-prem |
 | `magoonlab` (on-prem) | Gateway: ingests student-app HTTP + edge MQTT → mokunet/Supabase; hosts field-guide skill-agent |
-| `mokulab` | Platform for BIM model creation; edge devices source the `mokulab/#` telemetry (consumed by magoonlab) |
+| `mokulab` | Systems lab for Design-Build workflows (BIM model creation for buildings and landscapes); edge devices source the `mokulab/#` telemetry (consumed by magoonlab) |
 | `bgoodfarms-magoon-rfid` | Separate on-prem RFID substrate (Mosquitto + InfluxDB) at the Magoon site |
 
 ## What's working
