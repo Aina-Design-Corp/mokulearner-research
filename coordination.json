@@ -86,6 +86,15 @@
       "at": "2026-08-18",
       "by": "claude (mokulearner-research session), directed by steward",
       "note": "Row cleared per close criteria: PR #3 (the staged 07-24 drift) merged to main and published (97ab53a); the two new items applied in this commit — diacriticals in registry/contributors.json (Manaʻolana, Āina Design Corp, UH Mānoa ×2) and contributions/**/metadata.json (Keʻehi/ʻEwa/Oʻahu/Manaʻolana in titles+descriptions; lab-form-verbatim provenance fields in sample_context left as recorded; machine slugs unchanged). The 'verified' QA-tier ruling remains with the steward — tracked in the 07-24 record, not changed here."
+    },
+    {
+      "change": "2026-09-22-systems-lab-identity",
+      "domain": "public-fact",
+      "authorizedBy": "mokunet-org",
+      "status": "applied",
+      "at": "2026-09-22",
+      "by": "claude (mokulab session), directed by steward",
+      "note": "docs/onprem-pipeline-reconciliation.md and docs/network-coordination-audit.md mokulab role rows reworded; MQTT/gateway facts unchanged."
     }
   ]
 }
