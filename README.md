@@ -17,6 +17,8 @@ Both pathways resolve to specific moku districts and connect to shared sustainab
 
 **Hui Koʻe ʻĀina** ([huikoeaina.ainadesign.org](https://huikoeaina.ainadesign.org)) is the natural resource management portal where contributors and the learning community browse, query, and visualize this data on interactive maps. Governed under the UH Foundation, HKA provides the community entry point for University of Hawaiʻi and Hawaiʻi Pacific University research labs looking to de-silo their data.
 
+**Kuleana · commons reports** ([kuleana.ainadesign.org](https://kuleana.ainadesign.org)) is the companion public record of the work itself: who is caring for each moku, what they did, and what came of it. The first report tracks the 91 projects the State's fee on visitors paid for in fiscal year 2027. A commons report says what the work did; the observations contributed here show how the place is responding.
+
 **Contributions are:**
 - Version-controlled with full Git provenance
 - Validated automatically via GitHub Actions
@@ -183,6 +185,7 @@ scripts/validate-pr.mjs     Local validator (run before opening a PR)
 
 - [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) — Browse, query, and contribute research data
 - [Mokunet Platform](https://hawaii.mokunet.us) — API backend and data pipeline
+- [Kuleana · commons reports](https://kuleana.ainadesign.org) — The public record of who is caring for each moku and what came of it
 - [Metadata Schema Reference](schemas/metadata.schema.json)
 
 ## License
