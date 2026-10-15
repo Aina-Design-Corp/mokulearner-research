@@ -2,6 +2,8 @@
 
 Localizing cross-domain metrics for Hawaiʻi — bridging the gap between federal county-level baselines and the 33 traditional moku districts where community governance actually happens.
 
+**Start at the [Research Commons site](https://aina-design-corp.github.io/mokulearner-research/)** — what the commons is, why it exists, and an interactive walkthrough of your first contribution.
+
 ## What Is This?
 
 When a community measures its water or soil, that reading should count — and stay traceable to who gathered it, where, and when. This repository is where Hawaiʻi researchers and community groups contribute environmental observations and community statistics to a shared research commons, sharpening the picture of what's actually happening in their moku.
@@ -183,6 +185,7 @@ scripts/validate-pr.mjs     Local validator (run before opening a PR)
 
 ## Links
 
+- [Mokunet Research Commons site](https://aina-design-corp.github.io/mokulearner-research/) — The contributor dashboard and walkthrough
 - [HKA Natural Resource Management](https://huikoeaina.ainadesign.org) — Browse, query, and contribute research data
 - [Mokunet Platform](https://hawaii.mokunet.us) — API backend and data pipeline
 - [Kuleana · commons reports](https://kuleana.ainadesign.org) — The public record of who is caring for each moku and what came of it
