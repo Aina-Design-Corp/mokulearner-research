@@ -95,6 +95,24 @@
       "at": "2026-09-22",
       "by": "claude (mokulab session), directed by steward",
       "note": "docs/onprem-pipeline-reconciliation.md and docs/network-coordination-audit.md mokulab role rows reworded; MQTT/gateway facts unchanged."
+    },
+    {
+      "change": "2026-10-12-community-monitoring-toolkit",
+      "domain": "governance",
+      "authorizedBy": "mokunet-org",
+      "status": "acknowledged",
+      "at": "2026-10-26",
+      "by": "leo (ack pass 2026-10-26, steward-directed)",
+      "note": "No change owed in v1; promotion of a published monitoring record to a research dataset remains field-pipeline §6's open item."
+    },
+    {
+      "change": "2026-10-24-community-hub-premise",
+      "domain": "public-fact",
+      "authorizedBy": "mokunet-org",
+      "status": "clear",
+      "at": "2026-10-26",
+      "by": "leo (ack pass 2026-10-26, steward-directed)",
+      "note": "Role rows in the two coordination docs stay compatible; a grep of main for digital twin, Magoon Lab and community hub finds no conflicting claim. No edit."
     }
   ]
 }
