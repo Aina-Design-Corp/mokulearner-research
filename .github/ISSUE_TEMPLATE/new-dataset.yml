@@ -71,7 +71,7 @@ body:
       label: Quality Level
       options:
         - preliminary
-        - verified
+        - qualified
         - peer_reviewed
     validations:
       required: true

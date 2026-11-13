@@ -2,7 +2,7 @@
   "$schema": "../mokulearner-node/docs/general-specs/coordination.schema.json",
   "repo": "mokulearner-research",
   "role": "Git-based screened dataset workflows — the network's direct source of qualified, cleansed datasets. PR-reviewed before ingestion; researcher/org-facing.",
-  "updated": "2026-08-18",
+  "updated": "2026-11-13",
   "spec": "../mokulearner-node/docs/general-specs/CROSS-REPO-COORDINATION.md",
   "reconciledBy": "mokunet-org/leo",
   "managedBy": [
@@ -67,7 +67,7 @@
       "status": "applied",
       "at": "2026-07-24",
       "by": "leo",
-      "note": "Staged on leo/sweep-2026-07-24: graph-wiring section relocated README → docs/topics.md (exempt deep doc) with an outside-in summary in its place; banned vocab (nodes/edges/spatial backbone/H3 res-8) off the non-exempt README surface; unbuilt-pipeline claims (auto-anchoring, research API) softened to being-brought-online; Oʻahu/Mānoa diacriticals in issue templates. The 'verified' QA-tier rename is held for steward ruling (not changed). PR #3 merged to main and published 2026-08-18 (97ab53a, steward-directed session)."
+      "note": "Staged on leo/sweep-2026-07-24: graph-wiring section relocated README → docs/topics.md (exempt deep doc) with an outside-in summary in its place; banned vocab (nodes/edges/spatial backbone/H3 res-8) off the non-exempt README surface; unbuilt-pipeline claims (auto-anchoring, research API) softened to being-brought-online; Oʻahu/Mānoa diacriticals in issue templates. The 'verified' QA-tier rename is held for steward ruling (not changed). PR #3 merged to main and published 2026-08-18 (97ab53a, steward-directed session). 2026-11-13: the QA-tier ruling owed by this record is applied. Per CANON §6 (ruled 2026-11-13), the quality tier 'verified' is renamed 'qualified' in the metadata schema enum, the docs, the templates, the site, and the existing contribution metadata (steward-directed, mokunet-org session)."
     },
     {
       "change": "2026-06-23-commit-authorization-model",

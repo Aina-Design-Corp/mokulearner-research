@@ -4,7 +4,7 @@
 **Dataset:** <!-- dataset title -->
 **Topics:** <!-- e.g., water, biodiversity -->
 **Record Count:** <!-- number of records -->
-**Quality Level:** <!-- preliminary / verified / peer_reviewed -->
+**Quality Level:** <!-- preliminary / qualified / peer_reviewed -->
 **Moku districts covered:** <!-- e.g., oahu-koolaupoko, or "statewide" -->
 
 ## Checklist

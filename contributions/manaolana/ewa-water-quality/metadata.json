@@ -8,7 +8,7 @@
       "license": "CC-BY-4.0",
       "contribution_type": "observation",
       "topics": ["water"],
-      "quality": "verified",
+      "quality": "qualified",
       "moku_ids": ["oahu-ewa"],
       "temporal_coverage": {
         "start": "2026-02-10",

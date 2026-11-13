@@ -136,7 +136,7 @@ Start from the [metadata template](../templates/metadata-template.json) and fill
 | `topics` | Use the [mapping table](#mapping-arcgis-data-to-repository-topics-and-contribution-types) above |
 | `sample_context` | Required for `observation` type — declare the matrix (water, soil, sediment, etc.) and collection methods |
 | `baseline_context` | Recommended for `indicator` type — list the Data Commons variable DCIDs your data supplements |
-| `quality` | Government agency data is typically `verified` (QA'd by agency). Published reports: `peer_reviewed`. Raw downloads without agency QA documentation: `preliminary`. See [quality-levels.md](quality-levels.md) |
+| `quality` | Government agency data is typically `qualified` (QA'd by agency). Published reports: `peer_reviewed`. Raw downloads without agency QA documentation: `preliminary`. See [quality-levels.md](quality-levels.md) |
 | `license` | Check the item page "Terms of Use". Federal agencies (USGS, NOAA, USFWS): use `CC0`. State of Hawaiʻi data: check terms, typically `CC-BY-4.0` with attribution. If unclear, use `CC-BY-4.0` and note the source in `citation` |
 | `citation` | Use the Credits/Source field from the ArcGIS item page |
 | `schema` | Map each retained column to `string`, `number`, `date`, or `boolean` |
@@ -282,7 +282,7 @@ Download Oʻahu records as GeoJSON:
       "citation": "Hawaiʻi DLNR Division of Aquatic Resources. DAR Aquatic Biosurvey. ArcGIS Online.",
       "contribution_type": "observation",
       "topics": ["water", "biodiversity"],
-      "quality": "verified",
+      "quality": "qualified",
       "coverage": "Stream survey stations across all six moku districts of Oʻahu",
       "temporal_coverage": {
         "start": "2019-01-01",
@@ -312,7 +312,7 @@ Download Oʻahu records as GeoJSON:
 
 **Topic selection rationale:** `water` (stream survey, hydrological context) + `biodiversity` (species counts). See the [mapping table](#mapping-arcgis-data-to-repository-topics-and-contribution-types).
 
-**Quality rationale:** `verified` — DLNR data is collected using standardized field protocols and QA'd by the agency before publication.
+**Quality rationale:** `qualified` — DLNR data is collected using standardized field protocols and QA'd by the agency before publication.
 
 **License rationale:** `CC-BY-4.0` — State of Hawaiʻi data with no explicit CC0 declaration; attribution to DLNR is appropriate.
 
