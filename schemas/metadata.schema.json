@@ -116,7 +116,7 @@
         },
         "quality": {
           "type": "string",
-          "enum": ["preliminary", "verified", "peer_reviewed"],
+          "enum": ["preliminary", "qualified", "peer_reviewed"],
           "description": "Quality level declared by the contributor"
         },
         "access_level": {

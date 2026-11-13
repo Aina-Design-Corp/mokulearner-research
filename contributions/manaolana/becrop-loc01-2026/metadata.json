@@ -9,7 +9,7 @@
       "citation": "Biome Makers Inc. 2026. BeCrop Test v4.0 Microbiome Analysis Report DU5000 (sample KMO_SAMPLE_01). Davis, CA / Valladolid, Spain.",
       "contribution_type": "observation",
       "topics": ["land_environment", "agriculture"],
-      "quality": "verified",
+      "quality": "qualified",
       "access_level": "public",
       "moku_ids": ["oahu-kona"],
       "temporal_coverage": {

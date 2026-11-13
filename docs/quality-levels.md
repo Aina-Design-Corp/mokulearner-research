@@ -16,7 +16,7 @@ Quality levels also determine how your data is used relative to county-level bas
 - Admin performs a spot-check during PR review
 - Displayed with a "Preliminary" label in the graph
 
-### verified
+### qualified
 
 **QA'd by the contributor, methods documented.**
 
@@ -41,7 +41,7 @@ Quality levels also determine how your data is used relative to county-level bas
 | If your data... | Use |
 |---|---|
 | Was just collected from the field | `preliminary` |
-| Has been checked and cleaned by your team | `verified` |
+| Has been checked and cleaned by your team | `qualified` |
 | Is part of a published paper or report | `peer_reviewed` |
 
 ## Upgrading Quality

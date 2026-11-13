@@ -96,7 +96,7 @@ For `indicator`:
 - Optional: `resolution_gain` (e.g., "moku-level"), `comparison_method`.
 
 For all types:
-- `quality`: `preliminary` (raw, not QA'd), `verified` (contributor-QA'd), or `peer_reviewed`. Lab-issued reports default to `verified`.
+- `quality`: `preliminary` (raw, not QA'd), `qualified` (contributor-QA'd), or `peer_reviewed`. Lab-issued reports default to `qualified`.
 - `license`: `CC-BY-4.0` is the repo recommendation. **Before defaulting for a commercial lab assay (e.g., BeCrop), check the lab's confidentiality clause** — some include "no part may be reproduced for commercial or public use without permission" language. Surface this to the contributor and confirm before PR.
 - `topics`: from controlled vocab in [docs/topics.md](docs/topics.md). Multiple topics OK (e.g., a flower-crop soil microbiome → `["land_environment", "agriculture"]`).
 - `temporal_coverage`: ISO dates `start`/`end`. For a single-day sample, `start === end`.

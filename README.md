@@ -70,7 +70,7 @@ If your lab already uses Git for code, the same workflow applies to data.
 | Contribution type | Yes | `observation`, `indicator`, or `spatial_overlay` — how your data integrates with the governance graph |
 | Topics | Yes | What domain your research addresses (e.g. `water`, `demographics`) |
 | License | Yes | Open data license (CC-BY-4.0 recommended) |
-| Quality level | Yes | `preliminary`, `verified`, or `peer_reviewed` |
+| Quality level | Yes | `preliminary`, `qualified`, or `peer_reviewed` |
 | Schema | Yes | Column names and types in your data file |
 | Sample context | For observations | What was physically collected (soil, water, sediment, etc.) |
 | Baseline context | For indicators | Which Data Commons variables your data supplements |
@@ -148,7 +148,7 @@ The platform recognizes 33 traditional moku districts across 7 islands. You don'
 | Level | Meaning | Review |
 |---|---|---|
 | **preliminary** | Raw field data, not yet QA'd | Spot-check |
-| **verified** | QA'd by contributor, methods documented | Standard review |
+| **qualified** | QA'd by contributor, methods documented | Standard review |
 | **peer_reviewed** | Published or reviewed by external party | Fast-track |
 
 Preliminary data is welcome — the quality level is a declaration, not a gatekeep. Labs can upgrade quality by submitting a follow-up PR with updated metadata.

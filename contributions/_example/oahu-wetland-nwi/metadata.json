@@ -19,7 +19,7 @@
         "oahu-waialua"
       ],
       "sdg_codes": ["sdg6", "sdg14", "sdg15"],
-      "quality": "verified",
+      "quality": "qualified",
       "access_level": "public",
       "temporal_coverage": {
         "start": "2020-01-01",

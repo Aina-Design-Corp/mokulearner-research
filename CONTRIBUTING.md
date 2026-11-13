@@ -69,7 +69,7 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 | `datasets[].citation` | No | Preferred citation for your dataset |
 | `datasets[].contribution_type` | Yes | `observation`, `indicator`, or `spatial_overlay` (see Step 2) |
 | `datasets[].topics` | Yes | Array from: land_environment, water, biodiversity, agriculture, coastal, climate, forestry, food_safety, infrastructure, demographics, community_wellbeing |
-| `datasets[].quality` | Yes | One of: preliminary, verified, peer_reviewed |
+| `datasets[].quality` | Yes | One of: preliminary, qualified, peer_reviewed |
 | `datasets[].coverage` | When needed | Text description of geographic scope (required if data lacks coordinate columns and no `moku_ids` provided) |
 | `datasets[].schema` | Yes | Column name to type mapping (`string`, `number`, `date`, `boolean`) |
 | `datasets[].required_fields` | Yes | Columns that must be non-null in every record |
@@ -82,7 +82,7 @@ Every contribution needs a `metadata.json` file. Start from the [template](templ
 
 ### Example: Federal Data (One-Time Import)
 
-See [contributions/_example/](contributions/_example/) for a working example using Oʻahu wetland data from the USFWS National Wetlands Inventory. This shows a typical one-time import of a verified federal dataset.
+See [contributions/_example/](contributions/_example/) for a working example using Oʻahu wetland data from the USFWS National Wetlands Inventory. This shows a typical one-time import of a qualified federal dataset.
 
 ### Example: Community-Sourced Observations (Ongoing Sampling)
 
@@ -182,7 +182,7 @@ Once your PR is merged, the ingestion pipeline — being brought online now — 
 To update a dataset with new data or improved quality:
 
 1. Replace the data file in your contribution directory
-2. Update the `metadata.json` if any metadata has changed (e.g., upgrading `quality` from `preliminary` to `verified`)
+2. Update the `metadata.json` if any metadata has changed (e.g., upgrading `quality` from `preliminary` to `qualified`)
 3. Open a new PR with the updates
 4. The ingestion system uses MERGE operations — existing records are updated, new records are added
 
